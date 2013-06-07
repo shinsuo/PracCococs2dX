@@ -20,6 +20,15 @@ public:
     
     
     void Test(CCObject* pSender);
+    
+    void Place(CCObject* pSender);
+    void Hide(CCObject* pSender);
+    void Show(CCObject* pSender);
+    void Toggle(CCObject* pSender);
+    void Back(CCObject* pSender);
+    
+private:
+    cocos2d::CCSprite *pSprite;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

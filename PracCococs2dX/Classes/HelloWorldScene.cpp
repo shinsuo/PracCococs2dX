@@ -63,7 +63,7 @@ bool HelloWorld::init()
     CCLabelAtlas *pLabelAtlas = CCLabelAtlas::create("0", "fonts_rankscore.png", 24, 38, (unsigned int)'/');
     pLabelAtlas->setString("38475");
     pLabelAtlas->setPosition(ccp(100,100));
-    this->addChild(pLabelAtlas,2);
+//    this->addChild(pLabelAtlas,2);
     
     
     CCLabelAtlas *pLabelAtlas1 = CCLabelAtlas::create("0", "fonts_ranking_01.png", 40, 46, (unsigned int)'0');
@@ -74,12 +74,12 @@ bool HelloWorld::init()
     CCLabelAtlas *pLabelAtlas2 = CCLabelAtlas::create("0", "set1_player_hud3.png", 14, 21, (unsigned int)'0');
     pLabelAtlas2->setString("38475:");
     pLabelAtlas2->setPosition(ccp(300,100));
-    this->addChild(pLabelAtlas2,2);
+//    this->addChild(pLabelAtlas2,2);
     
     CCLabelAtlas *pLabelAtlas3 = CCLabelAtlas::create("00.0", "fps_images.png", 12, 32, (unsigned int)'.');
     pLabelAtlas3->setString("385.7");
     pLabelAtlas3->setPosition(ccp(400,100));
-    this->addChild(pLabelAtlas3,2);
+//    this->addChild(pLabelAtlas3,2);
     
     
     CCMenuItemLabel *pMenuLabelAtlas = CCMenuItemLabel::create(pLabel,
@@ -100,13 +100,21 @@ bool HelloWorld::init()
     pMenuItemFont->setPosition(ccp(500, 400));
     pMenuItemFont->setScale(4);
     
+    
+    CCMenuItemFont *p1 = CCMenuItemFont::create("Place", this, menu_selector(HelloWorld::Place));
+    CCMenuItemFont *p2 = CCMenuItemFont::create("Hide", this, menu_selector(HelloWorld::Hide));
+    CCMenuItemFont *p3 = CCMenuItemFont::create("Show", this, menu_selector(HelloWorld::Show));
+    CCMenuItemFont *p4 = CCMenuItemFont::create("Toggle", this, menu_selector(HelloWorld::Toggle));
+    CCMenuItemFont *p5 = CCMenuItemFont::create("Back", this, menu_selector(HelloWorld::Back));
+    
     // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pCloseItem,pMenuLabelAtlas,pMenuLabelAtlas1,pMenuAtlasFont,pMenuItemFont, NULL);
-    pMenu->setPosition( CCPointZero );
+    CCMenu* pMenu = CCMenu::create(p1,p2,p3,p4,p5, NULL);
+    pMenu->alignItemsVerticallyWithPadding(30);
+    pMenu->setPosition( ccp(800,320) );
     this->addChild(pMenu, 1);
 
     // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
+    pSprite = CCSprite::create("HelloWorld.png");
 
     // position the sprite on the center of the screen
     pSprite->setPosition( ccp(size.width/2, size.height/2) );
@@ -114,7 +122,38 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
     
+    
+    
+    
+    
+    
     return true;
+}
+
+void HelloWorld::Place(CCObject* pSender)
+{
+    CCSize size = CCDirector::sharedDirector()->getWinSize();
+    pSprite->runAction(CCPlace::create(ccp(size.width*CCRANDOM_0_1(),size.height*CCRANDOM_0_1())));
+}
+
+void HelloWorld::Hide(CCObject* pSender)
+{
+    pSprite->runAction(CCHide::create());
+}
+
+void HelloWorld::Show(CCObject* pSender)
+{
+    pSprite->runAction(CCShow::create());
+}
+
+void HelloWorld::Toggle(CCObject* pSender)
+{
+    pSprite->runAction(CCToggleVisibility::create());
+}
+
+void HelloWorld::Back(CCObject* pSender)
+{
+    
 }
 
 void HelloWorld::Test(CCObject* pSender)
