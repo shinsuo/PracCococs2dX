@@ -114,18 +114,19 @@ bool HelloWorld::init()
     this->addChild(pMenu, 1);
 
     // add "HelloWorld" splash screen"
-    pSprite = CCSprite::create("HelloWorld.png");
+    CCSprite* Sprite = CCSprite::create("HelloWorld.png");
 
     // position the sprite on the center of the screen
-    pSprite->setPosition( ccp(size.width/2, size.height/2) );
+    Sprite->setPosition( ccp(size.width/2, size.height/2) );
 
     // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
+    this->addChild(Sprite, 0);
     
     
     
-    
-    
+    pSprite = CCSprite::create("icon_05.png");
+    pSprite->setPosition(ccp(size.width/2, size.height/2));
+    this->addChild(pSprite,10);
     
     return true;
 }
@@ -138,7 +139,39 @@ void HelloWorld::Place(CCObject* pSender)
 
 void HelloWorld::Hide(CCObject* pSender)
 {
-    pSprite->runAction(CCHide::create());
+//    pSprite->runAction(CCHide::create());
+    int numsRunAction = pSprite->numberOfRunningActions();
+    CCLOG("running Action Numbers:%d",numsRunAction);
+    if (numsRunAction > 0) {
+        return;
+    }
+    CCSize size = CCDirector::sharedDirector()->getWinSize();
+    CCMoveTo *ac1 = CCMoveTo::create(2.0f, ccp(size.width-50,size.height-50));
+    CCJumpTo *ac2 = CCJumpTo::create(5.0f, ccp(100,100), 20, 5);
+    CCBlink *ac3 = CCBlink::create(3.0f, 3);
+    CCAction *ac4 = CCTintBy::create(2.0f, 0, 255, 255);
+    CCPlace *pl = CCPlace::create(ccp(size.width/2,size.height/2));
+    
+    CCCallFunc *cf = CCCallFunc::create(this, callfunc_selector(HelloWorld::Test));
+    
+    CCSequence *s1 = CCSequence::create(ac1,ac2,ac3,ac4,pl,cf,NULL);
+    
+//    CCSequence *ss = CCSequence::create(s1,CCDelayTime::create(5),s1->reverse(),NULL);
+    
+    pSprite->runAction(CCRepeat::create(s1, 3));
+//    pSprite->runAction(CCMoveTo::create(2, ccp(size.width*CCRANDOM_0_1(),size.height*CCRANDOM_0_1())));
+    
+    CCScaleTo *ac5 = CCScaleTo::create(5, 5);
+    CCScaleBy *ac6 = CCScaleBy::create(5, 5);
+    
+    CCRotateTo *ac7 = CCRotateTo::create(5, 180);
+    CCRotateBy *ac8 = CCRotateBy::create(5,180);
+    
+    CCSpawn *sp = CCSpawn::create(ac5,ac8,NULL);
+    
+//    pSprite->runAction(sp);
+    
+    
 }
 
 void HelloWorld::Show(CCObject* pSender)
