@@ -1,0 +1,58 @@
+<skeleton name="shoudianjidonghua" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="shoudianjidonghua">
+   <b name="2" x="0" y="0" kX="0" kY="0" cX="0.8" cY="0.8" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="dianjia_guanghuan_01"/>
+   </b>
+   <b name="3" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="dianji_guanghuan_02"/>
+   </b>
+   <b name="1" x="83.25" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="dianji_shou"/>
+   </b>
+   <b name="4" x="83.25" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="dianji_shou"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="shoudianjidonghua">
+   <mov name="uidonghua" dr="24" to="1" drTW="60" lp="0" twE="NaN">
+    <b name="2" sc="1" dl="0">
+     <f dr="4" dI="-1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="0.8" cY="0.8" z="0" pX="40" pY="40" width="80" height="80" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="7"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1.3" cY="1.3" z="0" pX="65" pY="65" width="130" height="130" alpha="0" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f dr="4" dI="-1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="0.8" cY="0.8" z="0" pX="40" pY="40" width="80" height="80" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="7"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1.3" cY="1.3" z="0" pX="65" pY="65" width="130" height="130" alpha="0" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+    <b name="3" sc="1" dl="0">
+     <f dr="2" dI="-1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="9"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1.3" cY="1.3" z="1" pX="130" pY="130" width="260" height="260" alpha="0" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f dr="2" dI="-1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="9"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1.3" cY="1.3" z="1" pX="130" pY="130" width="260" height="260" alpha="0" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+    <b name="1" sc="1" dl="0">
+     <f x="83.25" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="2"/>
+     <f x="78.3" y="12.3" kX="-10.23" kY="-10.23" cX="1" cY="1" z="2" pX="116.15" pY="116.15" width="233" height="233" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="6"/>
+     <f x="83.25" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" dr="3"/>
+     <f x="83.25" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="2"/>
+     <f x="78.3" y="12.3" kX="-10.23" kY="-10.23" cX="1" cY="1" z="2" pX="116.15" pY="116.15" width="233" height="233" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="6"/>
+     <f x="83.25" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" dr="5"/>
+    </b>
+   </mov>
+   <mov name="jingzhi" dr="2" to="1" drTW="5" lp="1" twE="2">
+    <b name="4" sc="1" dl="0">
+     <f x="83.25" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="shoudianjidonghua" width="512" height="256">
+  <SubTexture name="dianji_shou" pX="100" pY="100" width="200" height="200" x="202" y="0"/>
+  <SubTexture name="dianji_guanghuan_02" pX="100" pY="100" width="200" height="200" x="0" y="0"/>
+  <SubTexture name="dianjia_guanghuan_01" pX="50" pY="50" width="100" height="100" x="404" y="0"/>
+ </TextureAtlas>
+</skeleton>

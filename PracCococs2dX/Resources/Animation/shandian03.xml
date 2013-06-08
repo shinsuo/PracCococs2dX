@@ -1,0 +1,45 @@
+<skeleton name="Explode_Item_single" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="Explode_Item_single">
+   <b name="图层 1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="Explode_Item_single12"/>
+    <d name="Explode_Item_single15"/>
+    <d name="Explode_Item_single16"/>
+    <d name="Explode_Item_single17"/>
+    <d name="Explode_Item_single18"/>
+    <d name="Explode_Item_single19"/>
+    <d name="Explode_Item_single20"/>
+    <d name="Explode_Item_single22"/>
+    <d name="Explode_Item_single23"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="Explode_Item_single">
+   <mov name="Explode_Item_single" dr="10" to="6" drTW="25" lp="0" twE="NaN">
+    <b name="图层 1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="1" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="2" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="3" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="4" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="5" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="6" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="7" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="8" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="Explode_Item_single" width="512" height="1024">
+  <SubTexture name="Explode_Item_single23" pX="100" pY="100" width="200" height="200" x="0" y="808"/>
+  <SubTexture name="Explode_Item_single22" pX="100" pY="100" width="200" height="200" x="0" y="202"/>
+  <SubTexture name="Explode_Item_single20" pX="100" pY="100" width="200" height="200" x="202" y="606"/>
+  <SubTexture name="Explode_Item_single19" pX="100" pY="100" width="200" height="200" x="0" y="404"/>
+  <SubTexture name="Explode_Item_single18" pX="100" pY="100" width="200" height="200" x="0" y="0"/>
+  <SubTexture name="Explode_Item_single17" pX="100" pY="100" width="200" height="200" x="202" y="0"/>
+  <SubTexture name="Explode_Item_single16" pX="100" pY="100" width="200" height="200" x="202" y="202"/>
+  <SubTexture name="Explode_Item_single15" pX="100" pY="100" width="200" height="200" x="202" y="404"/>
+  <SubTexture name="Explode_Item_single12" pX="100" pY="100" width="200" height="200" x="0" y="606"/>
+ </TextureAtlas>
+</skeleton>

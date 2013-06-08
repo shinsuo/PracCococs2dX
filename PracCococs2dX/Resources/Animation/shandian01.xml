@@ -1,0 +1,42 @@
+<skeleton name="chufa" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="chufa">
+   <b name="图层 1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="chufa10"/>
+    <d name="chufa11"/>
+    <d name="chufa12"/>
+    <d name="chufa13"/>
+    <d name="chufa14"/>
+    <d name="chufa15"/>
+    <d name="chufa16"/>
+    <d name="chufa17"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="chufa">
+   <mov name="chufa" dr="8" to="6" drTW="20" lp="0" twE="NaN">
+    <b name="图层 1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="1" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="2" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="3" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="4" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="5" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="6" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="7" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="chufa" width="512" height="4096">
+  <SubTexture name="chufa17" pX="150" pY="150" width="300" height="300" x="0" y="302"/>
+  <SubTexture name="chufa16" pX="150" pY="150" width="300" height="300" x="0" y="1812"/>
+  <SubTexture name="chufa15" pX="150" pY="150" width="300" height="300" x="0" y="906"/>
+  <SubTexture name="chufa14" pX="150" pY="150" width="300" height="300" x="0" y="2114"/>
+  <SubTexture name="chufa13" pX="150" pY="150" width="300" height="300" x="0" y="0"/>
+  <SubTexture name="chufa12" pX="150" pY="150" width="300" height="300" x="0" y="604"/>
+  <SubTexture name="chufa11" pX="150" pY="150" width="300" height="300" x="0" y="1208"/>
+  <SubTexture name="chufa10" pX="150" pY="150" width="300" height="300" x="0" y="1510"/>
+ </TextureAtlas>
+</skeleton>

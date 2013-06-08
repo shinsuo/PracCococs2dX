@@ -1,0 +1,42 @@
+<skeleton name="CommonEffects" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="CommonEffects">
+   <b name="图层 1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="CommonEffects20"/>
+    <d name="CommonEffects21"/>
+    <d name="CommonEffects22"/>
+    <d name="CommonEffects23"/>
+    <d name="CommonEffects24"/>
+    <d name="CommonEffects25"/>
+    <d name="CommonEffects26"/>
+    <d name="CommonEffects27"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="CommonEffects">
+   <mov name="CommonEffects" dr="17" to="1" drTW="40" lp="0" twE="NaN">
+    <b name="图层 1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="1" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="2" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="3" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="4" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="5" twE="0" dr="3"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="6" twE="0" dr="3"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="7" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="CommonEffects" width="512" height="4096">
+  <SubTexture name="CommonEffects27" pX="150" pY="150" width="300" height="300" x="0" y="302"/>
+  <SubTexture name="CommonEffects26" pX="150" pY="150" width="300" height="300" x="0" y="1812"/>
+  <SubTexture name="CommonEffects25" pX="150" pY="150" width="300" height="300" x="0" y="906"/>
+  <SubTexture name="CommonEffects24" pX="150" pY="150" width="300" height="300" x="0" y="2114"/>
+  <SubTexture name="CommonEffects23" pX="150" pY="150" width="300" height="300" x="0" y="0"/>
+  <SubTexture name="CommonEffects22" pX="150" pY="150" width="300" height="300" x="0" y="604"/>
+  <SubTexture name="CommonEffects21" pX="150" pY="150" width="300" height="300" x="0" y="1208"/>
+  <SubTexture name="CommonEffects20" pX="150" pY="150" width="300" height="300" x="0" y="1510"/>
+ </TextureAtlas>
+</skeleton>

@@ -1,0 +1,51 @@
+<skeleton name="LvUpTxt" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="LvUpTxt">
+   <b name="Text" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="levelup"/>
+   </b>
+   <b name="shining1" x="-158.95" y="-43" kX="0" kY="0" cX="1" cY="1" alpha="0" red="100" green="100" blue="100" z="1">
+    <d name="shining"/>
+   </b>
+   <b name="shining2" x="65" y="-46" kX="0" kY="0" cX="1" cY="1" alpha="0" red="100" green="100" blue="100" z="1">
+    <d name="shining"/>
+   </b>
+   <b name="shining3" x="187" y="32" kX="0" kY="0" cX="1" cY="1" alpha="0" red="100" green="100" blue="100" z="1">
+    <d name="shining"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="LvUpTxt">
+   <mov name="LvUpTxt" dr="60" to="1" drTW="150" lp="0" twE="NaN">
+    <b name="Text" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="196" pY="58" width="392" height="116" alpha="100" red="100" green="100" blue="100" dI="0" dr="60"/>
+    </b>
+    <b name="shining1" sc="1" dl="0">
+     <f x="-158.95" y="-43" kX="0" kY="0" cX="1" cY="1" z="1" pX="60" pY="45" width="120" height="90" alpha="0" red="100" green="100" blue="100" dI="0" twE="0" dr="7"/>
+     <f x="-158.95" y="-43" kX="0" kY="0" cX="1" cY="1" z="1" pX="60" pY="45" width="120" height="90" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="8"/>
+     <f x="-158.95" y="-43" kX="0" kY="0" cX="1" cY="1" z="1" pX="60" pY="45" width="120" height="90" alpha="0" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f dr="44" dI="-1"/>
+    </b>
+    <b name="shining2" sc="1" dl="0">
+     <f dr="16" dI="-1"/>
+     <f x="65" y="-46" kX="0" kY="0" cX="1" cY="1" z="1" pX="60" pY="45" width="120" height="90" alpha="0" red="100" green="100" blue="100" dI="0" twE="0" dr="7"/>
+     <f x="65" y="-46" kX="0" kY="0" cX="1" cY="1" z="1" pX="60" pY="45" width="120" height="90" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="7"/>
+     <f x="65" y="-46" kX="0" kY="0" cX="1" cY="1" z="1" pX="60" pY="45" width="120" height="90" alpha="0" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f dr="29" dI="-1"/>
+    </b>
+    <b name="shining3" sc="1" dl="0">
+     <f dr="31" dI="-1"/>
+     <f x="187" y="32" kX="0" kY="0" cX="1" cY="1" z="1" pX="60" pY="45" width="120" height="90" alpha="0" red="100" green="100" blue="100" dI="0" twE="0" dr="8"/>
+     <f x="187" y="32" kX="0" kY="0" cX="1" cY="1" z="1" pX="60" pY="45" width="120" height="90" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="8"/>
+     <f x="187" y="32" kX="0" kY="0" cX="1" cY="1" z="1" pX="60" pY="45" width="120" height="90" alpha="0" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f dr="12" dI="-1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="LvUpTxt" width="512" height="256">
+  <SubTexture name="shining" pX="60" pY="45" width="120" height="90" x="0" y="118"/>
+  <SubTexture name="levelup" pX="196" pY="58" width="392" height="116" x="0" y="0"/>
+ </TextureAtlas>
+</skeleton>

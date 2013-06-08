@@ -1,0 +1,69 @@
+<skeleton name="hongxingzengjia2" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="hongxin">
+   <b name="heart1" x="0" y="-140" kX="0" kY="0" cX="0.5" cY="0.5" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="hongxin1"/>
+   </b>
+   <b name="heart2" x="2" y="-2" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="xinguangquan"/>
+   </b>
+   <b name="lizi1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="hongxinxiaochulizi1"/>
+    <d name="hongxinxiaochulizi2"/>
+    <d name="hongxinxiaochulizi3"/>
+    <d name="hongxinxiaochulizi4"/>
+    <d name="hongxinxiaochulizi5"/>
+    <d name="hongxinxiaochulizi6"/>
+    <d name="hongxinxiaochulizi7"/>
+    <d name="hongxinxiaochulizi8"/>
+    <d name="hongxinxiaochulizi9"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="hongxin">
+   <mov name="uidonghua1" dr="22" to="1" drTW="55" lp="0" twE="NaN">
+    <b name="heart1" sc="1" dl="0">
+     <f x="0" y="-140" kX="0" kY="0" cX="0.5" cY="0.5" z="0" pX="26.25" pY="22.25" width="53" height="45" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="2"/>
+     <f x="0" y="-31" kX="0" kY="0" cX="0.5" cY="0.5" z="0" pX="26.25" pY="22.25" width="53" height="45" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="3"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="52.5" pY="44.5" width="105" height="89" alpha="100" red="0" green="0" blue="0" dI="0" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1.1" cY="1.1" z="0" pX="57.75" pY="48.95" width="116" height="98" alpha="100" red="0" green="0" blue="0" dI="0" dr="1"/>
+     <f x="0" y="-5.5" kX="0" kY="0" cX="1.2" cY="1.32" z="0" pX="63" pY="58.9" width="126" height="118" alpha="100" red="0" green="0" blue="0" dI="0" twE="0" dr="5"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="52.5" pY="44.5" width="105" height="89" alpha="100" red="100" green="100" blue="100" dI="0" dr="10"/>
+    </b>
+    <b name="heart2" sc="1" dl="0">
+     <f dr="5" dI="-1"/>
+     <f x="2" y="-2" kX="0" kY="0" cX="1" cY="1" z="1" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f x="2" y="-2" kX="0" kY="0" cX="1.1" cY="1.1" z="1" pX="110" pY="110" width="220" height="220" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f x="2" y="-11" kX="0" kY="0" cX="1.1" cY="1.1" z="1" pX="110" pY="110" width="220" height="220" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="9"/>
+     <f x="2" y="-11" kX="0" kY="0" cX="1.27" cY="1.27" z="1" pX="127" pY="127" width="254" height="254" alpha="0" red="100" green="100" blue="100" dI="0" dr="6"/>
+    </b>
+    <b name="lizi1" sc="1" dl="0">
+     <f dr="4" dI="-1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="1" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="2" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="3" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="4" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="5" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="6" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="7" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="2" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="8" dr="2"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="hongxingzengjia2" width="512" height="1024">
+  <SubTexture name="hongxinxiaochulizi9" pX="100" pY="100" width="200" height="200" x="0" y="606"/>
+  <SubTexture name="hongxinxiaochulizi8" pX="100" pY="100" width="200" height="200" x="0" y="202"/>
+  <SubTexture name="hongxinxiaochulizi7" pX="100" pY="100" width="200" height="200" x="202" y="808"/>
+  <SubTexture name="hongxinxiaochulizi6" pX="100" pY="100" width="200" height="200" x="0" y="404"/>
+  <SubTexture name="hongxinxiaochulizi5" pX="100" pY="100" width="200" height="200" x="0" y="808"/>
+  <SubTexture name="hongxinxiaochulizi4" pX="100" pY="100" width="200" height="200" x="0" y="0"/>
+  <SubTexture name="hongxinxiaochulizi3" pX="100" pY="100" width="200" height="200" x="202" y="0"/>
+  <SubTexture name="hongxinxiaochulizi2" pX="100" pY="100" width="200" height="200" x="202" y="202"/>
+  <SubTexture name="hongxinxiaochulizi1" pX="100" pY="100" width="200" height="200" x="202" y="404"/>
+  <SubTexture name="xinguangquan" pX="100" pY="100" width="200" height="200" x="202" y="606"/>
+  <SubTexture name="hongxin1" pX="52.5" pY="44.5" width="105" height="89" x="404" y="0"/>
+ </TextureAtlas>
+</skeleton>

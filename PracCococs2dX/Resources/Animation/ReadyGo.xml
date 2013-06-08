@@ -1,0 +1,47 @@
+<skeleton name="ready" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="readygo">
+   <b name="ready" x="550" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="ready"/>
+   </b>
+   <b name="ready2" x="-550" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="ready"/>
+   </b>
+   <b name="gou" x="0" y="0" kX="0" kY="0" cX="0.24" cY="0.24" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="go"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="readygo">
+   <mov name="uidonghua" dr="50" to="1" drTW="125" lp="0" twE="NaN">
+    <b name="ready" sc="1" dl="0">
+     <f x="550" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="184" pY="59" width="368" height="118" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="4"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="184" pY="59" width="368" height="118" alpha="100" red="100" green="100" blue="100" dI="0" dr="15"/>
+     <f dr="31" dI="-1"/>
+    </b>
+    <b name="ready2" sc="1" dl="0">
+     <f x="-550" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="184" pY="59" width="368" height="118" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="4"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="184" pY="59" width="368" height="118" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="184" pY="59" width="368" height="118" alpha="100" red="0" green="0" blue="0" dI="0" twE="0" dr="7"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1.39" cY="1.39" z="1" pX="256.25" pY="82.15" width="513" height="165" alpha="0" red="100" green="100" blue="100" dI="0" dr="7"/>
+     <f dr="31" dI="-1"/>
+    </b>
+    <b name="gou" sc="1" dl="0">
+     <f dr="19" dI="-1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="0.24" cY="0.24" z="0" pX="28.25" pY="16.05" width="57" height="33" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="6"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="118" pY="67" width="236" height="134" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="118" pY="67" width="236" height="134" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="3"/>
+     <f x="0" y="0" kX="0" kY="0" cX="0.88" cY="0.88" z="0" pX="103.4" pY="58.7" width="207" height="118" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="3"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="118" pY="67" width="236" height="134" alpha="100" red="100" green="100" blue="100" dI="0" dr="5"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="118" pY="67" width="236" height="134" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="12"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="118" pY="67" width="236" height="134" alpha="0" red="100" green="100" blue="100" dI="0" twE="0" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="ready" width="512" height="256">
+  <SubTexture name="go" pX="118" pY="67" width="236" height="134" x="0" y="120"/>
+  <SubTexture name="ready" pX="184" pY="59" width="368" height="118" x="0" y="0"/>
+ </TextureAtlas>
+</skeleton>

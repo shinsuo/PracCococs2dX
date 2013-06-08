@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>defenBGhuangguang1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{685,697}}</string>
+                <key>offset</key>
+                <string>{19,14}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{38,0},{685,697}}</string>
+                <key>sourceSize</key>
+                <string>{723,725}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>defenBGfangguang.png</string>
+            <key>size</key>
+            <string>{1024,1024}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:65b3a76f44c516f1f97b737aeee6b39b$</string>
+            <key>textureFileName</key>
+            <string>defenBGfangguang.png</string>
+        </dict>
+    </dict>
+</plist>

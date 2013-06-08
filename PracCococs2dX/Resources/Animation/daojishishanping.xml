@@ -1,0 +1,48 @@
+<skeleton name="daojishishanping" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="daojishishanpingtexiao">
+   <b name="ruo1" x="-192" y="-256" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="daojishishanping"/>
+   </b>
+   <b name="ruo2" x="192" y="-256" kX="0" kY="180" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="daojishishanping"/>
+   </b>
+   <b name="ruo3" x="-192" y="256" kX="180" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="daojishishanping"/>
+   </b>
+   <b name="ruo4" x="192" y="256" kX="180" kY="180" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="3">
+    <d name="daojishishanping"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="daojishishanpingtexiao">
+   <mov name="texiao4" dr="1" to="1"/>
+   <mov name="texiao1" dr="23" to="1" drTW="58" lp="1" twE="NaN">
+    <b name="ruo1" sc="1" dl="0">
+     <f x="-192" y="-256" kX="0" kY="0" cX="1" cY="1" z="0" pX="192" pY="256" width="384" height="512" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="11"/>
+     <f x="-192" y="-256" kX="0" kY="0" cX="1" cY="1" z="0" pX="192" pY="256" width="384" height="512" alpha="20" red="100" green="100" blue="100" dI="0" twE="0" dr="11"/>
+     <f x="-192" y="-256" kX="0" kY="0" cX="1" cY="1" z="0" pX="192" pY="256" width="384" height="512" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="1"/>
+    </b>
+    <b name="ruo2" sc="1" dl="0">
+     <f x="192" y="-256" kX="0" kY="180" cX="1" cY="1" z="1" pX="192" pY="256" width="384" height="512" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="11"/>
+     <f x="192" y="-256" kX="0" kY="180" cX="1" cY="1" z="1" pX="192" pY="256" width="384" height="512" alpha="20" red="100" green="100" blue="100" dI="0" twE="0" dr="11"/>
+     <f x="192" y="-256" kX="0" kY="180" cX="1" cY="1" z="1" pX="192" pY="256" width="384" height="512" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="1"/>
+    </b>
+    <b name="ruo3" sc="1" dl="0">
+     <f x="-192" y="256" kX="180" kY="0" cX="1" cY="1" z="2" pX="192" pY="256" width="384" height="512" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="11"/>
+     <f x="-192" y="256" kX="180" kY="0" cX="1" cY="1" z="2" pX="192" pY="256" width="384" height="512" alpha="20" red="100" green="100" blue="100" dI="0" twE="0" dr="11"/>
+     <f x="-192" y="256" kX="180" kY="0" cX="1" cY="1" z="2" pX="192" pY="256" width="384" height="512" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="1"/>
+    </b>
+    <b name="ruo4" sc="1" dl="0">
+     <f x="192" y="256" kX="180" kY="180" cX="1" cY="1" z="3" pX="192" pY="256" width="384" height="512" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="11"/>
+     <f x="192" y="256" kX="180" kY="180" cX="1" cY="1" z="3" pX="192" pY="256" width="384" height="512" alpha="20" red="100" green="100" blue="100" dI="0" twE="0" dr="11"/>
+     <f x="192" y="256" kX="180" kY="180" cX="1" cY="1" z="3" pX="192" pY="256" width="384" height="512" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="daojishishanping" width="512" height="1024">
+  <SubTexture name="daojishishanping" pX="192" pY="256" width="384" height="512" x="0" y="0"/>
+ </TextureAtlas>
+</skeleton>

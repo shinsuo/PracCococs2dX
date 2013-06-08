@@ -1,0 +1,54 @@
+<skeleton name="daojuxuanze" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="daojuxuanze">
+   <b name="1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="daojuxuanze1"/>
+    <d name="daojuxuanze2"/>
+    <d name="daojuxuanze3"/>
+    <d name="daojuxuanze4"/>
+    <d name="daojuxuanze5"/>
+    <d name="daojuxuanze6"/>
+    <d name="daojuxuanze7"/>
+    <d name="daojuxuanze8"/>
+    <d name="daojuxuanze9"/>
+    <d name="daojuxuanze10"/>
+    <d name="daojuxuanze11"/>
+    <d name="daojuxuanze12"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="daojuxuanze">
+   <mov name="uidonghua" dr="24" to="1" drTW="44" lp="0" twE="NaN">
+    <b name="1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="1" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="2" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="3" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="4" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="5" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="6" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="7" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="8" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="9" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="10" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="100" pY="100" width="200" height="200" alpha="100" red="100" green="100" blue="100" dI="11" dr="2"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="daojuxuanze" width="512" height="2048">
+  <SubTexture name="daojuxuanze12" pX="100" pY="100" width="200" height="200" x="202" y="0"/>
+  <SubTexture name="daojuxuanze11" pX="100" pY="100" width="200" height="200" x="202" y="606"/>
+  <SubTexture name="daojuxuanze10" pX="100" pY="100" width="200" height="200" x="202" y="202"/>
+  <SubTexture name="daojuxuanze9" pX="100" pY="100" width="200" height="200" x="202" y="1010"/>
+  <SubTexture name="daojuxuanze8" pX="100" pY="100" width="200" height="200" x="202" y="404"/>
+  <SubTexture name="daojuxuanze7" pX="100" pY="100" width="200" height="200" x="0" y="1010"/>
+  <SubTexture name="daojuxuanze6" pX="100" pY="100" width="200" height="200" x="0" y="0"/>
+  <SubTexture name="daojuxuanze5" pX="100" pY="100" width="200" height="200" x="0" y="202"/>
+  <SubTexture name="daojuxuanze4" pX="100" pY="100" width="200" height="200" x="0" y="404"/>
+  <SubTexture name="daojuxuanze3" pX="100" pY="100" width="200" height="200" x="0" y="606"/>
+  <SubTexture name="daojuxuanze2" pX="100" pY="100" width="200" height="200" x="0" y="808"/>
+  <SubTexture name="daojuxuanze1" pX="100" pY="100" width="200" height="200" x="202" y="808"/>
+ </TextureAtlas>
+</skeleton>

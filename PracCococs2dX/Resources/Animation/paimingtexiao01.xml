@@ -1,0 +1,48 @@
+<skeleton name="paimingtexiao01" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="paimingtexiao01">
+   <b name="图层 1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="paimingtexiao52"/>
+    <d name="paimingtexiao53"/>
+    <d name="paimingtexiao54"/>
+    <d name="paimingtexiao55"/>
+    <d name="paimingtexiao56"/>
+    <d name="paimingtexiao57"/>
+    <d name="paimingtexiao58"/>
+    <d name="paimingtexiao59"/>
+    <d name="paimingtexiao60"/>
+    <d name="paimingtexiao61"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="paimingtexiao01">
+   <mov name="paimingtexiao01" dr="20" to="6" drTW="50" lp="0" twE="NaN">
+    <b name="图层 1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="1" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="2" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="3" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="4" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="5" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="6" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="7" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="8" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="225" pY="100" width="450" height="200" alpha="100" red="100" green="100" blue="100" dI="9" dr="2"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="paimingtexiao01" width="512" height="2048">
+  <SubTexture name="paimingtexiao61" pX="225" pY="100" width="450" height="200" x="0" y="202"/>
+  <SubTexture name="paimingtexiao60" pX="225" pY="100" width="450" height="200" x="0" y="1818"/>
+  <SubTexture name="paimingtexiao59" pX="225" pY="100" width="450" height="200" x="0" y="606"/>
+  <SubTexture name="paimingtexiao58" pX="225" pY="100" width="450" height="200" x="0" y="1616"/>
+  <SubTexture name="paimingtexiao57" pX="225" pY="100" width="450" height="200" x="0" y="1010"/>
+  <SubTexture name="paimingtexiao56" pX="225" pY="100" width="450" height="200" x="0" y="0"/>
+  <SubTexture name="paimingtexiao55" pX="225" pY="100" width="450" height="200" x="0" y="404"/>
+  <SubTexture name="paimingtexiao54" pX="225" pY="100" width="450" height="200" x="0" y="808"/>
+  <SubTexture name="paimingtexiao53" pX="225" pY="100" width="450" height="200" x="0" y="1212"/>
+  <SubTexture name="paimingtexiao52" pX="225" pY="100" width="450" height="200" x="0" y="1414"/>
+ </TextureAtlas>
+</skeleton>

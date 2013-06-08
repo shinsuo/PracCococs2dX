@@ -1,0 +1,24 @@
+<skeleton name="lastbonus" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="lastbonus">
+   <b name="last" x="0" y="0" kX="0" kY="0" cX="0.14" cY="0.14" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="lastbonus1"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="lastbonus">
+   <mov name="uidonghua" dr="18" to="1" drTW="45" lp="0" twE="NaN">
+    <b name="last" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="0.14" cY="0.14" z="0" pX="26.65" pY="7.65" width="54" height="16" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="9"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1.14" cY="1.14" z="0" pX="219.1" pY="62.75" width="439" height="126" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="3"/>
+     <f x="0" y="0" kX="0" kY="0" cX="0.79" cY="0.79" z="0" pX="151.85" pY="43.5" width="304" height="87" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="3"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="192" pY="55" width="384" height="110" alpha="100" red="100" green="100" blue="100" dI="0" dr="3"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="lastbonus" width="512" height="128">
+  <SubTexture name="lastbonus1" pX="192" pY="55" width="384" height="110" x="0" y="0"/>
+ </TextureAtlas>
+</skeleton>

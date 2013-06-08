@@ -1,0 +1,45 @@
+<skeleton name="feverxiaochu" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="feverxiaochu">
+   <b name="xiaochu" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="feverxiaochu1"/>
+    <d name="feverxiaochu2"/>
+    <d name="feverxiaochu3"/>
+    <d name="feverxiaochu4"/>
+    <d name="feverxiaochu5"/>
+    <d name="feverxiaochu6"/>
+    <d name="feverxiaochu7"/>
+    <d name="feverxiaochu8"/>
+    <d name="feverxiaochu9"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="feverxiaochu">
+   <mov name="texiao" dr="9" to="1" drTW="25" lp="0" twE="NaN">
+    <b name="xiaochu" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="1" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="2" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="3" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="4" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="5" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="6" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="7" dr="1"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="150" pY="150" width="300" height="300" alpha="100" red="100" green="100" blue="100" dI="8" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="feverxiaochu" width="512" height="4096">
+  <SubTexture name="feverxiaochu9" pX="150" pY="150" width="300" height="300" x="0" y="2416"/>
+  <SubTexture name="feverxiaochu8" pX="150" pY="150" width="300" height="300" x="0" y="604"/>
+  <SubTexture name="feverxiaochu7" pX="150" pY="150" width="300" height="300" x="0" y="2114"/>
+  <SubTexture name="feverxiaochu6" pX="150" pY="150" width="300" height="300" x="0" y="1208"/>
+  <SubTexture name="feverxiaochu5" pX="150" pY="150" width="300" height="300" x="0" y="0"/>
+  <SubTexture name="feverxiaochu4" pX="150" pY="150" width="300" height="300" x="0" y="302"/>
+  <SubTexture name="feverxiaochu3" pX="150" pY="150" width="300" height="300" x="0" y="906"/>
+  <SubTexture name="feverxiaochu2" pX="150" pY="150" width="300" height="300" x="0" y="1510"/>
+  <SubTexture name="feverxiaochu1" pX="150" pY="150" width="300" height="300" x="0" y="1812"/>
+ </TextureAtlas>
+</skeleton>

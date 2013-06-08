@@ -1,0 +1,107 @@
+<skeleton name="UIsaoguang" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="baoshi00">
+   <b name="图层 3" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="baoshi6"/>
+    <d name="baoshi1"/>
+    <d name="baoshi2"/>
+    <d name="baoshi3"/>
+    <d name="baoshi4"/>
+    <d name="baoshi5"/>
+   </b>
+  </armature>
+  <armature name="coin00">
+   <b name="图层 3" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="coin6"/>
+    <d name="coin1"/>
+    <d name="coin2"/>
+    <d name="coin3"/>
+    <d name="coin4"/>
+    <d name="coin5"/>
+   </b>
+  </armature>
+  <armature name="star00">
+   <b name="图层 5" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="star6"/>
+    <d name="star1"/>
+    <d name="star2"/>
+    <d name="star3"/>
+    <d name="star4"/>
+    <d name="star5"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="baoshi00">
+   <mov name="jingzhi" dr="1" to="6">
+    <b name="图层 3" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="saoguang" dr="11" to="6" drTW="28" lp="0" twE="NaN">
+    <b name="图层 3" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="1" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="2" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="3" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="4" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="5" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+  <animation name="coin00">
+   <mov name="jingzhi" dr="1" to="6">
+    <b name="图层 3" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="saoguang" dr="11" to="6" drTW="28" lp="0" twE="NaN">
+    <b name="图层 3" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="31" pY="32" width="62" height="64" alpha="100" red="100" green="100" blue="100" dI="1" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="31" pY="32" width="62" height="64" alpha="100" red="100" green="100" blue="100" dI="2" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="31" pY="32" width="62" height="64" alpha="100" red="100" green="100" blue="100" dI="3" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="31" pY="32" width="62" height="64" alpha="100" red="100" green="100" blue="100" dI="4" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="31" pY="32" width="62" height="64" alpha="100" red="100" green="100" blue="100" dI="5" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+  <animation name="star00">
+   <mov name="jingzhi" dr="1" to="6">
+    <b name="图层 5" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="saoguang" dr="11" to="6" drTW="28" lp="0" twE="NaN">
+    <b name="图层 5" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="34" pY="33" width="68" height="66" alpha="100" red="100" green="100" blue="100" dI="1" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="34" pY="33" width="68" height="66" alpha="100" red="100" green="100" blue="100" dI="2" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="34" pY="33" width="68" height="66" alpha="100" red="100" green="100" blue="100" dI="3" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="34" pY="33" width="68" height="66" alpha="100" red="100" green="100" blue="100" dI="4" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="34" pY="33" width="68" height="66" alpha="100" red="100" green="100" blue="100" dI="5" twE="0" dr="2"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="50" pY="50" width="100" height="100" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="UIsaoguang" width="512" height="512">
+  <SubTexture name="star5" pX="34" pY="33" width="68" height="66" x="376" y="170"/>
+  <SubTexture name="star4" pX="34" pY="33" width="68" height="66" x="306" y="102"/>
+  <SubTexture name="star3" pX="34" pY="33" width="68" height="66" x="0" y="204"/>
+  <SubTexture name="star2" pX="34" pY="33" width="68" height="66" x="306" y="170"/>
+  <SubTexture name="star1" pX="34" pY="33" width="68" height="66" x="376" y="102"/>
+  <SubTexture name="star6" pX="50" pY="50" width="100" height="100" x="204" y="0"/>
+  <SubTexture name="coin5" pX="31" pY="32" width="62" height="64" x="70" y="204"/>
+  <SubTexture name="coin4" pX="31" pY="32" width="62" height="64" x="446" y="168"/>
+  <SubTexture name="coin3" pX="31" pY="32" width="62" height="64" x="198" y="204"/>
+  <SubTexture name="coin2" pX="31" pY="32" width="62" height="64" x="446" y="102"/>
+  <SubTexture name="coin1" pX="31" pY="32" width="62" height="64" x="134" y="204"/>
+  <SubTexture name="coin6" pX="50" pY="50" width="100" height="100" x="102" y="102"/>
+  <SubTexture name="baoshi5" pX="50" pY="50" width="100" height="100" x="204" y="102"/>
+  <SubTexture name="baoshi4" pX="50" pY="50" width="100" height="100" x="408" y="0"/>
+  <SubTexture name="baoshi3" pX="50" pY="50" width="100" height="100" x="0" y="102"/>
+  <SubTexture name="baoshi2" pX="50" pY="50" width="100" height="100" x="306" y="0"/>
+  <SubTexture name="baoshi1" pX="50" pY="50" width="100" height="100" x="102" y="0"/>
+  <SubTexture name="baoshi6" pX="50" pY="50" width="100" height="100" x="0" y="0"/>
+ </TextureAtlas>
+</skeleton>

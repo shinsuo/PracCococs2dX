@@ -1,0 +1,32 @@
+<skeleton name="xuanfengdaoju" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="xuanfengdonghua">
+   <b name="1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="daoju_xuanfeng_bg"/>
+   </b>
+   <b name="2" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="daoju_xuanfeng"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="xuanfengdonghua">
+   <mov name="xuanfeng" dr="24" to="1" drTW="60" lp="1" twE="NaN">
+    <b name="1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="41.5" pY="41.5" width="83" height="83" alpha="100" red="100" green="100" blue="100" dI="0" dr="24"/>
+    </b>
+    <b name="2" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="41.5" pY="41.5" width="83" height="83" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="6"/>
+     <f x="0" y="0" kX="89.99" kY="89.99" cX="1" cY="1" z="1" pX="41.5" pY="41.5" width="83" height="83" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="6"/>
+     <f x="0" y="0" kX="180" kY="180" cX="1" cY="1" z="1" pX="41.5" pY="41.5" width="83" height="83" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="6"/>
+     <f x="0" y="0" kX="-90" kY="-90" cX="1" cY="1" z="1" pX="41.5" pY="41.5" width="83" height="83" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="5"/>
+     <f x="0" y="0" kX="-22" kY="-22" cX="1" cY="1" z="1" pX="54.05" pY="54.05" width="109" height="109" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="xuanfengdaoju" width="512" height="128">
+  <SubTexture name="daoju_xuanfeng" pX="41.5" pY="41.5" width="83" height="83" x="85" y="0"/>
+  <SubTexture name="daoju_xuanfeng_bg" pX="41.5" pY="41.5" width="83" height="83" x="0" y="0"/>
+ </TextureAtlas>
+</skeleton>

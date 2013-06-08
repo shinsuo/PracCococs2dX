@@ -1,0 +1,467 @@
+<skeleton name="shuiguofangkuai" frameRate="24" version="1.4">
+ <armatures>
+  <armature name="huanxiongdonghua">
+   <b name="1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huanxiong"/>
+   </b>
+   <b name="2" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huanxiong"/>
+   </b>
+   <b name="3" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huanxiong"/>
+   </b>
+   <b name="4" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="zhadan"/>
+   </b>
+   <b name="8" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="5" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huanxiong"/>
+   </b>
+   <b name="6" x="4" y="-2" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="ranse"/>
+   </b>
+   <b name="9" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="11" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huanxiong"/>
+   </b>
+   <b name="10" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="7" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="wuxiao"/>
+   </b>
+  </armature>
+  <armature name="hulidonghua">
+   <b name="1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huli"/>
+   </b>
+   <b name="2" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huli"/>
+   </b>
+   <b name="3" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huli"/>
+   </b>
+   <b name="4" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="zhadan"/>
+   </b>
+   <b name="8" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="5" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huli"/>
+   </b>
+   <b name="6" x="2" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="ranse"/>
+   </b>
+   <b name="9" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="11" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="huli"/>
+   </b>
+   <b name="10" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="7" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="wuxiao"/>
+   </b>
+  </armature>
+  <armature name="niudonghua">
+   <b name="1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="niu"/>
+   </b>
+   <b name="2" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="niu"/>
+   </b>
+   <b name="3" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="niu"/>
+   </b>
+   <b name="4" x="3" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="zhadan"/>
+   </b>
+   <b name="8" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="5" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="niu"/>
+   </b>
+   <b name="6" x="6" y="-1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="ranse"/>
+   </b>
+   <b name="9" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="11" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="niu"/>
+   </b>
+   <b name="10" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="7" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="wuxiao"/>
+   </b>
+  </armature>
+  <armature name="qingwadonghua">
+   <b name="1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="qingwa"/>
+   </b>
+   <b name="2" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="qingwa"/>
+   </b>
+   <b name="3" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="qingwa"/>
+   </b>
+   <b name="4" x="1" y="-1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="zhadan"/>
+   </b>
+   <b name="8" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="5" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="qingwa"/>
+   </b>
+   <b name="6" x="4" y="-2" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="ranse"/>
+   </b>
+   <b name="9" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="11" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="qingwa"/>
+   </b>
+   <b name="10" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="7" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="wuxiao"/>
+   </b>
+  </armature>
+  <armature name="zhudonghua">
+   <b name="1" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="zhu"/>
+   </b>
+   <b name="2" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="zhu"/>
+   </b>
+   <b name="3" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="zhu"/>
+   </b>
+   <b name="4" x="1" y="-1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="zhadan"/>
+   </b>
+   <b name="8" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="5" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="zhu"/>
+   </b>
+   <b name="6" x="3" y="-1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="ranse"/>
+   </b>
+   <b name="9" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="2">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="11" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="zhu"/>
+   </b>
+   <b name="10" x="1" y="1" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="1">
+    <d name="shuiguoguanghuan"/>
+   </b>
+   <b name="7" x="0" y="0" kX="0" kY="0" cX="1" cY="1" alpha="100" red="100" green="100" blue="100" z="0">
+    <d name="wuxiao"/>
+   </b>
+  </armature>
+ </armatures>
+ <animations>
+  <animation name="huanxiongdonghua">
+   <mov name="tishi" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="70" green="70" blue="70" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="jingzhi" dr="2" to="1" drTW="5" lp="1" twE="2">
+    <b name="2" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+    </b>
+   </mov>
+   <mov name="zhadan" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="3" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="4" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="31" pY="34" width="62" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="8" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="ranse" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="5" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="6" sc="1" dl="0">
+     <f x="4" y="-2" kX="0" kY="0" cX="1" cY="1" z="1" pX="33" pY="34" width="66" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="9" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="fangguang" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="11" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="10" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="wuxiao" dr="4" to="1" drTW="10" lp="1" twE="2">
+    <b name="7" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="4"/>
+    </b>
+   </mov>
+  </animation>
+  <animation name="hulidonghua">
+   <mov name="tishi" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="70" green="70" blue="70" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="jingzhi" dr="2" to="1" drTW="5" lp="1" twE="2">
+    <b name="2" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+    </b>
+   </mov>
+   <mov name="zhadan" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="3" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="4" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="31" pY="34" width="62" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="8" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="ranse" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="5" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="6" sc="1" dl="0">
+     <f x="2" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="33" pY="34" width="66" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="9" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="fangguang" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="11" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="10" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="wuxiao" dr="4" to="1" drTW="10" lp="1" twE="2">
+    <b name="7" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="4"/>
+    </b>
+   </mov>
+  </animation>
+  <animation name="niudonghua">
+   <mov name="tishi" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="70" green="70" blue="70" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="jingzhi" dr="2" to="1" drTW="5" lp="1" twE="2">
+    <b name="2" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+    </b>
+   </mov>
+   <mov name="zhadan" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="3" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="4" sc="1" dl="0">
+     <f x="3" y="0" kX="0" kY="0" cX="1" cY="1" z="1" pX="31" pY="34" width="62" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="8" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="ranse" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="5" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="6" sc="1" dl="0">
+     <f x="6" y="-1" kX="0" kY="0" cX="1" cY="1" z="1" pX="33" pY="34" width="66" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="9" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="fangguang" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="11" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="10" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="wuxiao" dr="4" to="1" drTW="10" lp="1" twE="2">
+    <b name="7" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="4"/>
+    </b>
+   </mov>
+  </animation>
+  <animation name="qingwadonghua">
+   <mov name="tishi" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="70" green="70" blue="70" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="jingzhi" dr="2" to="1" drTW="5" lp="1" twE="2">
+    <b name="2" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+    </b>
+   </mov>
+   <mov name="zhadan" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="3" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="4" sc="1" dl="0">
+     <f x="1" y="-1" kX="0" kY="0" cX="1" cY="1" z="1" pX="31" pY="34" width="62" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="8" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="ranse" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="5" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="6" sc="1" dl="0">
+     <f x="4" y="-2" kX="0" kY="0" cX="1" cY="1" z="1" pX="33" pY="34" width="66" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="9" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="fangguang" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="11" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="10" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="wuxiao" dr="4" to="1" drTW="10" lp="1" twE="2">
+    <b name="7" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="4"/>
+    </b>
+   </mov>
+  </animation>
+  <animation name="zhudonghua">
+   <mov name="tishi" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="1" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="70" green="70" blue="70" dI="0" twE="0" dr="14"/>
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="jingzhi" dr="2" to="1" drTW="5" lp="1" twE="2">
+    <b name="2" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="2"/>
+    </b>
+   </mov>
+   <mov name="zhadan" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="3" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="4" sc="1" dl="0">
+     <f x="1" y="-1" kX="0" kY="0" cX="1" cY="1" z="1" pX="31" pY="34" width="62" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="8" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="ranse" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="5" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="6" sc="1" dl="0">
+     <f x="3" y="-1" kX="0" kY="0" cX="1" cY="1" z="1" pX="33" pY="34" width="66" height="68" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="9" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="2" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="fangguang" dr="29" to="1" drTW="73" lp="1" twE="NaN">
+    <b name="11" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="29"/>
+    </b>
+    <b name="10" sc="1" dl="0">
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="50" red="100" green="100" blue="100" dI="0" twE="0" dr="14"/>
+     <f x="1" y="1" kX="0" kY="0" cX="1" cY="1" z="1" pX="44" pY="44" width="88" height="88" alpha="100" red="100" green="100" blue="100" dI="0" dr="1"/>
+    </b>
+   </mov>
+   <mov name="wuxiao" dr="4" to="1" drTW="10" lp="1" twE="2">
+    <b name="7" sc="1" dl="0">
+     <f x="0" y="0" kX="0" kY="0" cX="1" cY="1" z="0" pX="42.5" pY="42.5" width="85" height="85" alpha="100" red="100" green="100" blue="100" dI="0" dr="4"/>
+    </b>
+   </mov>
+  </animation>
+ </animations>
+ <TextureAtlas name="shuiguofangkuai" width="512" height="256">
+  <SubTexture name="wuxiao" pX="42.5" pY="42.5" width="85" height="85" x="351" y="0"/>
+  <SubTexture name="ranse" pX="33" pY="34" width="66" height="68" x="438" y="0"/>
+  <SubTexture name="shuiguoguanghuan" pX="44" pY="44" width="88" height="88" x="0" y="0"/>
+  <SubTexture name="zhadan" pX="31" pY="34" width="62" height="68" x="438" y="70"/>
+  <SubTexture name="zhu" pX="42.5" pY="42.5" width="85" height="85" x="90" y="0"/>
+  <SubTexture name="qingwa" pX="42.5" pY="42.5" width="85" height="85" x="177" y="0"/>
+  <SubTexture name="niu" pX="42.5" pY="42.5" width="85" height="85" x="264" y="0"/>
+  <SubTexture name="huli" pX="42.5" pY="42.5" width="85" height="85" x="90" y="87"/>
+  <SubTexture name="huanxiong" pX="42.5" pY="42.5" width="85" height="85" x="177" y="87"/>
+ </TextureAtlas>
+</skeleton>
