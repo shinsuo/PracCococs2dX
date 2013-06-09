@@ -128,6 +128,10 @@ bool HelloWorld::init()
     pSprite->setPosition(ccp(size.width/2, size.height/2));
     this->addChild(pSprite,10);
     
+//    schedule(schedule_selector(HelloWorld::update));
+//    schedule(schedule_selector(HelloWorld::update), 1);
+//    scheduleUpdate();
+    setTouchEnabled(1);
     return true;
 }
 
@@ -140,6 +144,7 @@ void HelloWorld::Place(CCObject* pSender)
 void HelloWorld::Hide(CCObject* pSender)
 {
 //    pSprite->runAction(CCHide::create());
+    
     int numsRunAction = pSprite->numberOfRunningActions();
     CCLOG("running Action Numbers:%d",numsRunAction);
     if (numsRunAction > 0) {
@@ -158,7 +163,7 @@ void HelloWorld::Hide(CCObject* pSender)
     
 //    CCSequence *ss = CCSequence::create(s1,CCDelayTime::create(5),s1->reverse(),NULL);
     
-    pSprite->runAction(CCRepeat::create(s1, 3));
+//    pSprite->runAction(CCRepeat::create(s1, 3));
 //    pSprite->runAction(CCMoveTo::create(2, ccp(size.width*CCRANDOM_0_1(),size.height*CCRANDOM_0_1())));
     
     CCScaleTo *ac5 = CCScaleTo::create(5, 5);
@@ -169,9 +174,17 @@ void HelloWorld::Hide(CCObject* pSender)
     
     CCSpawn *sp = CCSpawn::create(ac5,ac8,NULL);
     
+    CCEaseBackInOut *eb = CCEaseBackInOut::create(ac1);
+    pSprite->runAction(eb);
+    
 //    pSprite->runAction(sp);
     
     
+}
+
+void HelloWorld::update(float delta)
+{
+    CCLOG("update --%f",delta);
 }
 
 void HelloWorld::Show(CCObject* pSender)
@@ -201,4 +214,22 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+bool HelloWorld::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+    CCLog("HelloWorld ccTouchBegan");
+    return true;
+}
+
+void HelloWorld::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent)
+{
+    CCLog("HelloWorld ccTouchesBegan");
+}
+
+void HelloWorld::registerWithTouchDispatcher(void)
+{
+    CCTouchDispatcher *disPatcher = CCDirector::sharedDirector()->getTouchDispatcher();
+    disPatcher->addTargetedDelegate(this, 1, 1);
+    CCLog("registerWithTouchDispatcher");
 }

@@ -26,6 +26,14 @@ public:
     void Show(CCObject* pSender);
     void Toggle(CCObject* pSender);
     void Back(CCObject* pSender);
+    void update(float delta);
+    
+    virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+    virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+    virtual void registerWithTouchDispatcher(void);
+//    virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+//    virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+//    virtual void ccTouchCancelled(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     
 private:
     cocos2d::CCSprite *pSprite;
