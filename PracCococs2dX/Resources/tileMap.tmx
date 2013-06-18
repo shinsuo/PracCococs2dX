@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="20" tileheight="20">
+ <tileset firstgid="1" name="tileSet" tilewidth="20" tileheight="20">
+  <image source="tileSet.PNG" width="120" height="20"/>
+  <tile id="1">
+   <properties>
+    <property name="tt1" value="12"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="10" height="10">
+  <properties>
+   <property name="t1" value="23"/>
+   <property name="t2" value="abc"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NiYGBgIoCZiZCHqWHDoYYFj35WKGZBUw8ykxGHPYTcis0+QnrJCQM2NIxLDz51yBgAYFfKfpABAAA=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="10" height="10">
+  <properties>
+   <property name="aa" value="1324"/>
+   <property name="bb" value="bcd"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NhYGBgGcWDBgMAwwVleZABAAA=
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="10" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NmYGBgHsWDBgMAyAqMIJABAAA=
+  </data>
+ </layer>
+ <layer name="Tile Layer 4" width="10" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NlYGBgHcWDBgMAQAXQ7ZABAAA=
+  </data>
+ </layer>
+ <layer name="Tile Layer 5" width="10" height="10" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NjYGBgG8WDBgMAhAJ+i5ABAAA=
+  </data>
+ </layer>
+ <objectgroup name="Obj1" width="10" height="10">
+  <object name="ob1" type="fds" x="100" y="60" width="60" height="40"/>
+  <object name="ob3" type="aa" x="80" y="140" width="40" height="40"/>
+  <object x="160" y="140"/>
+  <object name="ob2" type="dd" x="160" y="140"/>
+ </objectgroup>
+</map>

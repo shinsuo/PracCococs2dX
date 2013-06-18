@@ -123,10 +123,9 @@ bool HelloWorld::init()
     this->addChild(Sprite, 0);
     
     
-    
     pSprite = CCSprite::create("icon_05.png");
     pSprite->setPosition(ccp(size.width/2, size.height/2));
-    this->addChild(pSprite,10);
+    this->addChild(pSprite,1);
     
 //    schedule(schedule_selector(HelloWorld::update));
 //    schedule(schedule_selector(HelloWorld::update), 1);
@@ -199,6 +198,83 @@ void HelloWorld::Toggle(CCObject* pSender)
 
 void HelloWorld::Back(CCObject* pSender)
 {
+    CCSize size = CCDirector::sharedDirector()->getWinSize();
+    CCTMXTiledMap *map = CCTMXTiledMap::create("tileMap.tmx");
+    addChild(map,2);
+    map->setAnchorPoint(ccp(0.5,0.5));
+    map->setPosition(ccp(size.width/2,size.height/2));
+    map->setScale(3);
+    
+    CCTMXLayer* tLayer = map->layerNamed("Tile Layer 1");
+    CCString *tStr1 = tLayer->propertyNamed("t1");
+    CCLog("t1: ==%d",tStr1->intValue());
+    
+    CCString *tStr2 = tLayer->propertyNamed("t2");
+    CCLog("t2 ==%s",tStr2->getCString());
+    
+    
+    
+    CCTMXLayer* tLayer2 = map->layerNamed("Tile Layer 2");
+    CCString *tStr3 = tLayer2->propertyNamed("aa");
+    CCLog("t3 ==%d",tStr3->intValue());
+    CCString *tStr4 = tLayer2->propertyNamed("bb");
+    CCLog("t4 ==%s",tStr4->getCString());
+    
+    CCLog("layerName ==%s",tLayer2->getLayerName());
+    
+    CCTMXLayer *tLayer4 = map->layerNamed("Tile Layer 4");
+    CCSprite *tileSprite = tLayer4->tileAt(ccp(2,2));
+    
+    int gid = tLayer4->tileGIDAt(ccp(2,2));
+    CCLog("gid ==%d",gid);
+    
+    
+    CCLog("gid tt ==%d",tLayer->tileGIDAt(ccp(0,1)));
+    CCLog("gid tt ==%d",tLayer->tileGIDAt(ccp(9,0)));
+    CCLog("gid tt ==%d",tLayer->tileGIDAt(ccp(2,2)));
+    CCLog("gid tt ==%d",tLayer->tileGIDAt(ccp(0,2)));
+    CCLog("gid tt ==%d",tLayer->tileGIDAt(ccp(6,2)));
+    CCLog("gid tt ==%d",tLayer->tileGIDAt(ccp(0,4)));
+    
+    
+//    tLayer4->setTileGID(3, ccp(3,3));
+    
+    tileSprite->setScale(2);
+    tileSprite->setPosition(ccp(300,300));
+    
+    
+    
+    tLayer4->removeTileAt(ccp(1,1));
+    
+    
+    
+    
+    CCDictionary *tDic = map->propertiesForGID(1);
+    
+    
+    CCTMXObjectGroup *ObjGroup = map->objectGroupNamed("Obj1");
+    CCArray *tObjArray = ObjGroup->getObjects();
+    
+    CCDictionary *tDic1 = NULL;
+    CCObject *pObjet = NULL;
+    CCARRAY_FOREACH(tObjArray, pObjet)
+    {
+        tDic1 = (CCDictionary *)pObjet;
+        if (!tDic1) {
+            break;
+        }
+        
+        CCDictElement *pDictElement = NULL;
+        CCDICT_FOREACH(tDic1, pDictElement)
+        {
+            
+            CCLog("fds");
+        }
+        
+        
+        
+        CCLog("test aa");
+    }
     
 }
 

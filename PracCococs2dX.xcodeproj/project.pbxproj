@@ -573,6 +573,8 @@
 		B9F77211176334750080C7A9 /* TimeUp.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9F771AE176334750080C7A9 /* TimeUp.plist */; };
 		B9F77212176334750080C7A9 /* TimeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F771AF176334750080C7A9 /* TimeUp.png */; };
 		B9F77213176334750080C7A9 /* TimeUp.xml in Resources */ = {isa = PBXBuildFile; fileRef = B9F771B0176334750080C7A9 /* TimeUp.xml */; };
+		B9F7721B176AC0850080C7A9 /* tileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B9F77219176AC0850080C7A9 /* tileMap.tmx */; };
+		B9F7721C176AC0850080C7A9 /* tileSet.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B9F7721A176AC0850080C7A9 /* tileSet.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1386,6 +1388,8 @@
 		B9F771AE176334750080C7A9 /* TimeUp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TimeUp.plist; sourceTree = "<group>"; };
 		B9F771AF176334750080C7A9 /* TimeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimeUp.png; sourceTree = "<group>"; };
 		B9F771B0176334750080C7A9 /* TimeUp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TimeUp.xml; sourceTree = "<group>"; };
+		B9F77219176AC0850080C7A9 /* tileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tileMap.tmx; path = Resources/tileMap.tmx; sourceTree = "<group>"; };
+		B9F7721A176AC0850080C7A9 /* tileSet.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tileSet.PNG; path = Resources/tileSet.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1727,6 +1731,8 @@
 		B934396C17618F9400B0C377 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9F77219176AC0850080C7A9 /* tileMap.tmx */,
+				B9F7721A176AC0850080C7A9 /* tileSet.PNG */,
 				B9F7714D176334750080C7A9 /* Animation */,
 				B9258D0B1761BD7200B855B2 /* Res */,
 				B934396D17618F9400B0C377 /* CloseNormal.png */,
@@ -3133,6 +3139,8 @@
 				B9F77211176334750080C7A9 /* TimeUp.plist in Resources */,
 				B9F77212176334750080C7A9 /* TimeUp.png in Resources */,
 				B9F77213176334750080C7A9 /* TimeUp.xml in Resources */,
+				B9F7721B176AC0850080C7A9 /* tileMap.tmx in Resources */,
+				B9F7721C176AC0850080C7A9 /* tileSet.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
