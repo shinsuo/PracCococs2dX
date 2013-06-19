@@ -177,8 +177,6 @@ void HelloWorld::Hide(CCObject* pSender)
     pSprite->runAction(eb);
     
 //    pSprite->runAction(sp);
-    
-    
 }
 
 void HelloWorld::update(float delta)
@@ -188,7 +186,18 @@ void HelloWorld::update(float delta)
 
 void HelloWorld::Show(CCObject* pSender)
 {
-    pSprite->runAction(CCShow::create());
+//    pSprite->runAction(CCShow::create());
+    CCSize size = CCDirector::sharedDirector()->getWinSize();
+    CCRenderTexture *rt = CCRenderTexture::create(size.width, size.height);
+    rt->begin();
+//    this->visit();
+    CCDirector::sharedDirector()->getRunningScene()->visit();
+    rt->end();
+    
+    CCSprite *tSp = CCSprite::createWithTexture(rt->getSprite()->getTexture());
+    this->addChild(tSp);
+    tSp->setPosition(ccp(size.width/2+10,size.height/2-10));
+//    tSp->setRotation(180);
 }
 
 void HelloWorld::Toggle(CCObject* pSender)
