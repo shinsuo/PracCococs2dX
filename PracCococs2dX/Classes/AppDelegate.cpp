@@ -11,8 +11,11 @@
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
 #include "HelloWorldScene.h"
+#include "HelloCCB.h"
+#include "cocos-ext.h"
 
 USING_NS_CC;
+USING_NS_CC_EXT;
 using namespace CocosDenshion;
 
 AppDelegate::AppDelegate()
@@ -37,11 +40,15 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
-
+    CCScene *pScene = CCScene::create();//HelloCCB::scene();
+    CCNodeLoaderLibrary *nodeLoader = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    nodeLoader->registerCCNodeLoader("HelloCCB", HelloCCBLoader::loader());
+    CCBReader *ccbReader = new CCBReader(nodeLoader);
+    CCNode *node = ccbReader->readNodeGraphFromFile("HelloCocosBuilder.ccbi");
     // run
     pDirector->runWithScene(pScene);
-
+    pScene->addChild(node);
+    
     return true;
 }
 

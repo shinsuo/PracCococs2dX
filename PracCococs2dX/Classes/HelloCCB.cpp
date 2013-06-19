@@ -1,0 +1,28 @@
+//
+//  HelloCCB.cpp
+//  PracCococs2dX
+//
+//  Created by shin on 13-6-19.
+//
+//
+
+#include "HelloCCB.h"
+#include "SimpleAudioEngine.h"
+
+using namespace cocos2d;
+using namespace CocosDenshion;
+
+// on "init" you need to initialize your instance
+bool HelloCCB::init()
+{
+    if ( !CCLayer::init() )
+    {
+        return false;
+    }
+    
+//    CCSprite *test = CCSprite::create("Icon-72.png");
+//    addChild(test);
+//    test->setPosition(ccp(100,100));
+    
+    return true;
+}

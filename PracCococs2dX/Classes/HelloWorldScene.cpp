@@ -1,5 +1,6 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+#include "CCNode.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;

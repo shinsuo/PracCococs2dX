@@ -30,7 +30,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>background</string>
+				<string>CCSprite</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -89,7 +89,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Res/ui_game_02.png</string>
+							<string>Res/map_background.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -101,78 +101,6 @@
 						<array>
 							<integer>770</integer>
 							<integer>771</integer>
-						</array>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>baseClass</key>
-				<string>CCSprite</string>
-				<key>children</key>
-				<array/>
-				<key>customClass</key>
-				<string></string>
-				<key>displayName</key>
-				<string>fruitFlag</string>
-				<key>memberVarAssignmentName</key>
-				<string>fruitFlag</string>
-				<key>memberVarAssignmentType</key>
-				<integer>1</integer>
-				<key>properties</key>
-				<array>
-					<dict>
-						<key>name</key>
-						<string>position</string>
-						<key>type</key>
-						<string>Position</string>
-						<key>value</key>
-						<array>
-							<real>123</real>
-							<real>193</real>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>anchorPoint</string>
-						<key>type</key>
-						<string>Point</string>
-						<key>value</key>
-						<array>
-							<real>0.5</real>
-							<real>0.5</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>scale</string>
-						<key>type</key>
-						<string>ScaleLock</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<false/>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>ignoreAnchorPointForPosition</string>
-						<key>type</key>
-						<string>Check</string>
-						<key>value</key>
-						<false/>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>displayFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string>Animation/OrdinaryAnimal.plist</string>
-							<string>huanxiong.png</string>
 						</array>
 					</dict>
 				</array>
@@ -199,13 +127,114 @@
 						<array>
 							<dict>
 								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>0.5</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ignoreAnchorPointForPosition</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<false/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>block</string>
+								<key>type</key>
+								<string>Block</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>isEnabled</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<true/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>normalSpriteFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string>Res/button_login_01.png</string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>selectedSpriteFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string>Res/button_login_02.png</string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>disabledSpriteFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string></string>
+								</array>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>baseClass</key>
+						<string>CCMenuItemImage</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>CCMenuItemImage</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>0</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
 								<string>position</string>
 								<key>type</key>
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>-4</real>
-									<real>-8</real>
+									<real>3</real>
+									<real>-136</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -248,8 +277,8 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>pause</string>
-									<integer>1</integer>
+									<string></string>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -268,7 +297,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Res/button_pause_01.png</string>
+									<string>Res/button_guest_01.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -279,7 +308,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>Res/button_pause_02.png</string>
+									<string>Res/button_guest_02.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -313,8 +342,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>721</real>
-							<real>983</real>
+							<real>384</real>
+							<real>317</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -394,7 +423,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>HelloCCB</string>
+		<string></string>
 		<key>displayName</key>
 		<string>CCLayer</string>
 		<key>memberVarAssignmentName</key>
@@ -488,8 +517,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -513,7 +540,7 @@
 			<key>centeredOrigin</key>
 			<false/>
 			<key>ext</key>
-			<string>ipad hd</string>
+			<string>ipad iphonehd</string>
 			<key>height</key>
 			<integer>1024</integer>
 			<key>name</key>
