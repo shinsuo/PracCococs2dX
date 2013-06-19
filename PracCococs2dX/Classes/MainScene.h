@@ -21,6 +21,7 @@ class MainScene :public CCLayer
 ,public CCNodeLoaderListener{
     
 public:
+    static CCScene *scene();
     virtual bool init();
     
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(MainScene, create);
@@ -30,6 +31,9 @@ public:
     }
     
     SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName){
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "guest", MainScene::guest);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "start", MainScene::start);
+        
         return NULL;
     }
     

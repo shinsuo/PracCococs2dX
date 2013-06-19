@@ -12,6 +12,7 @@
 #include "SimpleAudioEngine.h"
 #include "HelloWorldScene.h"
 #include "HelloCCB.h"
+#include "MainScene.h"
 #include "cocos-ext.h"
 
 USING_NS_CC;
@@ -40,14 +41,15 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = CCScene::create();//HelloCCB::scene();
-    CCNodeLoaderLibrary *nodeLoader = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-    nodeLoader->registerCCNodeLoader("HelloCCB", HelloCCBLoader::loader());
-    CCBReader *ccbReader = new CCBReader(nodeLoader);
-    CCNode *node = ccbReader->readNodeGraphFromFile("HelloCocosBuilder.ccbi");
+//    CCScene *pScene = CCScene::create();//HelloCCB::scene();
+//    CCNodeLoaderLibrary *nodeLoader = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+//    nodeLoader->registerCCNodeLoader("HelloCCB", HelloCCBLoader::loader());
+//    CCBReader *ccbReader = new CCBReader(nodeLoader);
+//    CCNode *node = ccbReader->readNodeGraphFromFile("HelloCocosBuilder.ccbi");
     // run
+    CCScene *pScene = MainScene::scene();
     pDirector->runWithScene(pScene);
-    pScene->addChild(node);
+//    pScene->addChild(node);
     
     return true;
 }

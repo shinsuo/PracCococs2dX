@@ -164,8 +164,8 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string></string>
-									<integer>0</integer>
+									<string>start</string>
+									<integer>1</integer>
 								</array>
 							</dict>
 							<dict>
@@ -277,7 +277,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string></string>
+									<string>guest</string>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -423,7 +423,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>MainScene</string>
 		<key>displayName</key>
 		<string>CCLayer</string>
 		<key>memberVarAssignmentName</key>
@@ -517,6 +517,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

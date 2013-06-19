@@ -8,6 +8,18 @@
 
 #include "MainScene.h"
 
+CCScene* MainScene::scene()
+{
+    CCScene *sc = CCScene::create();
+    
+    CCNodeLoaderLibrary *ndLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    ndLibrary->registerCCNodeLoader("MainScene", MainSceneLoader::loader());
+    CCBReader *ccbReader = new CCBReader(ndLibrary);
+    CCNode *node = ccbReader->readNodeGraphFromFile("MainScene.ccbi");
+    sc->addChild(node);
+    return sc;
+}
+
 bool MainScene::init()
 {
     if (!CCLayer::init()) {
