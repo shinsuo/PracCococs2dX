@@ -47,6 +47,7 @@ public:
 class HelloCCB : public  CcbBase{
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)
+    static CCScene* scene();
     virtual bool init();
     
     

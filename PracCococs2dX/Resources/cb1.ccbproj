@@ -24,10 +24,12 @@
 	<false/>
 	<key>javascriptMainCCB</key>
 	<string></string>
+	<key>needRepublish</key>
+	<true/>
 	<key>onlyPublishCCBs</key>
 	<true/>
 	<key>publishDirectory</key>
-	<string>.</string>
+	<string>../ccb</string>
 	<key>publishDirectoryAndroid</key>
 	<string></string>
 	<key>publishDirectoryHTML5</key>
@@ -73,5 +75,9 @@
 			<string>.</string>
 		</dict>
 	</array>
+	<key>versionStr</key>
+	<string>Version: 3.0-alpha5
+GitHub: 76499877e8
+</string>
 </dict>
 </plist>

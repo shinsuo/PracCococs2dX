@@ -7,6 +7,8 @@
 //
 
 #include "MainScene.h"
+#include "GameScene.h"
+#include "HelloCCB.h"
 
 CCScene* MainScene::scene()
 {
@@ -33,6 +35,8 @@ bool MainScene::init()
 
 void MainScene::start(CCObject *pSender){
     CCLog("start ===");
+    CCScene *sc =  HelloCCB::scene();
+    CCDirector::sharedDirector()->replaceScene(sc);
 }
 
 void MainScene::guest(CCObject *pSender){

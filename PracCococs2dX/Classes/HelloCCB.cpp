@@ -12,6 +12,17 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
+CCScene* HelloCCB::scene()
+{
+    CCScene *sc = CCScene::create();
+    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    nodeLibrary->registerCCNodeLoader("HelloCCB", HelloCCBLoader::loader());
+    CCBReader *ccbReader = new CCBReader(nodeLibrary);
+    CCNode *node = ccbReader->readNodeGraphFromFile("HelloCocosBuilder.ccbi");
+    sc->addChild(node);
+    return sc;
+}
+
 // on "init" you need to initialize your instance
 bool HelloCCB::init()
 {

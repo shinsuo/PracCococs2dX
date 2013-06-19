@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54AD8FDC177203CB00028C0B /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54AD8FDA177203CB00028C0B /* GameScene.cpp */; };
 		B9258E121761BD7300B855B2 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = B9258D0C1761BD7200B855B2 /* 10.png */; };
 		B9258E131761BD7300B855B2 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = B9258D0D1761BD7200B855B2 /* 13.png */; };
 		B9258E141761BD7300B855B2 /* add_friends01.png in Resources */ = {isa = PBXBuildFile; fileRef = B9258D0E1761BD7200B855B2 /* add_friends01.png */; };
@@ -582,6 +583,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54AD8FDA177203CB00028C0B /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
+		54AD8FDB177203CB00028C0B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 		B9258D0C1761BD7200B855B2 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		B9258D0D1761BD7200B855B2 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
 		B9258D0E1761BD7200B855B2 /* add_friends01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_friends01.png; sourceTree = "<group>"; };
@@ -2613,6 +2616,8 @@
 				B9343C1717618F9900B0C377 /* AppDelegate.cpp */,
 				B9343C1917618F9900B0C377 /* HelloWorldScene.h */,
 				B9343C1A17618F9900B0C377 /* HelloWorldScene.cpp */,
+				54AD8FDA177203CB00028C0B /* GameScene.cpp */,
+				54AD8FDB177203CB00028C0B /* GameScene.h */,
 				B9F774FA1771B6570080C7A9 /* MainScene.cpp */,
 				B9F774FB1771B6580080C7A9 /* MainScene.h */,
 				B9F774F2177192A90080C7A9 /* HelloCCB.cpp */,
@@ -3351,6 +3356,7 @@
 				B9343C1B17618F9900B0C377 /* HelloWorldScene.cpp in Sources */,
 				B9F774F4177192A90080C7A9 /* HelloCCB.cpp in Sources */,
 				B9F774FC1771B6580080C7A9 /* MainScene.cpp in Sources */,
+				54AD8FDC177203CB00028C0B /* GameScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
