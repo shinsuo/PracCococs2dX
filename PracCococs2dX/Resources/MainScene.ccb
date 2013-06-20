@@ -5,7 +5,7 @@
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>fileType</key>
@@ -44,9 +44,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>384</real>
-							<real>512</real>
-							<integer>0</integer>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
 						</array>
 					</dict>
 					<dict>
@@ -342,9 +342,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>384</real>
-							<real>317</real>
-							<integer>0</integer>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
 						</array>
 					</dict>
 					<dict>
