@@ -1,3 +1,5 @@
+
+
 //
 //  MainScene.cpp
 //  PracCococs2dX
@@ -17,7 +19,8 @@ CCScene* MainScene::scene()
     CCNodeLoaderLibrary *ndLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
     ndLibrary->registerCCNodeLoader("MainScene", MainSceneLoader::loader());
     CCBReader *ccbReader = new CCBReader(ndLibrary);
-    CCNode *node = ccbReader->readNodeGraphFromFile("MainScene.ccbi");
+    CCNode *node = ccbReader->readNodeGraphFromFile("ccb/MainScene.ccbi");
+    ccbReader->release();
     sc->addChild(node);
     return sc;
 }
@@ -35,7 +38,7 @@ bool MainScene::init()
 
 void MainScene::start(CCObject *pSender){
     CCLog("start ===");
-    CCScene *sc =  HelloCCB::scene();
+    CCScene *sc =  GameScene::scene();
     CCDirector::sharedDirector()->replaceScene(sc);
 }
 

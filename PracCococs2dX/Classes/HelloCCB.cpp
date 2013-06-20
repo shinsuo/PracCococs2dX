@@ -18,7 +18,8 @@ CCScene* HelloCCB::scene()
     CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
     nodeLibrary->registerCCNodeLoader("HelloCCB", HelloCCBLoader::loader());
     CCBReader *ccbReader = new CCBReader(nodeLibrary);
-    CCNode *node = ccbReader->readNodeGraphFromFile("HelloCocosBuilder.ccbi");
+    CCNode *node = ccbReader->readNodeGraphFromFile("ccb/HelloCocosBuilder.ccbi");
+    ccbReader->release();
     sc->addChild(node);
     return sc;
 }

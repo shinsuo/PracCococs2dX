@@ -576,10 +576,11 @@
 		B9F77213176334750080C7A9 /* TimeUp.xml in Resources */ = {isa = PBXBuildFile; fileRef = B9F771B0176334750080C7A9 /* TimeUp.xml */; };
 		B9F7721B176AC0850080C7A9 /* tileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B9F77219176AC0850080C7A9 /* tileMap.tmx */; };
 		B9F7721C176AC0850080C7A9 /* tileSet.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B9F7721A176AC0850080C7A9 /* tileSet.PNG */; };
-		B9F774F1177191B30080C7A9 /* HelloCocosBuilder.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = B9F774F0177191B30080C7A9 /* HelloCocosBuilder.ccbi */; };
 		B9F774F4177192A90080C7A9 /* HelloCCB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F774F2177192A90080C7A9 /* HelloCCB.cpp */; };
-		B9F774F91771B5E10080C7A9 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = B9F774F81771B5DF0080C7A9 /* MainScene.ccbi */; };
 		B9F774FC1771B6580080C7A9 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F774FA1771B6570080C7A9 /* MainScene.cpp */; };
+		B9F775001772999F0080C7A9 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = B9F774FF1772999F0080C7A9 /* ccb */; };
+		B9F775091772DCFA0080C7A9 /* PauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F775071772DCF80080C7A9 /* PauseLayer.cpp */; };
+		B9F7750C1772E33F0080C7A9 /* HelloMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F7750A1772E33B0080C7A9 /* HelloMenuLayer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1397,12 +1398,15 @@
 		B9F771B0176334750080C7A9 /* TimeUp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TimeUp.xml; sourceTree = "<group>"; };
 		B9F77219176AC0850080C7A9 /* tileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tileMap.tmx; path = Resources/tileMap.tmx; sourceTree = "<group>"; };
 		B9F7721A176AC0850080C7A9 /* tileSet.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tileSet.PNG; path = Resources/tileSet.PNG; sourceTree = "<group>"; };
-		B9F774F0177191B30080C7A9 /* HelloCocosBuilder.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = HelloCocosBuilder.ccbi; path = Resources/HelloCocosBuilder.ccbi; sourceTree = "<group>"; };
 		B9F774F2177192A90080C7A9 /* HelloCCB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloCCB.cpp; path = Classes/HelloCCB.cpp; sourceTree = "<group>"; };
 		B9F774F3177192A90080C7A9 /* HelloCCB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloCCB.h; path = Classes/HelloCCB.h; sourceTree = "<group>"; };
-		B9F774F81771B5DF0080C7A9 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainScene.ccbi; path = Resources/MainScene.ccbi; sourceTree = "<group>"; };
 		B9F774FA1771B6570080C7A9 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainScene.cpp; path = Classes/MainScene.cpp; sourceTree = "<group>"; };
 		B9F774FB1771B6580080C7A9 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = Classes/MainScene.h; sourceTree = "<group>"; };
+		B9F774FF1772999F0080C7A9 /* ccb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccb; sourceTree = "<group>"; };
+		B9F775071772DCF80080C7A9 /* PauseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PauseLayer.cpp; path = Classes/PauseLayer.cpp; sourceTree = "<group>"; };
+		B9F775081772DCF90080C7A9 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseLayer.h; path = Classes/PauseLayer.h; sourceTree = "<group>"; };
+		B9F7750A1772E33B0080C7A9 /* HelloMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloMenuLayer.cpp; path = Classes/HelloMenuLayer.cpp; sourceTree = "<group>"; };
+		B9F7750B1772E33D0080C7A9 /* HelloMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloMenuLayer.h; path = Classes/HelloMenuLayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1744,8 +1748,7 @@
 		B934396C17618F9400B0C377 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B9F774F81771B5DF0080C7A9 /* MainScene.ccbi */,
-				B9F774F0177191B30080C7A9 /* HelloCocosBuilder.ccbi */,
+				B9F774FF1772999F0080C7A9 /* ccb */,
 				B9F77219176AC0850080C7A9 /* tileMap.tmx */,
 				B9F7721A176AC0850080C7A9 /* tileSet.PNG */,
 				B9F7714D176334750080C7A9 /* Animation */,
@@ -2616,6 +2619,10 @@
 				B9343C1717618F9900B0C377 /* AppDelegate.cpp */,
 				B9343C1917618F9900B0C377 /* HelloWorldScene.h */,
 				B9343C1A17618F9900B0C377 /* HelloWorldScene.cpp */,
+				B9F7750A1772E33B0080C7A9 /* HelloMenuLayer.cpp */,
+				B9F7750B1772E33D0080C7A9 /* HelloMenuLayer.h */,
+				B9F775071772DCF80080C7A9 /* PauseLayer.cpp */,
+				B9F775081772DCF90080C7A9 /* PauseLayer.h */,
 				54AD8FDA177203CB00028C0B /* GameScene.cpp */,
 				54AD8FDB177203CB00028C0B /* GameScene.h */,
 				B9F774FA1771B6570080C7A9 /* MainScene.cpp */,
@@ -2783,8 +2790,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9F774F91771B5E10080C7A9 /* MainScene.ccbi in Resources */,
-				B9F774F1177191B30080C7A9 /* HelloCocosBuilder.ccbi in Resources */,
 				B934396E17618F9400B0C377 /* CloseNormal.png in Resources */,
 				B934397017618F9400B0C377 /* CloseSelected.png in Resources */,
 				B934397217618F9400B0C377 /* Default.png in Resources */,
@@ -3164,6 +3169,7 @@
 				B9F77213176334750080C7A9 /* TimeUp.xml in Resources */,
 				B9F7721B176AC0850080C7A9 /* tileMap.tmx in Resources */,
 				B9F7721C176AC0850080C7A9 /* tileSet.PNG in Resources */,
+				B9F775001772999F0080C7A9 /* ccb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3357,6 +3363,8 @@
 				B9F774F4177192A90080C7A9 /* HelloCCB.cpp in Sources */,
 				B9F774FC1771B6580080C7A9 /* MainScene.cpp in Sources */,
 				54AD8FDC177203CB00028C0B /* GameScene.cpp in Sources */,
+				B9F775091772DCFA0080C7A9 /* PauseLayer.cpp in Sources */,
+				B9F7750C1772E33F0080C7A9 /* HelloMenuLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

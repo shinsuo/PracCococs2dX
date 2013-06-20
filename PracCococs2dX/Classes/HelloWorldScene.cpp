@@ -1,6 +1,6 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
-#include "CCNode.h"
+#include "HelloMenuLayer.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -42,6 +42,7 @@ bool HelloWorld::init()
                                         menu_selector(HelloWorld::menuCloseCallback) );
     pCloseItem->setPosition( ccp(CCDirector::sharedDirector()->getWinSize().width - 20, 20) );
 
+    
     
 
     /////////////////////////////
@@ -111,7 +112,7 @@ bool HelloWorld::init()
     // create menu, it's an autorelease object
     CCMenu* pMenu = CCMenu::create(p1,p2,p3,p4,p5, NULL);
     pMenu->alignItemsVerticallyWithPadding(30);
-    pMenu->setPosition( ccp(800,320) );
+    pMenu->setPosition( ccp(100,320) );
     this->addChild(pMenu, 1);
 
     // add "HelloWorld" splash screen"
@@ -305,6 +306,7 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 bool HelloWorld::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 {
     CCLog("HelloWorld ccTouchBegan");
+    addChild(HelloMenuLayer::layer());
     return true;
 }
 

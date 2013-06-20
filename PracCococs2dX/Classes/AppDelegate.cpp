@@ -47,7 +47,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 //    CCBReader *ccbReader = new CCBReader(nodeLoader);
 //    CCNode *node = ccbReader->readNodeGraphFromFile("HelloCocosBuilder.ccbi");
     // run
-    CCScene *pScene = MainScene::scene();
+    CCScene *pScene = HelloWorld::scene();//MainScene::scene(); //
     pDirector->runWithScene(pScene);
 //    pScene->addChild(node);
     

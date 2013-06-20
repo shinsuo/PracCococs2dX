@@ -7,6 +7,7 @@
 //
 
 #include "GameScene.h"
+#include "PauseLayer.h"
 
 CCScene* GameScene::scene()
 {
@@ -14,7 +15,8 @@ CCScene* GameScene::scene()
     CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
     nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
     CCBReader *ccbReader = new CCBReader(nodeLibrary);
-    CCNode *node = ccbReader->readNodeGraphFromFile("HelloCocosBuilder.ccbi");
+    CCNode *node = ccbReader->readNodeGraphFromFile("ccb/GameScene.ccbi");
+    ccbReader->release();
     sc->addChild(node);
     return sc;
 }
@@ -27,4 +29,44 @@ bool GameScene::init(){
     
     
     return true;
+}
+
+void GameScene::onEnter()
+{
+    CCLayer::onEnter();
+    CCLog("onEnter");
+    
+}
+
+void GameScene::registerWithTouchDispatcher()
+{
+    CCLog("registerWithTouchDispatcher");
+    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this,INT_MAX,true);
+}
+
+void GameScene::pause(CCObject *pSender)
+{
+    CCLog("pause ===");
+//    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+//    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
+//    CCBReader *ccbReader = new CCBReader(nodeLibrary);
+//    CCLayer *node = (CCLayer *)ccbReader->readNodeGraphFromFile("ccb/PauseLayer.ccbi",this);
+    CCLayer *node = PauseLayer::layer();
+    addChild(node,INT_MAX,3);
+}
+
+void GameScene::resume(CCObject *pSender)
+{
+    CCLog("resume ===");
+    removeChildByTag(3);
+}
+
+void GameScene::back(CCObject *pSender)
+{
+    CCLog("back ===");
+}
+
+void GameScene::restart(CCObject *pSender)
+{
+    CCLog("restart ===");
 }
