@@ -220,6 +220,7 @@ void CCMenu::registerWithTouchDispatcher()
 
 bool CCMenu::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
+    CCLog("CCMenu::ccTouchBegan");
     CC_UNUSED_PARAM(event);
     if (m_eState != kCCMenuStateWaiting || ! m_bVisible || !m_bEnabled)
     {

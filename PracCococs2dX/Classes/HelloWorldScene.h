@@ -8,6 +8,8 @@ class HelloWorld : public cocos2d::CCLayer
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)
     virtual bool init();
+    
+    void onEnter();
 
     // there's no 'id' in cpp, so we recommend to return the class instance pointer
     static cocos2d::CCScene* scene();
@@ -27,7 +29,7 @@ public:
     void Toggle(CCObject* pSender);
     void Back(CCObject* pSender);
     void update(float delta);
-    
+    void nextT();
     virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
     virtual void registerWithTouchDispatcher(void);
@@ -37,6 +39,7 @@ public:
     
 private:
     cocos2d::CCSprite *pSprite;
+    cocos2d::CCMenu *pMenu;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

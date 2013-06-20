@@ -31,7 +31,8 @@ public:
     void resume(CCObject *pSender);
     void back(CCObject *pSender);
     void restart(CCObject *pSender);
-    
+    virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName){
         CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "pause", GameScene::pause);
         CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "resume", GameScene::resume);
@@ -46,14 +47,20 @@ public:
     }
     
     virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode){
-    
+        CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "pauseMenu", CCMenu *, this->pauseMenu);
+        CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "fruitFlag", CCSprite *, this->fruitFlag);
         return false;
     }
     
     virtual void onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader){
         
     }
-    
+private:
+    CCMenu *pauseMenu;
+    CCSprite *fruitFlag;
+    void layoutFruit();
+    CCArray *fruitArray;
+//    CCMenu *pauseLayerMenu;
 };
 
 

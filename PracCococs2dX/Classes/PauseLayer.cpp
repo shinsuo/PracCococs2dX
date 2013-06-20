@@ -23,21 +23,21 @@ bool PauseLayer::init()
     if (!CCLayer::init()) {
         return false;
     }
-    
+    setTouchEnabled(1);
     return true;
 }
 
 void PauseLayer::onEnter()
 {
     CCLayer::onEnter();
-    registerWithTouchDispatcher();
+    CCLog("PauseLayer::onEnter");
+//    pauseLayerMenu->setHandlerPriority(0);
 }
 
 void PauseLayer::registerWithTouchDispatcher()
 {
+    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 1, 1);
     CCLog("PauseLayer::registerWithTouchDispatcher");
-//    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 1, true);
-    CCDirector::sharedDirector()->getTouchDispatcher()->setDispatchEvents(false);
 }
 
 void PauseLayer::resume(CCObject *pSender)
@@ -56,4 +56,7 @@ void PauseLayer::restart(CCObject *pSender)
     CCLog("restart ===");
 }
 
-
+bool PauseLayer::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+    return true;
+}

@@ -16,7 +16,12 @@ CCLayer* HelloMenuLayer::layer()
     
     // 'layer' is an autorelease object
     HelloMenuLayer *layer = HelloMenuLayer::create();
-    
+    layer->setContentSize(CCDirector::sharedDirector()->getWinSize());
+    CCLayerColor *colorLayer = CCLayerColor::create();
+    colorLayer->setColor(ccc3(100,100,100));
+    colorLayer->setContentSize(CCDirector::sharedDirector()->getWinSize());
+    layer->addChild(colorLayer);
+    layer->setTouchEnabled(true);
     // return the scene
     return layer;
 }
@@ -55,20 +60,40 @@ bool HelloMenuLayer::init()
     return true;
 }
 
-void HelloMenuLayer::onEnter()
-{
-    CCLog("HelloMenuLayer::onEnter");
-    registerWithTouchDispatcher();
-}
+//void HelloMenuLayer::onEnter()
+//{
+//    CCLog("HelloMenuLayer::onEnter");
+//    CCLayer::onEnter();
+//    registerWithTouchDispatcher();
+//}
+//
+//void HelloMenuLayer::onExit()
+//{
+//    CCLog("HelloMenuLayer::onExit");
+//    CCLayer::onExit();
+//}
 
 void HelloMenuLayer::registerWithTouchDispatcher()
 {
     CCLog("HelloMenuLayer::registerWithTouchDispatcher");
-    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 1, 1);
+    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, 1);
 }
 
 
 void HelloMenuLayer::menuCloseCallback(CCObject* pSender)
 {
     CCLog("HelloMenuLayer::menuCloseCallback");
+    CCLayer *layer = (CCLayer *)getParent();
+//    layer->setTouchEnabled(true);
+    removeFromParent();
+//    CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
 }
+
+
+bool HelloMenuLayer::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+    return true;
+}
+
+
+

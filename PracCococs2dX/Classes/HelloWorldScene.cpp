@@ -110,10 +110,12 @@ bool HelloWorld::init()
     CCMenuItemFont *p5 = CCMenuItemFont::create("Back", this, menu_selector(HelloWorld::Back));
     
     // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(p1,p2,p3,p4,p5, NULL);
+    pMenu = CCMenu::create(p1,p2,p3,p4,p5, NULL);
     pMenu->alignItemsVerticallyWithPadding(30);
     pMenu->setPosition( ccp(100,320) );
     this->addChild(pMenu, 1);
+    
+//    scheduleOnce(schedule_selector(HelloWorld::nextT), 2);
 
     // add "HelloWorld" splash screen"
     CCSprite* Sprite = CCSprite::create("HelloWorld.png");
@@ -134,6 +136,13 @@ bool HelloWorld::init()
 //    scheduleUpdate();
     setTouchEnabled(1);
     return true;
+}
+
+void HelloWorld::onEnter()
+{
+    CCLayer::onEnter();
+    
+    pMenu->setHandlerPriority(4);
 }
 
 void HelloWorld::Place(CCObject* pSender)
@@ -204,7 +213,9 @@ void HelloWorld::Show(CCObject* pSender)
 
 void HelloWorld::Toggle(CCObject* pSender)
 {
-    pSprite->runAction(CCToggleVisibility::create());
+    addChild(HelloMenuLayer::layer());
+//    setTouchEnabled(false);
+//    pSprite->runAction(CCToggleVisibility::create());
 }
 
 void HelloWorld::Back(CCObject* pSender)
@@ -303,10 +314,14 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 #endif
 }
 
+void HelloWorld::nextT()
+{
+    pMenu->setHandlerPriority(4);
+}
+
 bool HelloWorld::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 {
     CCLog("HelloWorld ccTouchBegan");
-    addChild(HelloMenuLayer::layer());
     return true;
 }
 
@@ -318,6 +333,6 @@ void HelloWorld::ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEve
 void HelloWorld::registerWithTouchDispatcher(void)
 {
     CCTouchDispatcher *disPatcher = CCDirector::sharedDirector()->getTouchDispatcher();
-    disPatcher->addTargetedDelegate(this, 1, 1);
+    disPatcher->addTargetedDelegate(this, 3, 1);
     CCLog("registerWithTouchDispatcher");
 }

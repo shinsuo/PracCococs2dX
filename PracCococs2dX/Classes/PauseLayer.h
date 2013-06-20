@@ -25,6 +25,8 @@ public:
     bool init();
     void onEnter();
     void registerWithTouchDispatcher();
+    virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(PauseLayer, create);
     void resume(CCObject *pSender);
     void back(CCObject *pSender);
@@ -42,13 +44,16 @@ public:
     }
     
     virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode){
-        
+        CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "pauseLayerMenu", CCMenu *, this->pauseLayerMenu);
         return false;
     }
     
     virtual void onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader){
         
     }
+    
+private:
+    CCMenu *pauseLayerMenu;
 };
 
 
