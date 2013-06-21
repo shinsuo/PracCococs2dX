@@ -86,26 +86,60 @@ bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
     return true;
 }
 
+CCNode* GameScene::addCCB(const char *ccbName)
+{
+    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
+    CCBReader *ccbReader = new CCBReader(nodeLibrary);
+    CCNode *node1 = ccbReader->readNodeGraphFromFile(ccbName,this);
+    ccbReader->release();
+    return node1;
+}
+
 
 void GameScene::layoutFruit()
 {
     CCPoint pt = fruitFlag->getPosition();
-    fruitFlag->setVisible(1);
+//    fruitFlag->setVisible(1);
     fruitArray = new CCArray(FRUIT_NUM);
-    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
-    CCBReader *ccbReader = new CCBReader(nodeLibrary);
-    CCNode *node1 = ccbReader->readNodeGraphFromFile("ccb/fruit0.ccbi",this);
-    CCNode *node2 = ccbReader->readNodeGraphFromFile("ccb/fruit1.ccbi",this);
-    CCNode *node3 = ccbReader->readNodeGraphFromFile("ccb/fruit2.ccbi",this);
-    CCNode *node4 = ccbReader->readNodeGraphFromFile("ccb/fruit3.ccbi",this);
-    CCNode *node5 = ccbReader->readNodeGraphFromFile("ccb/fruit4.ccbi",this);
-    
+//    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+//    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
+//    CCBReader *ccbReader = new CCBReader(nodeLibrary);
+//    CCNode *node1 = addCCB("ccb/fruit0.ccbi");//ccbReader->readNodeGraphFromFile("ccb/fruit0.ccbi",this);
+//    CCNode *node2 = addCCB("ccb/fruit1.ccbi");//ccbReader->readNodeGraphFromFile("ccb/fruit1.ccbi",this);
+//    CCNode *node3 = ccbReader->readNodeGraphFromFile("ccb/fruit2.ccbi",this);
+//    CCNode *node4 = ccbReader->readNodeGraphFromFile("ccb/fruit3.ccbi",this);
+//    CCNode *node5 = ccbReader->readNodeGraphFromFile("ccb/fruit4.ccbi",this);
     char ccbName[20];
+//    for (int i = 0; i < FRUIT_NUM; i++) {
+//        memset(ccbName, 0, sizeof(ccbName));
+//        sprintf(ccbName, "ccb/fruit%d",i);
+//        fruitArray->addObject(addCCB(ccbName));
+//    }
 
 //    CCNode *tSprite= (CCNode *)fruitArray->objectAtIndex(FRUIT_NUM - 1);// fruitArray->objectAtIndex(FRUIT_NUM - 1);//
 //    addChild(tSprite);
 //    tSprite->setPosition(ccp(2*(FRUIT_WIDTH+1)+pt.x,3*(FRUIT_HEIGHT+1)+pt.y));
+//    return;
+//    addChild(node1);
+////    ccbReader->getAnimationManager()->runAnimationsForSequenceNamed("AnimationScale");
+//    node1->setPosition(ccp(2*(FRUIT_WIDTH+1)+pt.x,3*(FRUIT_HEIGHT+1)+pt.y));
+    
+//    CCArray *allSeq = ccbReader->getAnimationManager()->getSequences();
+//    for (int i = 0; i < allSeq->count(); i++) {
+//        CCBSequence *everySeq = (CCBSequence *)allSeq->objectAtIndex(i);
+//        CCLog("duration:%f",everySeq->getDuration());
+//        CCLog("duration:%s",everySeq->getName());
+//        CCLog("duration:%d",everySeq->getSequenceId());
+//
+//    }
+    
+//    for (int i = 0; i < FRUIT_NUM; i++) {
+//        CCNode *node = (CCNode *) fruitArray->objectAtIndex(i);
+//        addChild(node);
+//        node->setPosition(ccp(0*(FRUIT_WIDTH+1)+pt.x,i*(FRUIT_HEIGHT+1)+pt.y));
+//    }
+    
 //    return;
     
     for (int i = 0; i < HORIZONTAL_NUM; i++) {
@@ -114,13 +148,13 @@ void GameScene::layoutFruit()
 //            addChild(tSprite);
 //            tSprite->setScale(4/3);
 //            tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+pt.x,j*(FRUIT_HEIGHT+1)+pt.y));
-
+            
             int random = arc4random()%FRUIT_NUM;
+            CCLog("random ===%d",random);
             memset(ccbName, 0, sizeof(ccbName));
-            sprintf(ccbName, "ccb/fruit%d.ccbi",random);
-            CCLog("%s",ccbName);
-            return;
-            CCNode *tSprite=  (CCNode *)ccbReader->readNodeGraphFromFile(ccbName,this);//(CCNode *)node1;//
+            sprintf(ccbName, "ccb/fruit%d",random);
+            
+            CCNode *tSprite=  (CCNode *)addCCB(ccbName);//ccbReader->readNodeGraphFromFile(ccbName,this);//(CCNode *)node1;//
             addChild(tSprite);
             tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+pt.x,j*(FRUIT_HEIGHT+1)+pt.y));
         }

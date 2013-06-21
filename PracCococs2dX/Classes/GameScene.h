@@ -60,6 +60,7 @@ private:
     CCSprite *fruitFlag;
     void layoutFruit();
     CCArray *fruitArray;
+    CCNode* addCCB(const char* ccbName);
 //    CCMenu *pauseLayerMenu;
 };
 

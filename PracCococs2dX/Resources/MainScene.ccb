@@ -5,7 +5,7 @@
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>fileType</key>
@@ -70,7 +70,7 @@
 							<real>1</real>
 							<real>1</real>
 							<false/>
-							<integer>0</integer>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -343,7 +343,7 @@
 						<key>value</key>
 						<array>
 							<real>50</real>
-							<real>50</real>
+							<real>25</real>
 							<integer>4</integer>
 						</array>
 					</dict>
@@ -368,7 +368,7 @@
 							<real>1</real>
 							<real>1</real>
 							<false/>
-							<integer>0</integer>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -526,13 +526,13 @@
 			<key>centeredOrigin</key>
 			<false/>
 			<key>ext</key>
-			<string> </string>
+			<string>ipad hd</string>
 			<key>height</key>
 			<integer>480</integer>
 			<key>name</key>
 			<string>iPhone Portrait</string>
 			<key>scale</key>
-			<real>1</real>
+			<real>0.5</real>
 			<key>width</key>
 			<integer>320</integer>
 		</dict>
@@ -540,13 +540,13 @@
 			<key>centeredOrigin</key>
 			<false/>
 			<key>ext</key>
-			<string>ipad iphonehd</string>
+			<string>ipad hd</string>
 			<key>height</key>
 			<integer>1024</integer>
 			<key>name</key>
 			<string>iPad Portrait</string>
 			<key>scale</key>
-			<real>2</real>
+			<real>1</real>
 			<key>width</key>
 			<integer>768</integer>
 		</dict>

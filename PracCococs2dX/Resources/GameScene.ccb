@@ -70,7 +70,7 @@
 							<real>1</real>
 							<real>1</real>
 							<false/>
-							<integer>0</integer>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -135,9 +135,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>123</real>
-							<real>193</real>
-							<integer>0</integer>
+							<real>16.015625</real>
+							<real>18.84765625</real>
+							<integer>4</integer>
 						</array>
 					</dict>
 					<dict>
@@ -161,7 +161,7 @@
 							<real>1</real>
 							<real>1</real>
 							<false/>
-							<integer>0</integer>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -184,6 +184,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
@@ -321,9 +323,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>721</real>
-							<real>983</real>
-							<integer>0</integer>
+							<real>92</real>
+							<real>95</real>
+							<integer>4</integer>
 						</array>
 					</dict>
 					<dict>
@@ -347,7 +349,7 @@
 							<real>1</real>
 							<real>1</real>
 							<false/>
-							<integer>0</integer>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -399,8 +401,6 @@
 						<false/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
@@ -588,13 +588,13 @@
 			<key>centeredOrigin</key>
 			<false/>
 			<key>ext</key>
-			<string> </string>
+			<string>ipad hd</string>
 			<key>height</key>
 			<integer>480</integer>
 			<key>name</key>
 			<string>iPhone Portrait</string>
 			<key>scale</key>
-			<real>1</real>
+			<real>0.5</real>
 			<key>width</key>
 			<integer>320</integer>
 		</dict>
@@ -608,7 +608,7 @@
 			<key>name</key>
 			<string>iPad Portrait</string>
 			<key>scale</key>
-			<real>2</real>
+			<real>1</real>
 			<key>width</key>
 			<integer>768</integer>
 		</dict>
