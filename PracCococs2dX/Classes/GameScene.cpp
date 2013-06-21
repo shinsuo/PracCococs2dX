@@ -100,6 +100,11 @@ CCNode* GameScene::addCCB(const char *ccbName)
 void GameScene::layoutFruit()
 {
     CCPoint pt = fruitFlag->getPosition();
+    CCPoint anchorPt = fruitFlag->getAnchorPoint();
+    CCSize size = fruitFlag->getContentSize();
+    CCPoint newPt = ccp(pt.x+(0.5-anchorPt.x)*size.width,pt.y+(0.5-anchorPt.y)*size.height);
+    CCLog("layoutFruit ===%f,%f",pt.x,pt.y);
+    CCLog("layoutFruit ===%f,%f",newPt.x,newPt.y);
 //    fruitFlag->setVisible(1);
     fruitArray = new CCArray(FRUIT_NUM);
 //    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
@@ -156,7 +161,7 @@ void GameScene::layoutFruit()
             
             CCNode *tSprite=  (CCNode *)addCCB(ccbName);//ccbReader->readNodeGraphFromFile(ccbName,this);//(CCNode *)node1;//
             addChild(tSprite);
-            tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+pt.x,j*(FRUIT_HEIGHT+1)+pt.y));
+            tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+newPt.x,j*(FRUIT_HEIGHT+1)+newPt.y));
         }
     }
 }

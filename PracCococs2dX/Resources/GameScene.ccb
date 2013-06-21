@@ -5,7 +5,7 @@
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>1</integer>
+	<integer>2</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>fileType</key>
@@ -135,8 +135,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>16.015625</real>
-							<real>18.84765625</real>
+							<real>50</real>
+							<real>50</real>
 							<integer>4</integer>
 						</array>
 					</dict>
@@ -147,8 +147,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.5</real>
+							<real>3.5499999523162842</real>
+							<real>4.2300000190734863</real>
 						</array>
 					</dict>
 					<dict>
@@ -612,6 +612,20 @@
 			<key>width</key>
 			<integer>768</integer>
 		</dict>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>ipad hd</string>
+			<key>height</key>
+			<integer>960</integer>
+			<key>name</key>
+			<string>iPhone Hd Portrait</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>640</integer>
+		</dict>
 	</array>
 	<key>sequences</key>
 	<array>
@@ -627,7 +641,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>2.1666667461395264</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -637,6 +651,6 @@
 		</dict>
 	</array>
 	<key>stageBorder</key>
-	<integer>0</integer>
+	<integer>3</integer>
 </dict>
 </plist>
