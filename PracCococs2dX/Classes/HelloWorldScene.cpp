@@ -142,7 +142,7 @@ void HelloWorld::onEnter()
 {
     CCLayer::onEnter();
     
-    pMenu->setHandlerPriority(4);
+    pMenu->setHandlerPriority(2);
 }
 
 void HelloWorld::Place(CCObject* pSender)

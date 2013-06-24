@@ -548,6 +548,7 @@
 		B9F775001772999F0080C7A9 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = B9F774FF1772999F0080C7A9 /* ccb */; };
 		B9F775091772DCFA0080C7A9 /* PauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F775071772DCF80080C7A9 /* PauseLayer.cpp */; };
 		B9F7750C1772E33F0080C7A9 /* HelloMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F7750A1772E33B0080C7A9 /* HelloMenuLayer.cpp */; };
+		B9F81DBF17783FB700886476 /* logo.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = B9F81DBE17783FB700886476 /* logo.ccbi */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1341,6 +1342,7 @@
 		B9F775081772DCF90080C7A9 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseLayer.h; path = Classes/PauseLayer.h; sourceTree = "<group>"; };
 		B9F7750A1772E33B0080C7A9 /* HelloMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloMenuLayer.cpp; path = Classes/HelloMenuLayer.cpp; sourceTree = "<group>"; };
 		B9F7750B1772E33D0080C7A9 /* HelloMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloMenuLayer.h; path = Classes/HelloMenuLayer.h; sourceTree = "<group>"; };
+		B9F81DBE17783FB700886476 /* logo.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = logo.ccbi; path = ccb/logo.ccbi; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1682,6 +1684,7 @@
 		B934396C17618F9400B0C377 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9F81DBE17783FB700886476 /* logo.ccbi */,
 				B9F774FF1772999F0080C7A9 /* ccb */,
 				B9F77219176AC0850080C7A9 /* tileMap.tmx */,
 				B9F7721A176AC0850080C7A9 /* tileSet.PNG */,
@@ -3038,6 +3041,7 @@
 				B9F7721B176AC0850080C7A9 /* tileMap.tmx in Resources */,
 				B9F7721C176AC0850080C7A9 /* tileSet.PNG in Resources */,
 				B9F775001772999F0080C7A9 /* ccb in Resources */,
+				B9F81DBF17783FB700886476 /* logo.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

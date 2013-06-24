@@ -37,7 +37,7 @@ void PauseLayer::onEnter()
 void PauseLayer::registerWithTouchDispatcher()
 {
     CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 1, 1);
-    CCLog("PauseLayer::registerWithTouchDispatcher");
+    CCLog("PauseLayer::registerWithTouchDispatcher===%d",__INT_MAX__);
 }
 
 void PauseLayer::resume(CCObject *pSender)
