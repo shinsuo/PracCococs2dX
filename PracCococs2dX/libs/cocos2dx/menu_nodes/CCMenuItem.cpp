@@ -567,7 +567,7 @@ bool CCMenuItemSprite::initWithNormalSprite(CCNode* normalSprite, CCNode* select
     setNormalImage(normalSprite);
     setSelectedImage(selectedSprite);
     setDisabledImage(disabledSprite);
-
+    m_fOriginalScale = 1.0f;
     if(m_pNormalImage)
     {
         this->setContentSize(m_pNormalImage->getContentSize());
@@ -580,43 +580,36 @@ bool CCMenuItemSprite::initWithNormalSprite(CCNode* normalSprite, CCNode* select
  */
 void CCMenuItemSprite::selected()
 {
-    CCMenuItem::selected();
-
-    if (m_pNormalImage)
+    if(m_bIsEnabled)
     {
-        if (m_pDisabledImage)
+        CCMenuItem::selected();
+        
+        CCAction *action = getActionByTag(kZoomActionTag);
+        if (action)
         {
-            m_pDisabledImage->setVisible(false);
-        }
-
-        if (m_pSelectedImage)
-        {
-            m_pNormalImage->setVisible(false);
-            m_pSelectedImage->setVisible(true);
+            this->stopAction(action);
         }
         else
         {
-            m_pNormalImage->setVisible(true);
+            m_fOriginalScale = this->getScale();
         }
+        
+        CCAction *zoomAction = CCScaleTo::create(0.1f, m_fOriginalScale * 0.8f);
+        zoomAction->setTag(kZoomActionTag);
+        this->runAction(zoomAction);
     }
+
 }
 
 void CCMenuItemSprite::unselected()
 {
-    CCMenuItem::unselected();
-    if (m_pNormalImage)
+    if(m_bIsEnabled)
     {
-        m_pNormalImage->setVisible(true);
-
-        if (m_pSelectedImage)
-        {
-            m_pSelectedImage->setVisible(false);
-        }
-
-        if (m_pDisabledImage)
-        {
-            m_pDisabledImage->setVisible(false);
-        }
+        CCMenuItem::unselected();
+        this->stopActionByTag(kZoomActionTag);
+        CCAction *zoomAction = CCScaleTo::create(0.1f, m_fOriginalScale);
+        zoomAction->setTag(kZoomActionTag);
+        this->runAction(zoomAction);
     }
 }
 
@@ -676,9 +669,19 @@ bool CCMenuItemImage::init(void)
     return initWithNormalImage(NULL, NULL, NULL, NULL, NULL);
 }
 
+CCMenuItemImage * CCMenuItemImage::create(const char *normalImage)
+{
+    return CCMenuItemImage::create(normalImage, NULL, NULL, NULL, NULL);
+}
+
 CCMenuItemImage * CCMenuItemImage::create(const char *normalImage, const char *selectedImage)
 {
     return CCMenuItemImage::create(normalImage, selectedImage, NULL, NULL, NULL);
+}
+
+CCMenuItemImage * CCMenuItemImage::create(const char *normalImage, CCObject* target, SEL_MenuHandler selector)
+{
+    return CCMenuItemImage::create(normalImage, NULL, NULL, target, selector);
 }
 
 CCMenuItemImage * CCMenuItemImage::create(const char *normalImage, const char *selectedImage, CCObject* target, SEL_MenuHandler selector)

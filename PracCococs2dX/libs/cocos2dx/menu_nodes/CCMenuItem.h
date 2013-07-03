@@ -270,6 +270,7 @@ public:
     virtual bool isOpacityModifyRGB(void) { return false;}
 protected:
     virtual void updateImagesVisibility();
+    float m_fOriginalScale;
 };
 
 
@@ -288,10 +289,12 @@ public:
     virtual ~CCMenuItemImage(){}
     
     /** creates a menu item with a normal and selected image*/
+    static CCMenuItemImage* create(const char *normalImage);
     static CCMenuItemImage* create(const char *normalImage, const char *selectedImage);
     /** creates a menu item with a normal,selected  and disabled image*/
     static CCMenuItemImage* create(const char *normalImage, const char *selectedImage, const char *disabledImage);
     /** creates a menu item with a normal and selected image with target/selector */
+    static CCMenuItemImage* create(const char *normalImage, CCObject* target, SEL_MenuHandler selector);
     static CCMenuItemImage* create(const char *normalImage, const char *selectedImage, CCObject* target, SEL_MenuHandler selector);
     /** creates a menu item with a normal,selected  and disabled image with target/selector */
     static CCMenuItemImage* create(const char *normalImage, const char *selectedImage, const char *disabledImage, CCObject* target, SEL_MenuHandler selector);

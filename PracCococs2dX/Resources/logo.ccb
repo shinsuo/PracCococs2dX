@@ -2992,7 +2992,7 @@
 			<key>name</key>
 			<string>first</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>1.0514521598815918</real>
 			<key>position</key>
 			<real>3</real>
 			<key>resolution</key>
@@ -3001,26 +3001,6 @@
 			<real>332.04214477539062</real>
 			<key>sequenceId</key>
 			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>autoPlay</key>
-			<false/>
-			<key>chainedSequenceId</key>
-			<integer>-1</integer>
-			<key>length</key>
-			<real>3</real>
-			<key>name</key>
-			<string>second</string>
-			<key>offset</key>
-			<real>0.0</real>
-			<key>position</key>
-			<real>3</real>
-			<key>resolution</key>
-			<real>30</real>
-			<key>scale</key>
-			<real>128</real>
-			<key>sequenceId</key>
-			<integer>1</integer>
 		</dict>
 	</array>
 	<key>stageBorder</key>

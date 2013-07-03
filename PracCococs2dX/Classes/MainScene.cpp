@@ -31,7 +31,10 @@ bool MainScene::init()
         return false;
     }
     
+    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+    CCPoint pt = ccp(winSize.width,winSize.height);
     
+    ccDrawCircle(pt, 10, 10, 10,1, 2, 2);
     
     return true;
 }

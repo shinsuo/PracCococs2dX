@@ -15,6 +15,10 @@
 #define FRUIT_HEIGHT    85
 #define FRUIT_NUM       5
 
+
+CCArray *gFallingGems = NULL;
+
+
 CCScene* GameScene::scene()
 {
     CCScene *sc = CCScene::create();
@@ -45,6 +49,12 @@ void GameScene::onEnter()
     pauseMenu->setHandlerPriority(10);
     
     layoutFruit();
+    
+//    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+//    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
+//    bombCCB = new CCBReader(nodeLibrary);
+//    CCNode *node1 = bombCCB->readNodeGraphFromFile("ccb/bomb.ccbi",this);
+//    addChild(node1);
 }
 
 void GameScene::registerWithTouchDispatcher()
@@ -83,6 +93,8 @@ void GameScene::restart(CCObject *pSender)
 
 bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 {
+    CCLog("GameScene::ccTouchBegan");
+//    bombCCB->getAnimationManager()->runAnimationsForSequenceNamed("Bomb");
     return true;
 }
 
@@ -146,6 +158,12 @@ void GameScene::layoutFruit()
 //    }
     
 //    return;
+    gFallingGems = new CCArray(HORIZONTAL_NUM);
+    for (int i = 0 ; i < HORIZONTAL_NUM; i++) {
+        gFallingGems->insertObject(new CCArray(VERTICAL_NUM),i);
+    }
+    
+    CCLog("gFallingGems:%d",gFallingGems->count());
     
     for (int i = 0; i < HORIZONTAL_NUM; i++) {
         for (int j = 0; j < VERTICAL_NUM; j++) {
@@ -162,6 +180,7 @@ void GameScene::layoutFruit()
             CCNode *tSprite=  (CCNode *)addCCB(ccbName);//ccbReader->readNodeGraphFromFile(ccbName,this);//(CCNode *)node1;//
             addChild(tSprite);
             tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+newPt.x,j*(FRUIT_HEIGHT+1)+newPt.y));
+            ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
         }
     }
 }

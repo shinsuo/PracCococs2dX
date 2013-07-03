@@ -317,9 +317,9 @@
 	<array>
 		<dict>
 			<key>autoPlay</key>
-			<true/>
+			<false/>
 			<key>chainedSequenceId</key>
-			<integer>-1</integer>
+			<integer>0</integer>
 			<key>length</key>
 			<real>0.69999998807907104</real>
 			<key>name</key>

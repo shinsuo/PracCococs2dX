@@ -61,6 +61,7 @@ private:
     void layoutFruit();
     CCArray *fruitArray;
     CCNode* addCCB(const char* ccbName);
+    CCBReader *bombCCB;
 //    CCMenu *pauseLayerMenu;
 };
 

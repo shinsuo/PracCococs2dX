@@ -89,9 +89,9 @@ bool HelloWorld::init()
                                                           menu_selector(HelloWorld::Test));
     
     
-    CCMenuItemImage *pMenuLabelAtlas1 = CCMenuItemImage::create("button_buy_01.png", "button_buy_02.png", this, menu_selector(HelloWorld::Test));
-    pMenuLabelAtlas1->setPosition(ccp(300,300));
-   
+    CCMenuItemImage *pMenuLabelAtlas1 = CCMenuItemImage::create("button_buy_01.png", this, menu_selector(HelloWorld::Test));
+    pMenuLabelAtlas1->setPosition(ccp(0,0));
+    pMenuLabelAtlas1->setAnchorPoint(ccp(0.5,0.5));
     
     CCMenuItemAtlasFont *pMenuAtlasFont = CCMenuItemAtlasFont::create("88", "fonts_rankscore.png", 24, 38, (unsigned int)'/', this, menu_selector(HelloWorld::Test));
     pMenuAtlasFont->setPosition(ccp(400,400));
@@ -110,9 +110,12 @@ bool HelloWorld::init()
     CCMenuItemFont *p5 = CCMenuItemFont::create("Back", this, menu_selector(HelloWorld::Back));
     
     // create menu, it's an autorelease object
-    pMenu = CCMenu::create(p1,p2,p3,p4,p5, NULL);
+    pMenu = CCMenu::create(
+                           p1,
+                           pMenuLabelAtlas1,
+                           NULL);
     pMenu->alignItemsVerticallyWithPadding(30);
-    pMenu->setPosition( ccp(100,320) );
+    pMenu->setPosition( ccp(size.width / 2, size.height/2) );
     this->addChild(pMenu, 1);
     
 //    scheduleOnce(schedule_selector(HelloWorld::nextT), 2);
@@ -129,7 +132,7 @@ bool HelloWorld::init()
     
     pSprite = CCSprite::create("icon_05.png");
     pSprite->setPosition(ccp(size.width/2, size.height/2));
-    this->addChild(pSprite,1);
+//    this->addChild(pSprite,1);
     
 //    schedule(schedule_selector(HelloWorld::update));
 //    schedule(schedule_selector(HelloWorld::update), 1);
@@ -147,8 +150,8 @@ void HelloWorld::onEnter()
 
 void HelloWorld::Place(CCObject* pSender)
 {
-    CCSize size = CCDirector::sharedDirector()->getWinSize();
-    pSprite->runAction(CCPlace::create(ccp(size.width*CCRANDOM_0_1(),size.height*CCRANDOM_0_1())));
+//    CCSize size = CCDirector::sharedDirector()->getWinSize();
+//    pSprite->runAction(CCPlace::create(ccp(size.width*CCRANDOM_0_1(),size.height*CCRANDOM_0_1())));
 }
 
 void HelloWorld::Hide(CCObject* pSender)
