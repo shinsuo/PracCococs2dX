@@ -551,6 +551,7 @@
 		B9F775091772DCFA0080C7A9 /* PauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F775071772DCF80080C7A9 /* PauseLayer.cpp */; };
 		B9F7750C1772E33F0080C7A9 /* HelloMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F7750A1772E33B0080C7A9 /* HelloMenuLayer.cpp */; };
 		B9F81DCD1782C02200886476 /* bomb.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = B9F81DCC1782C02200886476 /* bomb.ccbi */; };
+		B9FDAD38178D36AA00740B1C /* FruitObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9FDAD36178D36AA00740B1C /* FruitObject.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1348,6 +1349,9 @@
 		B9F7750A1772E33B0080C7A9 /* HelloMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloMenuLayer.cpp; path = Classes/HelloMenuLayer.cpp; sourceTree = "<group>"; };
 		B9F7750B1772E33D0080C7A9 /* HelloMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloMenuLayer.h; path = Classes/HelloMenuLayer.h; sourceTree = "<group>"; };
 		B9F81DCC1782C02200886476 /* bomb.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = bomb.ccbi; path = ccb/bomb.ccbi; sourceTree = "<group>"; };
+		B9FDAD35178CFBFA00740B1C /* common_function.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common_function.h; path = Classes/common_function.h; sourceTree = "<group>"; };
+		B9FDAD36178D36AA00740B1C /* FruitObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FruitObject.cpp; path = Classes/FruitObject.cpp; sourceTree = "<group>"; };
+		B9FDAD37178D36AA00740B1C /* FruitObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FruitObject.h; path = Classes/FruitObject.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2574,6 +2578,9 @@
 				B9F774FB1771B6580080C7A9 /* MainScene.h */,
 				B9F774F2177192A90080C7A9 /* HelloCCB.cpp */,
 				B9F774F3177192A90080C7A9 /* HelloCCB.h */,
+				B9FDAD35178CFBFA00740B1C /* common_function.h */,
+				B9FDAD36178D36AA00740B1C /* FruitObject.cpp */,
+				B9FDAD37178D36AA00740B1C /* FruitObject.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3247,6 +3254,7 @@
 				B9F775091772DCFA0080C7A9 /* PauseLayer.cpp in Sources */,
 				B9F7750C1772E33F0080C7A9 /* HelloMenuLayer.cpp in Sources */,
 				B9035ABD17855B4300C6EEE4 /* Logo.cpp in Sources */,
+				B9FDAD38178D36AA00740B1C /* FruitObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

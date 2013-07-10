@@ -472,11 +472,11 @@
 			<key>length</key>
 			<real>3</real>
 			<key>name</key>
-			<string>Flash</string>
+			<string>Opacity</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>3</real>
+			<real>1.0666667222976685</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

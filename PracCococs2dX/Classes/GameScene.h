@@ -11,9 +11,15 @@
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
+#include "FruitObject.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
+
+typedef struct{
+    int i;
+    int j;
+}Index;
 
 class GameScene:public CCLayer
 ,public CCBSelectorResolver
@@ -61,6 +67,9 @@ private:
     void layoutFruit();
     CCArray *fruitArray;
     CCNode* addCCB(const char* ccbName);
+    FruitObject* fallingObject(unsigned int color);
+    void afterloadCCB();
+    void removeFruit(Index index);
     CCBReader *bombCCB;
 //    CCMenu *pauseLayerMenu;
 };
