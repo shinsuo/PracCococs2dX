@@ -164,7 +164,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>start</string>
+									<string>start:</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -277,7 +277,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>guest</string>
+									<string>guest:</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -422,11 +422,6 @@
 				</array>
 			</dict>
 			<dict>
-				<key>animatedProperties</key>
-				<dict>
-					<key>0</key>
-					<dict/>
-				</dict>
 				<key>baseClass</key>
 				<string>CCBFile</string>
 				<key>children</key>
@@ -448,9 +443,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>49.088542938232422</real>
-							<real>63.37890625</real>
-							<integer>4</integer>
+							<real>399</real>
+							<real>707</real>
+							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>

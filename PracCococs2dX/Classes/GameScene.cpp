@@ -32,11 +32,11 @@ CCScene* GameScene::scene()
 }
 
 bool GameScene::init(){
-    if (!CCLayer::init()) {
-        return false;
-    }
-    
-    setTouchEnabled(1);
+//    if (!CCLayer::init()) {
+//        return false;
+//    }
+//    
+//    setTouchEnabled(1);
     
     
     return true;

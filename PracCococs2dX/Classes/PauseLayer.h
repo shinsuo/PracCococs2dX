@@ -32,9 +32,9 @@ public:
     void back(CCObject *pSender);
     void restart(CCObject *pSender);
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName){
-        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "resume", PauseLayer::resume);
-        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "back", PauseLayer::back);
-        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "restart", PauseLayer::restart);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "resume:", PauseLayer::resume);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "back:", PauseLayer::back);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "restart:", PauseLayer::restart);
         return NULL;
     }
     

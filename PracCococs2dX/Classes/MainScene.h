@@ -31,8 +31,8 @@ public:
     }
     
     SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName){
-        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "guest", MainScene::guest);
-        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "start", MainScene::start);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "guest:", MainScene::guest);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "start:", MainScene::start);
         
         return NULL;
     }

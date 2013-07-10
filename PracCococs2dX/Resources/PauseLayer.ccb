@@ -225,7 +225,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>resume</string>
+									<string>resume:</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -326,7 +326,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>back</string>
+									<string>back:</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -439,7 +439,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>restart</string>
+									<string>restart:</string>
 									<integer>1</integer>
 								</array>
 							</dict>

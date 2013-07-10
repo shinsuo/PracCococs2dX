@@ -20,10 +20,10 @@ CCLayer* PauseLayer::layer()
 
 bool PauseLayer::init()
 {
-    if (!CCLayer::init()) {
-        return false;
-    }
-    setTouchEnabled(1);
+//    if (!CCLayer::init()) {
+//        return false;
+//    }
+//    setTouchEnabled(1);
     return true;
 }
 

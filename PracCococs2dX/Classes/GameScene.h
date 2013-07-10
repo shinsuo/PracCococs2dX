@@ -34,10 +34,10 @@ public:
     virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName){
-        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "pause", GameScene::pause);
-        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "resume", GameScene::resume);
-        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "back", GameScene::back);
-        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "restart", GameScene::restart);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "pause:", GameScene::pause);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "resume:", GameScene::resume);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "back:", GameScene::back);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "restart:", GameScene::restart);
         return NULL;
     }
     
