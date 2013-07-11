@@ -147,8 +147,11 @@ void GameScene::onEnter()
 //    bombCCB = new CCBReader(nodeLibrary);
 //    CCNode *node1 = bombCCB->readNodeGraphFromFile("ccb/bomb.ccbi",this);
 //    addChild(node1);
-    Index i = getIndexByPoint(ccp(10,10));
-    CCLog("GameScene::init === %d,%d ===%f,%f",i.i,i.j,fruitFlag->getPositionX(),fruitFlag->getPositionY());
+//    
+//    bombCCB->getAnimationManager()->setAnimationCompletedCallback(this, callfunc_selector(GameScene::removeBomb));
+//    
+//    CCSize size = CCDirector::sharedDirector()->getWinSize();
+//    node1->setPosition(ccp(size.width/2,size.height/2));
 }
 
 void GameScene::afterloadCCB()
@@ -252,7 +255,13 @@ FruitObject* GameScene::fallingObject(unsigned int color)
 void GameScene::removeFruit(Index index)
 {
     CCNode *node =  getChildByTag(index.i*FRUIT_WIDTH+index.j);
+    CCPoint pt = node->getPosition();
     node->removeFromParent();
+    
+    CCNode *node1 =  addCCB("ccb/bomb");
+    addChild(node1);
+    node1->setPosition(pt);
+    
     
     ((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
 }
@@ -336,6 +345,12 @@ void GameScene::layoutFruit()
             ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
         }
     }
+}
+
+
+void GameScene::removeBomb()
+{
+    
 }
 
 

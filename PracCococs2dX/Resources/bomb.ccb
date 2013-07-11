@@ -58,7 +58,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.10000000149011612</real>
+									<real>0.066666670143604279</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -76,7 +76,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.20000000298023224</real>
+									<real>0.1666666716337204</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -94,7 +94,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.30000001192092896</real>
+									<real>0.26666668057441711</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -112,7 +112,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.40000000596046448</real>
+									<real>0.36666667461395264</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -130,7 +130,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.5</real>
+									<real>0.46666666865348816</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -148,7 +148,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.60000002384185791</real>
+									<real>0.56666666269302368</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -232,8 +232,8 @@
 					<dict>
 						<key>baseValue</key>
 						<array>
-							<string></string>
-							<string>Use regular file</string>
+							<string>CommonEffects20.png</string>
+							<string>Animation/CommonEffects.plist</string>
 						</array>
 						<key>name</key>
 						<string>displayFrame</string>
@@ -242,7 +242,7 @@
 						<key>value</key>
 						<array>
 							<string>Animation/CommonEffects.plist</string>
-							<string>CommonEffects27.png</string>
+							<string>CommonEffects24.png</string>
 						</array>
 					</dict>
 				</array>
@@ -317,9 +317,9 @@
 	<array>
 		<dict>
 			<key>autoPlay</key>
-			<false/>
+			<true/>
 			<key>chainedSequenceId</key>
-			<integer>0</integer>
+			<integer>-1</integer>
 			<key>length</key>
 			<real>0.69999998807907104</real>
 			<key>name</key>
@@ -331,7 +331,7 @@
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
-			<real>397.4775390625</real>
+			<real>512</real>
 			<key>sequenceId</key>
 			<integer>0</integer>
 		</dict>
