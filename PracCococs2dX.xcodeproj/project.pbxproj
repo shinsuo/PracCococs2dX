@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		54057874178D79E400F2C4D3 /* logo.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 54057873178D79E400F2C4D3 /* logo.ccbi */; };
 		54AD8FDC177203CB00028C0B /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54AD8FDA177203CB00028C0B /* GameScene.cpp */; };
+		54D1E6D1178EE02400FF9DA1 /* Bomb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6CF178EE02400FF9DA1 /* Bomb.cpp */; };
 		B9035ABD17855B4300C6EEE4 /* Logo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9035ABB17855B4300C6EEE4 /* Logo.cpp */; };
 		B9258E121761BD7300B855B2 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = B9258D0C1761BD7200B855B2 /* 10.png */; };
 		B9258E131761BD7300B855B2 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = B9258D0D1761BD7200B855B2 /* 13.png */; };
@@ -557,6 +558,8 @@
 		54057873178D79E400F2C4D3 /* logo.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = logo.ccbi; path = ccb/logo.ccbi; sourceTree = "<group>"; };
 		54AD8FDA177203CB00028C0B /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
 		54AD8FDB177203CB00028C0B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
+		54D1E6CF178EE02400FF9DA1 /* Bomb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bomb.cpp; path = Classes/Bomb.cpp; sourceTree = "<group>"; };
+		54D1E6D0178EE02400FF9DA1 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = Classes/Bomb.h; sourceTree = "<group>"; };
 		B9035ABB17855B4300C6EEE4 /* Logo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logo.cpp; path = Classes/Logo.cpp; sourceTree = "<group>"; };
 		B9035ABC17855B4300C6EEE4 /* Logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logo.h; path = Classes/Logo.h; sourceTree = "<group>"; };
 		B9258D0C1761BD7200B855B2 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
@@ -2578,6 +2581,8 @@
 				B9FDAD35178CFBFA00740B1C /* common_function.h */,
 				B9FDAD36178D36AA00740B1C /* FruitObject.cpp */,
 				B9FDAD37178D36AA00740B1C /* FruitObject.h */,
+				54D1E6CF178EE02400FF9DA1 /* Bomb.cpp */,
+				54D1E6D0178EE02400FF9DA1 /* Bomb.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3251,6 +3256,7 @@
 				B9F7750C1772E33F0080C7A9 /* HelloMenuLayer.cpp in Sources */,
 				B9035ABD17855B4300C6EEE4 /* Logo.cpp in Sources */,
 				B9FDAD38178D36AA00740B1C /* FruitObject.cpp in Sources */,
+				54D1E6D1178EE02400FF9DA1 /* Bomb.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

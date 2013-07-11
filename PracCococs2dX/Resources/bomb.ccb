@@ -45,7 +45,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>CommonEffects20.png</string>
+										<string>CommonEffects21.png</string>
 										<string>Animation/CommonEffects.plist</string>
 									</array>
 								</dict>
@@ -63,24 +63,6 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>CommonEffects21.png</string>
-										<string>Animation/CommonEffects.plist</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>time</key>
-									<real>0.1666666716337204</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
 										<string>CommonEffects22.png</string>
 										<string>Animation/CommonEffects.plist</string>
 									</array>
@@ -94,7 +76,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.26666668057441711</real>
+									<real>0.13333334028720856</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -112,7 +94,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.36666667461395264</real>
+									<real>0.20000000298023224</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -130,7 +112,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.46666666865348816</real>
+									<real>0.26666668057441711</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -148,7 +130,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.56666666269302368</real>
+									<real>0.3333333432674408</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -166,7 +148,7 @@
 									<key>name</key>
 									<string>displayFrame</string>
 									<key>time</key>
-									<real>0.69999998807907104</real>
+									<real>0.40000000596046448</real>
 									<key>type</key>
 									<integer>7</integer>
 									<key>value</key>
@@ -246,6 +228,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -321,13 +305,13 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>0.69999998807907104</real>
+			<real>0.40000000596046448</real>
 			<key>name</key>
 			<string>Bomb</string>
 			<key>offset</key>
-			<real>0.033984363079071045</real>
+			<real>0.0</real>
 			<key>position</key>
-			<real>0.69999998807907104</real>
+			<real>0.40000000596046448</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

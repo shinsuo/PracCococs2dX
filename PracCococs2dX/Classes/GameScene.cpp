@@ -9,6 +9,8 @@
 #include "GameScene.h"
 #include "PauseLayer.h"
 #include "FruitObject.h"
+#include "Bomb.h"
+
 #include <vector>
 
 #define HORIZONTAL_NUM  7
@@ -17,8 +19,13 @@
 #define FRUIT_HEIGHT    85
 #define FRUIT_NUM       5
 
+enum ZorderPriority {
+    kFruit = 10,
+    kBomb,
+    };
+
 CCArray *gFallingGems = NULL;
-std::vector<FruitObject *> g_VfruitObjects;
+std::vector<FruitObject *> g_VObjects;
 CCPoint markPos;
 
 #pragma ----Common Function----
@@ -35,6 +42,13 @@ bool isValidIndex(Index index)
         return true;
     }
     return false;
+}
+
+CCPoint getPointByIndex(const Index index)
+{
+    int i = index.i;
+    int j = index.j;
+    return ccp(i*(FRUIT_WIDTH+1)+markPos.x,j*(FRUIT_HEIGHT+1)+markPos.y);
 }
 
 Index getIndexByPoint(const CCPoint pt)
@@ -68,10 +82,12 @@ void getEliminateArray(Index index,const unsigned int color)
 //    eliminateArray[0].j  = index.j;
 //    return eliminateArray;
     FruitObject *touchFruit = getFruitByIndex(index);
+    CCLog("getEliminateArray:%d,%d === %d,%d",index.i,index.j,touchFruit->color,touchFruit->choose);
     if ((touchFruit->color == color)
         && (touchFruit->choose == false)
         
         ) {
+        CCLog("push");
         g_Veliminate.push_back(index);
         touchFruit->choose = true;
         
@@ -210,8 +226,12 @@ bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
             CCLog("loop ===%d,%d",it->i,it->j);
             removeFruit(*it);
         }
+    }else{
+        for (std::vector<Index>::iterator it = g_Veliminate.begin(); it != g_Veliminate.end(); it++) {
+            FruitObject *touchFruit1 =  (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(tempIndex.i))->objectAtIndex(tempIndex.j);
+            touchFruit1->choose = false;
+        }
     }
-    
     
     
 //    CCLog("vector size:%d,%d",g_Veliminate.size(),g_Veliminate.capacity());
@@ -241,10 +261,11 @@ FruitObject* GameScene::fallingObject(unsigned int color)
     memset(ccbName, 0, sizeof(ccbName));
     sprintf(ccbName, "ccb/fruit%d",color);
     
-    CCLog("fallingObject ==%s",ccbName);
+//    CCLog("fallingObject ==%s",ccbName);
     
     FruitObject *tSprite=  (FruitObject *)addCCB(ccbName);//ccbReader->readNodeGraphFromFile(ccbName,this);//(CCNode *)node1;//
     addChild(tSprite);
+    tSprite->setZOrder(kFruit);
 //    tSprite->setTag(i*FRUIT_WIDTH+j);
     tSprite->color = color;
     tSprite->choose = false;
@@ -256,16 +277,36 @@ FruitObject* GameScene::fallingObject(unsigned int color)
 
 void GameScene::removeFruit(Index index)
 {
-    CCNode *node =  getChildByTag(index.i*FRUIT_WIDTH+index.j);
-    CCPoint pt = node->getPosition();
-    node->removeFromParent();
+//    CCNode *node =  getChildByTag(index.i*FRUIT_WIDTH+index.j);
+//    CCPoint pt = node->getPosition();
+//    node->removeFromParent();
+    removeChildByTag(index.i*FRUIT_WIDTH+index.j, true);
+//    ((CCArray *)gFallingGems->objectAtIndex(index.i))->removeObjectAtIndex(index.j);
+    FruitObject *node = (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
+//    CCNode *node1 =  addCCB("ccb/bomb");
+//    addChild(node1);
+//    node1->setPosition(pt);
     
-    CCNode *node1 =  addCCB("ccb/bomb");
-    addChild(node1);
-    node1->setPosition(pt);
+    CCPoint pt = getPointByIndex(index);
+    
+    Bomb *bomb = Bomb::bomb();
+    bomb->setPosition(pt);
+    bomb->setZOrder(kBomb);
+    addChild(bomb);
     
     
     ((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
+    int random = arc4random()%FRUIT_NUM;
+    FruitObject *tSprite = fallingObject(random);
+    int i = index.i;
+    int j = index.j;
+    tSprite->setTag(i*FRUIT_WIDTH+j);
+    tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+markPos.x,j*(FRUIT_HEIGHT+1)+markPos.y));
+    ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
+    CCLog("removeFruit 1 ==%d,%d",tSprite->color,tSprite->choose);
+    FruitObject *node1 = (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
+    CCLog("removeFruit 2 ==%d,%d",node1->color,node1->choose);
+
 }
 
 void GameScene::layoutFruit()
@@ -343,8 +384,12 @@ void GameScene::layoutFruit()
             FruitObject *tSprite = fallingObject(random);
             
             tSprite->setTag(i*FRUIT_WIDTH+j);
-            tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+markPos.x,j*(FRUIT_HEIGHT+1)+markPos.y));
+//            tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+markPos.x,j*(FRUIT_HEIGHT+1)+markPos.y));
+            Index index = {i,j};
+            tSprite->setPosition(getPointByIndex(index));
             ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
+            
+            tSprite->release();
         }
     }
 }
