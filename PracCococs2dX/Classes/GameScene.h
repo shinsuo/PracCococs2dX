@@ -71,6 +71,7 @@ private:
     void afterloadCCB();
     void removeFruit(Index index);
     CCBReader *bombCCB;
+    void removeBomb();
 //    CCMenu *pauseLayerMenu;
 };
 

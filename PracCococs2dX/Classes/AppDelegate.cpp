@@ -13,6 +13,7 @@
 #include "HelloWorldScene.h"
 #include "HelloCCB.h"
 #include "MainScene.h"
+#include "GameScene.h"
 #include "cocos-ext.h"
 
 USING_NS_CC;
@@ -47,7 +48,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 //    CCBReader *ccbReader = new CCBReader(nodeLoader);
 //    CCNode *node = ccbReader->readNodeGraphFromFile("HelloCocosBuilder.ccbi");
     // run
-    CCScene *pScene = MainScene::scene(); //HelloWorld::scene();//
+    CCScene *pScene = GameScene::scene(); //HelloWorld::scene();//
     pDirector->runWithScene(pScene);
 //    pScene->addChild(node);
     
