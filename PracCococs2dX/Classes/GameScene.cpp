@@ -115,7 +115,7 @@ CCScene* GameScene::scene()
     CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
     nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
     CCBReader *ccbReader = new CCBReader(nodeLibrary);
-    CCNode *node = ccbReader->readNodeGraphFromFile("ccb/GameScene.ccbi");
+    CCNode *node = ccbReader->readNodeGraphFromFile("ccb/GameScene");
     ccbReader->release();
     sc->addChild(node);
     return sc;
@@ -140,13 +140,13 @@ void GameScene::onEnter()
     CCLog("GameScene::onEnter");
     pauseMenu->setHandlerPriority(10);
     afterloadCCB();
-    layoutFruit();
+//    layoutFruit();
     
-//    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-//    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
-//    bombCCB = new CCBReader(nodeLibrary);
-//    CCNode *node1 = bombCCB->readNodeGraphFromFile("ccb/bomb.ccbi",this);
-//    addChild(node1);
+    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
+    bombCCB = new CCBReader(nodeLibrary);
+    CCNode *node1 = bombCCB->readNodeGraphFromFile("ccb/bomb2.ccbi",this);
+    addChild(node1);
     Index i = getIndexByPoint(ccp(10,10));
     CCLog("GameScene::init === %d,%d ===%f,%f",i.i,i.j,fruitFlag->getPositionX(),fruitFlag->getPositionY());
 }
@@ -238,6 +238,8 @@ FruitObject* GameScene::fallingObject(unsigned int color)
     memset(ccbName, 0, sizeof(ccbName));
     sprintf(ccbName, "ccb/fruit%d",color);
     
+    CCLog("fallingObject ==%s",ccbName);
+    
     FruitObject *tSprite=  (FruitObject *)addCCB(ccbName);//ccbReader->readNodeGraphFromFile(ccbName,this);//(CCNode *)node1;//
     addChild(tSprite);
 //    tSprite->setTag(i*FRUIT_WIDTH+j);
@@ -252,22 +254,34 @@ FruitObject* GameScene::fallingObject(unsigned int color)
 void GameScene::removeFruit(Index index)
 {
     CCNode *node =  getChildByTag(index.i*FRUIT_WIDTH+index.j);
+    CCPoint pt = CCPoint(node->getPositionX(),node->getPositionY());
     node->removeFromParent();
     
-    ((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
+//    CCNode *node1 = addCCB("ccb/bomb");
+//    node1->setPosition(pt);
+    
+    
+//    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+//    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
+//    bombCCB = new CCBReader(nodeLibrary);
+//    CCNode *node1 = bombCCB->readNodeGraphFromFile("ccb/bomb.ccbi",this);
+//    addChild(node1);
+    
+    
+//    ((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
 }
 
 void GameScene::layoutFruit()
 {
-    CCPoint pt = fruitFlag->getPosition();
-    CCPoint anchorPt = fruitFlag->getAnchorPoint();
-    CCSize size = fruitFlag->getContentSize();
-    CCPoint newPt = ccp(pt.x+(0.5-anchorPt.x)*size.width,pt.y+(0.5-anchorPt.y)*size.height);
-    CCLog("layoutFruit ===%f,%f",pt.x,pt.y);
-    CCLog("layoutFruit ===%f,%f",newPt.x,newPt.y);
-    markPos = CCPoint(newPt.x,newPt.y);
-//    fruitFlag->setVisible(1);
-    fruitArray = new CCArray(FRUIT_NUM);
+//    CCPoint pt = fruitFlag->getPosition();
+//    CCPoint anchorPt = fruitFlag->getAnchorPoint();
+//    CCSize size = fruitFlag->getContentSize();
+//    CCPoint newPt = ccp(pt.x+(0.5-anchorPt.x)*size.width,pt.y+(0.5-anchorPt.y)*size.height);
+//    CCLog("layoutFruit ===%f,%f",pt.x,pt.y);
+//    CCLog("layoutFruit ===%f,%f",newPt.x,newPt.y);
+//    markPos = CCPoint(newPt.x,newPt.y);
+////    fruitFlag->setVisible(1);
+//    fruitArray = new CCArray(FRUIT_NUM);
 //    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
 //    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
 //    CCBReader *ccbReader = new CCBReader(nodeLibrary);
@@ -276,7 +290,7 @@ void GameScene::layoutFruit()
 //    CCNode *node3 = ccbReader->readNodeGraphFromFile("ccb/fruit2.ccbi",this);
 //    CCNode *node4 = ccbReader->readNodeGraphFromFile("ccb/fruit3.ccbi",this);
 //    CCNode *node5 = ccbReader->readNodeGraphFromFile("ccb/fruit4.ccbi",this);
-    char ccbName[20];
+//    char ccbName[20];
 //    for (int i = 0; i < FRUIT_NUM; i++) {
 //        memset(ccbName, 0, sizeof(ccbName));
 //        sprintf(ccbName, "ccb/fruit%d",i);
@@ -332,7 +346,7 @@ void GameScene::layoutFruit()
             FruitObject *tSprite = fallingObject(random);
             
             tSprite->setTag(i*FRUIT_WIDTH+j);
-            tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+newPt.x,j*(FRUIT_HEIGHT+1)+newPt.y));
+            tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+markPos.x,j*(FRUIT_HEIGHT+1)+markPos.y));
             ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
         }
     }

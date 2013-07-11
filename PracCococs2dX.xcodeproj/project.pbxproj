@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54057874178D79E400F2C4D3 /* logo.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 54057873178D79E400F2C4D3 /* logo.ccbi */; };
 		54AD8FDC177203CB00028C0B /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54AD8FDA177203CB00028C0B /* GameScene.cpp */; };
 		B9035ABD17855B4300C6EEE4 /* Logo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9035ABB17855B4300C6EEE4 /* Logo.cpp */; };
-		B922382317854B0400ECE6FE /* logo.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = B922382217854B0400ECE6FE /* logo.ccbi */; };
 		B9258E121761BD7300B855B2 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = B9258D0C1761BD7200B855B2 /* 10.png */; };
 		B9258E131761BD7300B855B2 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = B9258D0D1761BD7200B855B2 /* 13.png */; };
 		B9258E141761BD7300B855B2 /* add_friends01.png in Resources */ = {isa = PBXBuildFile; fileRef = B9258D0E1761BD7200B855B2 /* add_friends01.png */; };
@@ -550,16 +550,15 @@
 		B9F775001772999F0080C7A9 /* ccb in Resources */ = {isa = PBXBuildFile; fileRef = B9F774FF1772999F0080C7A9 /* ccb */; };
 		B9F775091772DCFA0080C7A9 /* PauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F775071772DCF80080C7A9 /* PauseLayer.cpp */; };
 		B9F7750C1772E33F0080C7A9 /* HelloMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F7750A1772E33B0080C7A9 /* HelloMenuLayer.cpp */; };
-		B9F81DCD1782C02200886476 /* bomb.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = B9F81DCC1782C02200886476 /* bomb.ccbi */; };
 		B9FDAD38178D36AA00740B1C /* FruitObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9FDAD36178D36AA00740B1C /* FruitObject.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54057873178D79E400F2C4D3 /* logo.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = logo.ccbi; path = ccb/logo.ccbi; sourceTree = "<group>"; };
 		54AD8FDA177203CB00028C0B /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
 		54AD8FDB177203CB00028C0B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 		B9035ABB17855B4300C6EEE4 /* Logo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logo.cpp; path = Classes/Logo.cpp; sourceTree = "<group>"; };
 		B9035ABC17855B4300C6EEE4 /* Logo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logo.h; path = Classes/Logo.h; sourceTree = "<group>"; };
-		B922382217854B0400ECE6FE /* logo.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = logo.ccbi; path = ccb/logo.ccbi; sourceTree = "<group>"; };
 		B9258D0C1761BD7200B855B2 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		B9258D0D1761BD7200B855B2 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
 		B9258D0E1761BD7200B855B2 /* add_friends01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_friends01.png; sourceTree = "<group>"; };
@@ -1348,7 +1347,6 @@
 		B9F775081772DCF90080C7A9 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PauseLayer.h; path = Classes/PauseLayer.h; sourceTree = "<group>"; };
 		B9F7750A1772E33B0080C7A9 /* HelloMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloMenuLayer.cpp; path = Classes/HelloMenuLayer.cpp; sourceTree = "<group>"; };
 		B9F7750B1772E33D0080C7A9 /* HelloMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloMenuLayer.h; path = Classes/HelloMenuLayer.h; sourceTree = "<group>"; };
-		B9F81DCC1782C02200886476 /* bomb.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = bomb.ccbi; path = ccb/bomb.ccbi; sourceTree = "<group>"; };
 		B9FDAD35178CFBFA00740B1C /* common_function.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common_function.h; path = Classes/common_function.h; sourceTree = "<group>"; };
 		B9FDAD36178D36AA00740B1C /* FruitObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FruitObject.cpp; path = Classes/FruitObject.cpp; sourceTree = "<group>"; };
 		B9FDAD37178D36AA00740B1C /* FruitObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FruitObject.h; path = Classes/FruitObject.h; sourceTree = "<group>"; };
@@ -1693,8 +1691,7 @@
 		B934396C17618F9400B0C377 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B922382217854B0400ECE6FE /* logo.ccbi */,
-				B9F81DCC1782C02200886476 /* bomb.ccbi */,
+				54057873178D79E400F2C4D3 /* logo.ccbi */,
 				B9F774FF1772999F0080C7A9 /* ccb */,
 				B9F77219176AC0850080C7A9 /* tileMap.tmx */,
 				B9F7721A176AC0850080C7A9 /* tileSet.PNG */,
@@ -3056,8 +3053,7 @@
 				B9F7721B176AC0850080C7A9 /* tileMap.tmx in Resources */,
 				B9F7721C176AC0850080C7A9 /* tileSet.PNG in Resources */,
 				B9F775001772999F0080C7A9 /* ccb in Resources */,
-				B9F81DCD1782C02200886476 /* bomb.ccbi in Resources */,
-				B922382317854B0400ECE6FE /* logo.ccbi in Resources */,
+				54057874178D79E400F2C4D3 /* logo.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

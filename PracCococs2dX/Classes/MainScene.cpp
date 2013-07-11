@@ -21,7 +21,7 @@ CCScene* MainScene::scene()
     CCNodeLoaderLibrary *ndLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
     ndLibrary->registerCCNodeLoader("MainScene", MainSceneLoader::loader());
     CCBReader *ccbReader = new CCBReader(ndLibrary);
-    CCNode *node = ccbReader->readNodeGraphFromFile("ccb/MainScene.ccbi");
+    CCNode *node = ccbReader->readNodeGraphFromFile("ccb/MainScene");
     ccbReader->release();
     sc->addChild(node);
     return sc;
