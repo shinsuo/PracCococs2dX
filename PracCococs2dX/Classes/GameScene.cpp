@@ -12,6 +12,7 @@
 #include "Bomb.h"
 
 #include <vector>
+#include <algorithm>
 
 #define HORIZONTAL_NUM  7
 #define VERTICAL_NUM    7
@@ -27,6 +28,8 @@ enum ZorderPriority {
 CCArray *gFallingGems = NULL;
 std::vector<FruitObject *> g_VObjects;
 CCPoint markPos;
+bool *g_BEliminate = NULL;
+int direction[4][2] = {{-1,0},{0,-1},{1,0},{0,1}};
 
 #pragma ----Common Function----
 
@@ -68,13 +71,26 @@ Index getIndexByPoint(const CCPoint pt)
     return index;
 }
 
-FruitObject* getFruitByIndex(Index index)
+bool vectorComp(const Index &index2 ,const Index &index1)
 {
-    FruitObject * fruit = (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
+    if (index1.i > index2.i) {
+        return true;
+    }else if (index1.i == index2.i){
+        if (index1.j > index2.j) {
+            return true;
+        }
+        return false;
+    }
+    return false;
+}
+
+FruitObject* GameScene::getFruitByIndex(Index index)
+{
+    FruitObject* fruit = (FruitObject*)getChildByTag(index.i*FRUIT_WIDTH+index.j);//(FruitObject *)((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
     return fruit;
 }
 
-void getEliminateArray(Index index,const unsigned int color)
+void GameScene::getEliminateArray(Index index,const unsigned int color)
 {
     
 //    Index *eliminateArray = new Index[1];
@@ -91,37 +107,49 @@ void getEliminateArray(Index index,const unsigned int color)
         g_Veliminate.push_back(index);
         touchFruit->choose = true;
         
-        //expand to all around
-        //to left
-        Index left = {index.i-1,index.j};
-        if (isValidIndex(left)) {
-            getEliminateArray(left,color);
+        for (int p = 0; p < 4; p++) {
+            Index index2 = {index.i+direction[p][0],index.j+direction[p][1]};
+            if (isValidIndex(index2)) {
+                GameScene::getEliminateArray(index2, color);
+            }
         }
         
-        //to right
-        Index right = {index.i+1,index.j};
-        if (isValidIndex(right)) {
-            getEliminateArray(right,color);
-        }
-        
-        //to down
-        Index down = {index.i,index.j-1};
-        if (isValidIndex(down)) {
-            getEliminateArray(down,color);
-        }
-        
-        //to top
-        Index top = {index.i,index.j+1};
-        if (isValidIndex(top)) {
-            getEliminateArray(top,color);
-        }
+//        //expand to all around
+//        //to left
+//        Index left = {index.i-1,index.j};
+//        if (isValidIndex(left)) {
+//            GameScene::getEliminateArray(left,color);
+//        }
+//        
+//        //to down
+//        Index down = {index.i,index.j-1};
+//        if (isValidIndex(down)) {
+//            GameScene::getEliminateArray(down,color);
+//        }
+//        
+//        //to top
+//        Index top = {index.i,index.j+1};
+//        if (isValidIndex(top)) {
+//            GameScene::getEliminateArray(top,color);
+//        }
+//        
+//        //to right
+//        Index right = {index.i+1,index.j};
+//        if (isValidIndex(right)) {
+//            getEliminateArray(right,color);
+//        }
     }
     
     
 //    return g_Veliminate;
 }
 
-
+bool GameScene::changedObject(Index index,int color)
+{
+    
+    
+    return true;
+}
 
 #pragma ----Common Function----
 
@@ -143,9 +171,10 @@ bool GameScene::init(){
 //    }
 //
     
-    CCLog("size_t vs int  ===%d,%d",sizeof(size_t),sizeof(int));
+    CCLog("size_t vs int  ===%d,%d,%d",sizeof(size_t),sizeof(int),sizeof(bool));
     setTouchEnabled(1);
     
+//    scheduleUpdate();
     
     return true;
 }
@@ -157,7 +186,8 @@ void GameScene::onEnter()
     pauseMenu->setHandlerPriority(10);
     afterloadCCB();
     layoutFruit();
-
+    isTouch = true;
+    g_BEliminate = (bool *)malloc(sizeof(bool)*HORIZONTAL_NUM*VERTICAL_NUM);
 //    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
 //    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
 //    bombCCB = new CCBReader(nodeLibrary);
@@ -168,6 +198,11 @@ void GameScene::onEnter()
 //    
 //    CCSize size = CCDirector::sharedDirector()->getWinSize();
 //    node1->setPosition(ccp(size.width/2,size.height/2));
+}
+
+void GameScene::onExit()
+{
+    free(g_BEliminate);
 }
 
 void GameScene::afterloadCCB()
@@ -191,8 +226,17 @@ void GameScene::pause(CCObject *pSender)
 //    nodeLibrary->registerCCNodeLoader("GameScene", GameSceneLoader::loader());
 //    CCBReader *ccbReader = new CCBReader(nodeLibrary);
 //    CCLayer *node = (CCLayer *)ccbReader->readNodeGraphFromFile("ccb/PauseLayer.ccbi",this);
-    CCLayer *node = PauseLayer::layer();
-    addChild(node,3,3);
+    
+//    CCLayer *node = PauseLayer::layer();
+//    addChild(node,20,3);
+    for (int i = 0; i < HORIZONTAL_NUM; i++) {
+        for (int j = 0; j < VERTICAL_NUM; j++) {
+            Index index = {i,j};
+            FruitObject *touchFruit = getFruitByIndex(index);
+            CCLog("foreach %d,%d == %d,%d",i,j,touchFruit->color,touchFruit->choose);
+        }
+    }
+    
 }
 
 void GameScene::resume(CCObject *pSender)
@@ -214,29 +258,128 @@ void GameScene::restart(CCObject *pSender)
 
 bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 {
+    if (isTouch == false) {
+        return false;
+    }
+    isTouch = false;
     CCPoint pt =  pTouch->getLocation();
 //    CCLog("GameScene::ccTouchBegan ===%f,%f",pt.x,pt.y);
     Index tempIndex = getIndexByPoint(pt);
+    if ((tempIndex.i == -1) || (tempIndex.j == -1)) {
+        return true;
+    }
     CCLog("tempIndex ==%d,%d",tempIndex.i,tempIndex.j);
-    FruitObject *touchFruit =  (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(tempIndex.i))->objectAtIndex(tempIndex.j);
+    FruitObject *touchFruit =  (FruitObject *)getChildByTag(tempIndex.i*FRUIT_WIDTH+tempIndex.j);//(FruitObject *)((CCArray *)gFallingGems->objectAtIndex(tempIndex.i))->objectAtIndex(tempIndex.j);
     getEliminateArray(tempIndex,touchFruit->color);
     
+    CCLog("eliminate size:%d",g_Veliminate.size());
     if (g_Veliminate.size() >= 3) {
+        
         for (std::vector<Index>::iterator it = g_Veliminate.begin(); it != g_Veliminate.end(); it++) {
-            CCLog("loop ===%d,%d",it->i,it->j);
+            CCLog("before sorting ===%d,%d",it->i,it->j);
+        }
+        
+        std::sort(g_Veliminate.begin(), g_Veliminate.end(), vectorComp);
+        
+        for (std::vector<Index>::iterator it = g_Veliminate.begin(); it != g_Veliminate.end(); it++) {
+//            CCLog("after sorting ===%d,%d ,%d,%d",it->i,it->j,(it+1)->i,(it+1)->j);
+        }
+        
+        //remove Object
+        for (std::vector<Index>::iterator it = g_Veliminate.begin(); it != g_Veliminate.end(); it++) {
+            CCLog("loop a ===%d,%d",it->i,it->j);
             removeFruit(*it);
         }
+        
+        //move && drop Object
+        for (std::vector<Index>::iterator it = g_Veliminate.begin(); it != g_Veliminate.end(); it++) {
+            
+            for (int currentJ = it->j; currentJ < VERTICAL_NUM; currentJ++) {
+//                int nextJ = currentJ+1;
+                Index index = {it->i,currentJ};
+//                FruitObject *touchFruit2 = getFruitByIndex(index);
+//                if (touchFruit2) {
+//                    Index index2 = {it->i,currentJ};
+//                    touchFruit2->endPos = getPointByIndex(index2);
+//                    touchFruit2->move();
+//                }else{
+//                    continue;
+//                }
+                for (int nextJ = currentJ+1; nextJ < VERTICAL_NUM; nextJ++) {
+                    Index index2 = {it->i,nextJ};
+                    FruitObject *touchFruit2 = getFruitByIndex(index2);
+                    if (touchFruit2) {
+                        
+                        touchFruit2->endPos = getPointByIndex(index);
+                        touchFruit2->move();
+                        
+                        if (index.i) {
+                            <#statements#>
+                        }
+                        
+                        break;
+                    }else{
+                        continue;
+                    }
+                }
+            }
+        }
+        
+//        std::vector<Index>().swap(g_Veliminate);
+        
+//        int tempEliminate[HORIZONTAL_NUM][VERTICAL_NUM];
+//        memset(tempEliminate, HORIZONTAL_NUM*VERTICAL_NUM, sizeof(int));
+//        int **p = malloc(HORIZONTAL_NUM*VERTICAL_NUM*sizeof(int));
+        memset(g_BEliminate, 0, sizeof(bool)*HORIZONTAL_NUM*VERTICAL_NUM);
+        //check Eliminate
+        int i = 0;
+        int j = 0;
+        for (; i < HORIZONTAL_NUM; i++) {
+            for (; j < VERTICAL_NUM; j++) {
+                CCLog("bool ==%d,%d ==%d",i,j,*(g_BEliminate+i*HORIZONTAL_NUM+j));
+                
+                if (*(g_BEliminate+i*HORIZONTAL_NUM+j)) {
+                    continue;
+                }
+                
+                
+//                if (<#condition#>) {
+//                    <#statements#>
+//                }
+                
+                Index index= {i,j};
+                touchFruit = getFruitByIndex(index);
+//                getEliminateArray(index,touchFruit->color);
+                
+            }
+        }
+        
+        if (i == HORIZONTAL_NUM && j == VERTICAL_NUM) {
+            Index index = {3,3};
+            changedObject(index, 0);
+        }
+//        free(tempEliminate);
+        
+        
     }else{
         for (std::vector<Index>::iterator it = g_Veliminate.begin(); it != g_Veliminate.end(); it++) {
-            FruitObject *touchFruit1 =  (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(tempIndex.i))->objectAtIndex(tempIndex.j);
+            Index index = {it->i,it->j};
+            FruitObject *touchFruit1 =  getFruitByIndex(index);//(FruitObject *)getChildByTag(tempIndex.i*FRUIT_WIDTH+tempIndex.j);//((CCArray *)gFallingGems->objectAtIndex(tempIndex.i))->objectAtIndex(tempIndex.j);
             touchFruit1->choose = false;
+            CCLog("getEliminateArray recover:%d,%d === %d,%d",it->i,it->j,touchFruit1->color,touchFruit->choose);
+//            CCBAnimationManager *ccbManager = (CCBAnimationManager *)touchFruit1->getUserObject();
+//            ccbManager->runAnimationsForSequenceNamed("Invalid");
         }
+        
+//        std::vector<Index>().swap(g_Veliminate);
     }
     
+    std::vector<Index>().swap(g_Veliminate);
     
 //    CCLog("vector size:%d,%d",g_Veliminate.size(),g_Veliminate.capacity());
 //    g_Veliminate.clear();
-    std::vector<Index>().swap(g_Veliminate);
+    
+    isTouch = true;
 //    CCLog("vector size:%d,%d",g_Veliminate.size(),g_Veliminate.capacity());
 
 //    CCLog("getEliminateArray == %d,%d",v_eliminate[0].i,v_eliminate[0].j);
@@ -263,12 +406,12 @@ FruitObject* GameScene::fallingObject(unsigned int color)
     
 //    CCLog("fallingObject ==%s",ccbName);
     
-    FruitObject *tSprite=  (FruitObject *)addCCB(ccbName);//ccbReader->readNodeGraphFromFile(ccbName,this);//(CCNode *)node1;//
+    FruitObject *tSprite=  FruitObject::node(ccbName, color);//(FruitObject *)addCCB(ccbName);//ccbReader->readNodeGraphFromFile(ccbName,this);//(CCNode *)node1;//
     addChild(tSprite);
     tSprite->setZOrder(kFruit);
 //    tSprite->setTag(i*FRUIT_WIDTH+j);
-    tSprite->color = color;
-    tSprite->choose = false;
+//    tSprite->color = color;
+//    tSprite->choose = false;
 //    tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+newPt.x,j*(FRUIT_HEIGHT+1)+newPt.y));
 //    ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
     return tSprite;
@@ -282,7 +425,7 @@ void GameScene::removeFruit(Index index)
 //    node->removeFromParent();
     removeChildByTag(index.i*FRUIT_WIDTH+index.j, true);
 //    ((CCArray *)gFallingGems->objectAtIndex(index.i))->removeObjectAtIndex(index.j);
-    FruitObject *node = (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
+//    FruitObject *node = (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
 //    CCNode *node1 =  addCCB("ccb/bomb");
 //    addChild(node1);
 //    node1->setPosition(pt);
@@ -295,17 +438,19 @@ void GameScene::removeFruit(Index index)
     addChild(bomb);
     
     
-    ((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
-    int random = arc4random()%FRUIT_NUM;
-    FruitObject *tSprite = fallingObject(random);
-    int i = index.i;
-    int j = index.j;
-    tSprite->setTag(i*FRUIT_WIDTH+j);
-    tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+markPos.x,j*(FRUIT_HEIGHT+1)+markPos.y));
-    ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
-    CCLog("removeFruit 1 ==%d,%d",tSprite->color,tSprite->choose);
-    FruitObject *node1 = (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
-    CCLog("removeFruit 2 ==%d,%d",node1->color,node1->choose);
+//    ((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
+    
+//    int random = arc4random()%FRUIT_NUM;
+//    FruitObject *tSprite = fallingObject(random);
+//    int i = index.i;
+//    int j = index.j;
+//    tSprite->setTag(i*FRUIT_WIDTH+j);
+//    tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+markPos.x,j*(FRUIT_HEIGHT+1)+markPos.y));
+    
+//    ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
+//    CCLog("removeFruit 1 ==%d,%d",tSprite->color,tSprite->choose);
+//    FruitObject *node1 = (FruitObject *)((CCArray *)gFallingGems->objectAtIndex(index.i))->objectAtIndex(index.j);
+//    CCLog("removeFruit 2 ==%d,%d",node1->color,node1->choose);
 
 }
 
@@ -359,12 +504,12 @@ void GameScene::layoutFruit()
 //    }
     
 //    return;
-    gFallingGems = new CCArray(HORIZONTAL_NUM);
-    for (int i = 0 ; i < HORIZONTAL_NUM; i++) {
-        gFallingGems->insertObject(new CCArray(VERTICAL_NUM),i);
-    }
+//    gFallingGems = new CCArray(HORIZONTAL_NUM);
+//    for (int i = 0 ; i < HORIZONTAL_NUM; i++) {
+//        gFallingGems->insertObject(new CCArray(VERTICAL_NUM),i);
+//    }
     
-    CCLog("gFallingGems:%d",gFallingGems->count());
+//    CCLog("gFallingGems:%d",gFallingGems->count());
     
     for (int i = 0; i < HORIZONTAL_NUM; i++) {
         for (int j = 0; j < VERTICAL_NUM; j++) {
@@ -386,10 +531,16 @@ void GameScene::layoutFruit()
             tSprite->setTag(i*FRUIT_WIDTH+j);
 //            tSprite->setPosition(ccp(i*(FRUIT_WIDTH+1)+markPos.x,j*(FRUIT_HEIGHT+1)+markPos.y));
             Index index = {i,j};
-            tSprite->setPosition(getPointByIndex(index));
-            ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
+//            tSprite->setPosition(getPointByIndex(index));
+            CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+            CCPoint endPos = getPointByIndex(index);
+            tSprite->setPosition(endPos.x,winSize.height);
             
-            tSprite->release();
+            tSprite->endPos = endPos;//getPointByIndex(index);
+            tSprite->move();
+//            ((CCArray *)gFallingGems->objectAtIndex(i))->insertObject(tSprite, j);
+            
+//            tSprite->release();
         }
     }
 }
@@ -398,6 +549,20 @@ void GameScene::layoutFruit()
 void GameScene::removeBomb()
 {
     
+}
+
+void GameScene::update(float delta)
+{
+    CCLog("gamescene update ===");
+    for (int i = 0; i < HORIZONTAL_NUM; i++) {
+        for (int j = 0; j < VERTICAL_NUM; j++) {
+            CCNode* node = getChildByTag(i*FRUIT_WIDTH+j);
+            if (node) {
+                Index index = {i,j};
+                node->setPosition(getPointByIndex(index));
+            }
+        }
+    }
 }
 
 

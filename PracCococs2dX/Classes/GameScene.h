@@ -31,6 +31,8 @@ public:
     bool init();
     void registerWithTouchDispatcher();
     void onEnter();
+    void onExit();
+    virtual void update(float delta);
     
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(GameScene, create);
     void pause(CCObject *pSender);
@@ -72,6 +74,11 @@ private:
     void removeFruit(Index index);
     CCBReader *bombCCB;
     void removeBomb();
+    FruitObject* getFruitByIndex(Index index);
+    
+    void getEliminateArray(Index index,const unsigned int color);
+    bool changedObject(Index index,int color);
+    bool isTouch;
 //    CCMenu *pauseLayerMenu;
 };
 

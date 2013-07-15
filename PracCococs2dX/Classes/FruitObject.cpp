@@ -7,3 +7,36 @@
 //
 
 #include "FruitObject.h"
+
+FruitObject* FruitObject::node(const char *ccbName,int color)
+{
+    CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+    nodeLibrary->registerCCNodeLoader("FruitObject", FruitObjectLoader::loader());
+    CCBReader *ccbReader = new CCBReader(nodeLibrary);
+    FruitObject *node1 = (FruitObject *)ccbReader->readNodeGraphFromFile(ccbName);
+    node1->color = color;
+    node1->choose = false;
+    
+//    ccbReader->release();
+    return node1;
+}
+
+
+void FruitObject::onEnter()
+{
+    CCNode::onEnter();
+    cocos2d::CCLog("Fruite onEnter");
+    
+//    scheduleUpdate();
+}
+
+void FruitObject::move()
+{
+    CCMoveTo *moveTo = CCMoveTo::create(0.5, endPos);
+    runAction(moveTo);
+}
+
+void FruitObject::update(float delta)
+{
+    cocos2d::CCLog("FruiteObject");
+}

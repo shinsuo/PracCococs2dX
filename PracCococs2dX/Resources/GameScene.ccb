@@ -256,7 +256,7 @@
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>pause</string>
+									<string>pause:</string>
 									<integer>1</integer>
 								</array>
 							</dict>
@@ -302,6 +302,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
