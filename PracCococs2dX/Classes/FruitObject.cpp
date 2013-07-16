@@ -25,14 +25,14 @@ FruitObject* FruitObject::node(const char *ccbName,int color)
 void FruitObject::onEnter()
 {
     CCNode::onEnter();
-    cocos2d::CCLog("Fruite onEnter");
+//    cocos2d::CCLog("Fruite onEnter");
     
 //    scheduleUpdate();
 }
 
 void FruitObject::move()
 {
-    CCMoveTo *moveTo = CCMoveTo::create(0.5, endPos);
+    CCMoveTo *moveTo = CCMoveTo::create(0.3, endPos);
     runAction(moveTo);
 }
 
