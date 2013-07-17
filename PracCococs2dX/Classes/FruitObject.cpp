@@ -32,7 +32,8 @@ void FruitObject::onEnter()
 
 void FruitObject::move()
 {
-    CCMoveTo *moveTo = CCMoveTo::create(0.3, endPos);
+    CCMoveTo *moveTo = CCMoveTo::create(0.08, endPos);
+    CCEaseOut *easeOut = CCEaseOut::create(moveTo, 5);
     runAction(moveTo);
 }
 

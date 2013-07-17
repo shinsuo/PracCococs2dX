@@ -30,10 +30,15 @@ std::vector<FruitObject *> g_VObjects;
 CCPoint markPos;
 bool *g_BEliminate = NULL;
 int direction[4][2] = {{-1,0},{0,-1},{1,0},{0,1}};
+int Iabs(int a){ return a>0 ? a : -a; }
 
 #pragma ----Common Function----
 
 std::vector<Index> g_Veliminate;
+
+vector<Index *> g_pVIndex;
+
+typedef vector<Index *> Tpv_Index;
 
 bool isValidIndex(Index index)
 {
@@ -90,6 +95,11 @@ FruitObject* GameScene::getFruitByIndex(Index index)
     return fruit;
 }
 
+//void GameScene::getEliminateArray2(Index index,const unsigned int color)
+//{
+//    FruitObject *touchFruit = getFruitByIndex(index);
+//}
+
 void GameScene::getEliminateArray(Index index,const unsigned int color)
 {
     
@@ -98,12 +108,12 @@ void GameScene::getEliminateArray(Index index,const unsigned int color)
 //    eliminateArray[0].j  = index.j;
 //    return eliminateArray;
     FruitObject *touchFruit = getFruitByIndex(index);
-    CCLog("getEliminateArray:%d,%d === %d,%d",index.i,index.j,touchFruit->color,touchFruit->choose);
+//    CCLog("getEliminateArray:%d,%d === %d,%d",index.i,index.j,touchFruit->color,touchFruit->choose);
     if ((touchFruit->color == color)
         && (touchFruit->choose == false)
         
         ) {
-        CCLog("push");
+//        CCLog("push");
         g_Veliminate.push_back(index);
         touchFruit->choose = true;
         
@@ -146,7 +156,7 @@ void GameScene::getEliminateArray(Index index,const unsigned int color)
 
 bool GameScene::changedObject(Index index,int color)
 {
-    
+    CCLog("changedObject ====");
     
     return true;
 }
@@ -171,8 +181,29 @@ bool GameScene::init(){
 //    }
 //
     
-    CCLog("size_t vs int  ===%d,%d,%d",sizeof(size_t),sizeof(int),sizeof(bool));
+//    CCLog("size_t vs int  ===%d,%d,%d",sizeof(size_t),sizeof(int),sizeof(bool));
     setTouchEnabled(1);
+    
+    std::vector<Index *> *pVIndex = new std::vector<Index *>;//(std::vector<Index> *)malloc(sizeof(std::vector<Index>)*1);
+    
+    for (int i = 0; i < 7; i++) {
+        Index *pIndex = new Index;
+        pIndex->i = i*i;
+        pIndex->j = i*i+100;
+        pVIndex->push_back(pIndex);
+//        delete pIndex;
+    }
+    
+    for (int i = 0; i < 7; i++) {
+        Index *index = (*pVIndex)[i];
+        CCLog("init ===%d,%d",index->i,index->j);
+        delete index;
+    }
+    
+//    pVIndex->clear();
+//    pVIndex->empty();
+    
+    delete pVIndex;
     
 //    scheduleUpdate();
     
@@ -182,7 +213,7 @@ bool GameScene::init(){
 void GameScene::onEnter()
 {
     CCLayer::onEnter();
-    CCLog("GameScene::onEnter");
+//    CCLog("GameScene::onEnter");
     pauseMenu->setHandlerPriority(10);
     afterloadCCB();
     layoutFruit();
@@ -215,7 +246,7 @@ void GameScene::afterloadCCB()
 
 void GameScene::registerWithTouchDispatcher()
 {
-    CCLog("registerWithTouchDispatcher");
+//    CCLog("registerWithTouchDispatcher");
     CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this,INT_MAX,true);
 }
 
@@ -233,7 +264,7 @@ void GameScene::pause(CCObject *pSender)
         for (int j = 0; j < VERTICAL_NUM; j++) {
             Index index = {i,j};
             FruitObject *touchFruit = getFruitByIndex(index);
-            CCLog("foreach %d,%d == %d,%d",i,j,touchFruit->color,touchFruit->choose);
+//            CCLog("foreach %d,%d == %d,%d",i,j,touchFruit->color,touchFruit->choose);
         }
     }
     
@@ -304,9 +335,9 @@ bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
         
         for (std::vector< std::vector<Index> >::iterator it = tempVIndex.begin(); it != tempVIndex.end(); it++) {
             for (std::vector<Index>::iterator it2 = it->begin(); it2 != it->end(); it2++) {
-                CCLog("yeahyeah ==%d,%d,%d",it2->i,it2->j,it->size());
+//                CCLog("yeahyeah ==%d,%d,%d",it2->i,it2->j,it->size());
             }
-            CCLog("again ==");
+//            CCLog("again ==");
             
             std::vector<Index>::iterator it2 = it->begin();
             //moveObject
@@ -340,7 +371,8 @@ bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
                 tSprite->setPosition(endPos.x,winSize.height);
                 
                 tSprite->endPos = endPos;//getPointByIndex(index);
-                tSprite->move();
+//                tSprite->move();
+                tSprite->scheduleOnce(schedule_selector(FruitObject::move), (Iabs(i - it->size()))*0.1);
             }
         }
         
@@ -377,7 +409,6 @@ bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
 //                }
 //            }
 //        }
-        
 //        std::vector<Index>().swap(g_Veliminate);
         
 //        int tempEliminate[HORIZONTAL_NUM][VERTICAL_NUM];
@@ -411,6 +442,8 @@ bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
             Index index = {3,3};
             changedObject(index, 0);
         }
+        
+        
 //        free(tempEliminate);
         
         
@@ -419,7 +452,7 @@ bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
             Index index = {it->i,it->j};
             FruitObject *touchFruit1 =  getFruitByIndex(index);//(FruitObject *)getChildByTag(tempIndex.i*FRUIT_WIDTH+tempIndex.j);//((CCArray *)gFallingGems->objectAtIndex(tempIndex.i))->objectAtIndex(tempIndex.j);
             touchFruit1->choose = false;
-            CCLog("getEliminateArray recover:%d,%d === %d,%d",it->i,it->j,touchFruit1->color,touchFruit->choose);
+//            CCLog("getEliminateArray recover:%d,%d === %d,%d",it->i,it->j,touchFruit1->color,touchFruit->choose);
 //            CCBAnimationManager *ccbManager = (CCBAnimationManager *)touchFruit1->getUserObject();
 //            ccbManager->runAnimationsForSequenceNamed("Invalid");
         }
