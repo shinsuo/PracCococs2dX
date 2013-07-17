@@ -43,7 +43,7 @@ public:
     
     }
     
-    void move();
+    void move(float interval = 0.01f);
     
 public:
     /*

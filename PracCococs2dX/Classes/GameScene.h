@@ -17,10 +17,22 @@ USING_NS_CC;
 USING_NS_CC_EXT;
 using namespace std;
 
-typedef struct{
+//typedef struct{
+//    int i;
+//    int j;
+//}Index;
+
+class Index{
+public:
     int i;
     int j;
-}Index;
+    Index(int _i = -1,int _j = -1){
+        CCLog("Index()");
+        i = _i; j = _j;}
+    ~Index(){
+        CCLog("~Index()");
+    };
+};
 
 class GameScene:public CCLayer
 ,public CCBSelectorResolver
@@ -70,15 +82,15 @@ private:
     void layoutFruit();
     CCArray *fruitArray;
     CCNode* addCCB(const char* ccbName);
-    FruitObject* fallingObject(unsigned int color);
+    FruitObject* fallingObject(const Index& index, const unsigned int color);
     void afterloadCCB();
-    void removeFruit(Index index);
+    void removeFruit(const Index& index);
     CCBReader *bombCCB;
     void removeBomb();
-    FruitObject* getFruitByIndex(Index index);
+    FruitObject* getFruitByIndex(const Index& index);
     
-    void getEliminateArray(Index index,const unsigned int color);
-    bool changedObject(Index index,int color);
+    void getEliminateArray(const Index& index,const unsigned int color);
+    bool changedObject(const Index& index,const int color);
     bool isTouch;
 //    CCMenu *pauseLayerMenu;
 };

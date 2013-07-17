@@ -17,7 +17,7 @@ FruitObject* FruitObject::node(const char *ccbName,int color)
     node1->color = color;
     node1->choose = false;
     
-//    ccbReader->release();
+    ccbReader->release();
     return node1;
 }
 
@@ -30,10 +30,10 @@ void FruitObject::onEnter()
 //    scheduleUpdate();
 }
 
-void FruitObject::move()
+void FruitObject::move(float interval)
 {
-    CCMoveTo *moveTo = CCMoveTo::create(0.08, endPos);
-    CCEaseOut *easeOut = CCEaseOut::create(moveTo, 5);
+    CCMoveTo *moveTo = CCMoveTo::create(interval, endPos);
+//    CCEaseOut *easeOut = CCEaseOut::create(moveTo, 5);
     runAction(moveTo);
 }
 
