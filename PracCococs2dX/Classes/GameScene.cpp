@@ -36,6 +36,7 @@ enum FruitKind {
 CCPoint markPos;
 int direction[4][2] = {{-1,0},{0,-1},{1,0},{0,1}};
 int g_color[HORIZONTAL_NUM][VERTICAL_NUM];
+bool isSame[HORIZONTAL_NUM][VERTICAL_NUM];
 
 #pragma ----Common Function----
 
@@ -96,30 +97,80 @@ FruitObject* GameScene::getFruitByIndex(const Index& index)
     return NULL;
 }
 
-void GameScene::getEliminateArray(const Index& index,const unsigned int color)
+VIndex GameScene::getEliminateArray(const Index& index,const unsigned int color)
 {
-    FruitObject *touchFruit = getFruitByIndex(index);
-
-    if ((touchFruit->color == color)
-        && (touchFruit->choose == false)
+    VIndex eliminate;
+//    FruitObject *touchFruit = getFruitByIndex(index);
+//
+//    if ((touchFruit->color == color)
+//        && (touchFruit->choose == false)
+//        
+//        ) {
+//        touchFruit->choose = true;
+//        
+//        for (int p = 0; p < 4; p++) {
+//            Index index2 = Index(index.i+direction[p][0],index.j+direction[p][1]);//{index.i+direction[p][0],index.j+direction[p][1]};
+//            if (isValidIndex(index2)) {
+//                GameScene::getEliminateArray(index2, color);
+//            }
+//        }
+//        
+//    }
+    
+    if (g_color[index.i][index.j] == color
+        && isSame[index.i][index.j] == false) {
+        isSame[index.i][index.j] = true;
         
-        ) {
-        touchFruit->choose = true;
+        eliminate.push_back(index);
         
         for (int p = 0; p < 4; p++) {
-            Index index2 = Index(index.i+direction[p][0],index.j+direction[p][1]);//{index.i+direction[p][0],index.j+direction[p][1]};
+            Index index2 = Index(index.i+direction[p][0],index.j+direction[p][1]);
             if (isValidIndex(index2)) {
-                GameScene::getEliminateArray(index2, color);
+                VIndex tempEliminate = GameScene::getEliminateArray(index2, color);
+                for (VIndex::iterator it = tempEliminate.begin(); it != tempEliminate.end(); it++) {
+                    eliminate.push_back(*it);
+                }
+                
             }
         }
-        
     }
+    
+    return eliminate;
 }
 
 bool GameScene::changedObject(const Index& index,const int color)
 {
     CCLog("changedObject ====");
-    
+    for (int p = 0; p < 4; p++) {
+        Index index2 = Index(index.i+direction[p][0],index.j+direction[p][1]);
+        
+    }
+    return true;
+}
+
+bool GameScene::changedObject(const Index& index)
+{
+    CCLog("changedObject ====");
+    int num = 1;
+    FruitObject* fruiteObject = getFruitByIndex(index);
+    for (int p = 0; p < 4; p++) {
+        Index index2 = Index(index.i+direction[p][0],index.j+direction[p][1]);
+        if (isValidIndex(index2)) {
+            FruitObject* fruiteObject2 = getFruitByIndex(index2);
+            if (fruiteObject2->color != fruiteObject->color) {
+                removeChild(fruiteObject2, true);
+                FruitObject* fruiteObject3 = fallingObject(index2, fruiteObject->color);
+                fruiteObject3->setPosition(getPointByIndex(index2));
+                num++;
+            }else{
+                num++;
+            }
+        }
+        
+        if (num >= 3) {
+            break;
+        }
+    }
     return true;
 }
 
@@ -142,23 +193,13 @@ bool GameScene::init(){
     setTouchEnabled(1);
 
     memset(g_color, -1, sizeof(g_color));
-//    std::vector<Index *> *pVIndex = new std::vector<Index *>;//(std::vector<Index> *)malloc(sizeof(std::vector<Index>)*1);
-//    
-//    for (int i = 0; i < 7; i++) {
-//        Index *pIndex = new Index();
-//        pIndex->i = i*i;
-//        pIndex->j = i*i+100;
-//        pVIndex->push_back(pIndex);
-////        delete pIndex;
+    
+//    VIndex vIndex;
+//    for (int i = 0; i < 2; i++) {
+//        Index index = Index(i,i*i);
+//        vIndex.push_back(index);
 //    }
-//    
-//    for (int i = 0; i < 7; i++) {
-//        Index *index = (*pVIndex)[i];
-//        CCLog("init ===%d,%d",index->i,index->j);
-//        delete index;
-//    }
-//    
-//    delete pVIndex;
+    
     
     return true;
 }
@@ -214,11 +255,58 @@ void GameScene::restart(CCObject *pSender)
 
 
 bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
-{
+{    
     CCPoint pt = pTouch->getLocation();
     Index index = getIndexByPoint(pt);
-    CCLog("ccTouchBgan==");
-//    CCLog("ccTouchBgan==%d,%d",index.i,index.j);
+
+    FruitObject* fruitObject = getFruitByIndex(index);
+    if (fruitObject) {
+        memset(isSame, false, sizeof(isSame));
+        VIndex vIndex = getEliminateArray(index, fruitObject->color);
+        if (vIndex.size() >= 3) {
+            //remove & move & drop
+            for (VIndex::iterator it = vIndex.begin(); it != vIndex.end(); it++) {
+                removeFruit(*it);
+                int random = arc4random()%FRUIT_NUM;
+                
+                CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+                CCPoint endPos = getPointByIndex(*it);
+                
+                FruitObject *tSprite = fallingObject(*it,random);
+                tSprite->setPosition(endPos.x,winSize.height);
+                tSprite->endPos = endPos;
+                tSprite->scheduleOnce(schedule_selector(FruitObject::move), (it->j)*0.02);
+            }
+            
+            memset(isSame, false, sizeof(isSame));
+            bool isEliminate =false;
+            //check Eliminate
+            for (int i = 0; i < HORIZONTAL_NUM; i++) {
+                for (int j = 0; j < VERTICAL_NUM; j++) {
+                    if (isSame[i][j] == false) {
+                        Index index2 = Index(i,j);
+                        fruitObject = getFruitByIndex(index2);
+                        VIndex vIndex2 = getEliminateArray(index2, fruitObject->color);
+                        if (vIndex2.size() >= 3) {
+                            isEliminate = true;
+                            break;
+                        }
+                    }
+                }
+                if (isEliminate) {
+                    break;
+                }
+            }
+            
+            if (isEliminate == false) {
+                int random = arc4random()%FRUIT_NUM;
+                int i = arc4random()%HORIZONTAL_NUM;
+                int j = arc4random()%VERTICAL_NUM;
+                Index index3 = Index(i,j);
+                changedObject(index3);
+            }
+        }
+    }
     return true;
 }
 

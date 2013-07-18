@@ -26,6 +26,6 @@ Bomb* Bomb::bomb()
 void Bomb::test()
 {
 //    CCLog("removeFromParent ===");
-    removeFromParent();
+    removeFromParentAndCleanup(true);
 //    release();
 }

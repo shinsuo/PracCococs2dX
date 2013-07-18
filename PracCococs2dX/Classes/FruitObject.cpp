@@ -32,6 +32,7 @@ void FruitObject::onEnter()
 
 void FruitObject::move(float interval)
 {
+//    CCLog("interval ==%f",interval);
     CCMoveTo *moveTo = CCMoveTo::create(interval, endPos);
 //    CCEaseOut *easeOut = CCEaseOut::create(moveTo, 5);
     runAction(moveTo);

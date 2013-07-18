@@ -27,12 +27,20 @@ public:
     int i;
     int j;
     Index(int _i = -1,int _j = -1){
-        CCLog("Index()");
+//        CCLog("Index()");
         i = _i; j = _j;}
     ~Index(){
-        CCLog("~Index()");
+//        CCLog("~Index()");
     };
+    
+    Index(const Index& _index){
+//        CCLog(" Index(const Index& _index)");
+        i = _index.i;
+        j = _index.j;
+    }
 };
+
+typedef vector<Index> VIndex;
 
 class GameScene:public CCLayer
 ,public CCBSelectorResolver
@@ -89,8 +97,9 @@ private:
     void removeBomb();
     FruitObject* getFruitByIndex(const Index& index);
     
-    void getEliminateArray(const Index& index,const unsigned int color);
+    VIndex getEliminateArray(const Index& index,const unsigned int color);
     bool changedObject(const Index& index,const int color);
+    bool changedObject(const Index& index);
     bool isTouch;
 //    CCMenu *pauseLayerMenu;
 };
