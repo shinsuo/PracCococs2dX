@@ -11,6 +11,7 @@
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
+#include "common_function.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -43,7 +44,7 @@ public:
     
     }
     
-    void move(float interval = 0.01f);
+    void move(float interval = MOVE_INTERVAL);
     
 public:
     /*

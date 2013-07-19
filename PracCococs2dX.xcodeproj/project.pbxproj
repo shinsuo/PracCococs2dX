@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54057874178D79E400F2C4D3 /* logo.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 54057873178D79E400F2C4D3 /* logo.ccbi */; };
 		54AD8FDC177203CB00028C0B /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54AD8FDA177203CB00028C0B /* GameScene.cpp */; };
 		54D1E6D1178EE02400FF9DA1 /* Bomb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54D1E6CF178EE02400FF9DA1 /* Bomb.cpp */; };
 		B9035ABD17855B4300C6EEE4 /* Logo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9035ABB17855B4300C6EEE4 /* Logo.cpp */; };
@@ -478,6 +477,7 @@
 		B9343C1217618F9900B0C377 /* cocos2dx-ext_public.defines.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9343C1117618F9900B0C377 /* cocos2dx-ext_public.defines.txt */; };
 		B9343C1817618F9900B0C377 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9343C1717618F9900B0C377 /* AppDelegate.cpp */; };
 		B9343C1B17618F9900B0C377 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9343C1A17618F9900B0C377 /* HelloWorldScene.cpp */; };
+		B9EE339A1797CF71008A95E4 /* logo.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = B9EE33991797CF71008A95E4 /* logo.ccbi */; };
 		B9F771B1176334750080C7A9 /* bomb_effect.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9F7714E176334750080C7A9 /* bomb_effect.plist */; };
 		B9F771B2176334750080C7A9 /* bomb_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F7714F176334750080C7A9 /* bomb_effect.png */; };
 		B9F771B4176334750080C7A9 /* CommonEffects.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9F77151176334750080C7A9 /* CommonEffects.plist */; };
@@ -555,7 +555,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		54057873178D79E400F2C4D3 /* logo.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = logo.ccbi; path = ccb/logo.ccbi; sourceTree = "<group>"; };
 		54AD8FDA177203CB00028C0B /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
 		54AD8FDB177203CB00028C0B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 		54D1E6CF178EE02400FF9DA1 /* Bomb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bomb.cpp; path = Classes/Bomb.cpp; sourceTree = "<group>"; };
@@ -1273,6 +1272,7 @@
 		B9343C1717618F9900B0C377 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		B9343C1917618F9900B0C377 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		B9343C1A17618F9900B0C377 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		B9EE33991797CF71008A95E4 /* logo.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = logo.ccbi; path = ccb/logo.ccbi; sourceTree = "<group>"; };
 		B9F7714E176334750080C7A9 /* bomb_effect.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bomb_effect.plist; sourceTree = "<group>"; };
 		B9F7714F176334750080C7A9 /* bomb_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomb_effect.png; sourceTree = "<group>"; };
 		B9F77151176334750080C7A9 /* CommonEffects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CommonEffects.plist; sourceTree = "<group>"; };
@@ -1694,7 +1694,7 @@
 		B934396C17618F9400B0C377 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				54057873178D79E400F2C4D3 /* logo.ccbi */,
+				B9EE33991797CF71008A95E4 /* logo.ccbi */,
 				B9F774FF1772999F0080C7A9 /* ccb */,
 				B9F77219176AC0850080C7A9 /* tileMap.tmx */,
 				B9F7721A176AC0850080C7A9 /* tileSet.PNG */,
@@ -3058,7 +3058,7 @@
 				B9F7721B176AC0850080C7A9 /* tileMap.tmx in Resources */,
 				B9F7721C176AC0850080C7A9 /* tileSet.PNG in Resources */,
 				B9F775001772999F0080C7A9 /* ccb in Resources */,
-				54057874178D79E400F2C4D3 /* logo.ccbi in Resources */,
+				B9EE339A1797CF71008A95E4 /* logo.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

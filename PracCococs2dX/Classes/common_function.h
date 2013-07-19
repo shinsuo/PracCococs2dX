@@ -9,17 +9,8 @@
 #ifndef PracCococs2dX_common_function_h
 #define PracCococs2dX_common_function_h
 
-#include "cocoa/CCGeometry.h"
-
-typedef struct {
-    int x;
-    int y;
-}Index;
-
-
-Index convertPointToIndex(const CCPoint pt)
-{
-    
-}
+#define DROP_INTERVAL 0.01
+#define MOVE_INTERVAL 0.01
+#define DELAY         0.015
 
 #endif

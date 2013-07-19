@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "FruitObject.h"
+#include "common_function.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -41,6 +42,7 @@ public:
 };
 
 typedef vector<Index> VIndex;
+typedef vector<Index*> PVIndex;
 
 class GameScene:public CCLayer
 ,public CCBSelectorResolver
@@ -96,10 +98,12 @@ private:
     CCBReader *bombCCB;
     void removeBomb();
     FruitObject* getFruitByIndex(const Index& index);
+    FruitObject* getFruitByIJ(int i, int j);
     
     VIndex getEliminateArray(const Index& index,const unsigned int color);
     bool changedObject(const Index& index,const int color);
     bool changedObject(const Index& index);
+    void checkEliminate();
     bool isTouch;
 //    CCMenu *pauseLayerMenu;
 };
