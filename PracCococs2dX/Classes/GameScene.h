@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "FruitObject.h"
+#include "Bomb.h"
 #include "common_function.h"
 
 USING_NS_CC;
@@ -62,6 +63,9 @@ public:
     void resume(CCObject *pSender);
     void back(CCObject *pSender);
     void restart(CCObject *pSender);
+    void test();
+    void bombRemove(CCNode *node);
+    void dyeRemove(CCNode *node);
     virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName){
@@ -96,7 +100,6 @@ private:
     void afterloadCCB();
     void removeFruit(const Index& index);
     CCBReader *bombCCB;
-    void removeBomb();
     FruitObject* getFruitByIndex(const Index& index);
     FruitObject* getFruitByIJ(int i, int j);
     
@@ -104,7 +107,13 @@ private:
     bool changedObject(const Index& index,const int color);
     bool changedObject(const Index& index);
     void checkEliminate();
+    void showEliminate();
+    
+    Bomb* createDye(const Index& index);
+    void createDyes(VIndex& vIndex);
+    
     bool isTouch;
+    bool isFever;
 //    CCMenu *pauseLayerMenu;
 };
 
