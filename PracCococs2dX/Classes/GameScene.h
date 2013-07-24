@@ -57,6 +57,7 @@ public:
     void onEnter();
     void onExit();
     virtual void update(float delta);
+    static GameScene* shareScene();
     
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(GameScene, create);
     void pause(CCObject *pSender);

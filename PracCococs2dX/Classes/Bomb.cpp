@@ -7,8 +7,9 @@
 //
 
 #include "Bomb.h"
+#include "GameScene.h"
 
-Bomb* Bomb::bomb(const char* ccbName,CCObject *target,SEL_CallFuncN callbackFunc)
+Bomb* Bomb::bomb(const char* ccbName,int flag)
 {
     CCNodeLoaderLibrary *nodeLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
     nodeLibrary->registerCCNodeLoader(ccbName, BombLoader::loader());
@@ -18,7 +19,9 @@ Bomb* Bomb::bomb(const char* ccbName,CCObject *target,SEL_CallFuncN callbackFunc
     sprintf(_ccbName, "ccb/%s",ccbName);
     Bomb *node = (Bomb *)ccbReader->readNodeGraphFromFile(_ccbName);
     node->isAutoRemove = true;
-    node->_callbackFunc = callbackFunc;
+//    node->mParent = parent;
+    node->mFlag = flag;
+//    node->_callbackFunc = callbackFunc;
     ccbReader->getAnimationManager()->setAnimationCompletedCallback(node, callfunc_selector(Bomb::test));
     ccbReader->release();
     
@@ -36,11 +39,22 @@ bool Bomb::init(){
 
 void Bomb::test()
 {
-    if (this && _callbackFunc) {
-        (this->*_callbackFunc)(this);
-    }
+//    if (this && _callbackFunc) {
+//        (this->*_callbackFunc)(this);
+//    }
     
+    GameScene* gs = GameScene::shareScene();
+//    if (mFlag == kItemDye) {
+//        CCLog("bombRemove 1");
+//        gs->dyeRemove(this);
+//    }else if (mFlag == kItemBomb) {
+//        CCLog("dyeRemove 1");
+        gs->bombRemove(this);
+//    }
+//    
     if (isAutoRemove) {
         removeFromParentAndCleanup(true);
     }
+
+    
 }

@@ -13,4 +13,29 @@
 #define MOVE_INTERVAL 0.01
 #define DELAY         0.015
 
+#define HORIZONTAL_NUM  7
+#define VERTICAL_NUM    7
+#define FRUIT_WIDTH     85
+#define FRUIT_HEIGHT    85
+#define FRUIT_NUM       5
+
+enum ZorderPriority {
+    kFruit = 10,
+    kBomb,
+    kDye,
+};
+
+enum FruitKind {
+    kFruit1 = 0,
+    kFruit2,
+    kFruit3,
+    kFruit4,
+    kFruit5,
+};
+
+enum ItemTag {
+    kItemDye = 1000,
+    kItemBomb,
+};
+
 #endif

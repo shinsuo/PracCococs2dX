@@ -21,7 +21,7 @@ class Bomb:public CCNode
 ,public CCNodeLoaderListener{
     
 public:
-	static Bomb* bomb(const char* ccbName,CCObject *target,SEL_CallFuncN callbackFunc);
+	static Bomb* bomb(const char* ccbName,int flag);
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(Bomb, create);
     virtual bool init();
     virtual void onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader){}
@@ -29,6 +29,8 @@ public:
     void test();
     bool isAutoRemove;
     SEL_CallFuncN _callbackFunc = NULL;
+    CCNode* mParent;
+    int mFlag;
 };
 
 
