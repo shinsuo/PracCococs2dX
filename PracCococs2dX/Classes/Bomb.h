@@ -22,6 +22,7 @@ class Bomb:public CCNode
 ,public CCNodeLoaderListener{
     
 public:
+    static Bomb* bomb(const char* ccbName,CCCallFuncN *callFuncN);
     static Bomb* bomb(const char* ccbName,SEL_CallFuncN callBack);
 	static Bomb* bomb(const char* ccbName,int flag);
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(Bomb, create);
@@ -39,6 +40,7 @@ public:
     void test();
     bool isAutoRemove;
     SEL_CallFuncN _callbackFunc = NULL;
+    CCCallFuncN* _callbackFuncN;
     CCNode* mParent;
     int mFlag;
 };

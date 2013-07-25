@@ -478,7 +478,10 @@ void GameScene::showEliminate()
 
 Bomb* GameScene::createBomb(const Index& index)
 {
-    Bomb *tSprite = Bomb::bomb("Bomb",callfuncN_selector(GameScene::bombRemove));
+    CCCallFuncN *callFuncN = CCCallFuncN::create(this, callfuncN_selector(GameScene::bombRemove));
+    callFuncN->retain();
+    
+    Bomb *tSprite = Bomb::bomb("Bomb",callFuncN);
     addChild(tSprite);
     tSprite->setZOrder(kBomb);
     tSprite->setPosition(getPointByIndex(index));
@@ -487,7 +490,9 @@ Bomb* GameScene::createBomb(const Index& index)
 
 Bomb* GameScene::createDye(const Index& index)
 {
-    Bomb *tSprite = Bomb::bomb("Dye",callfuncN_selector(GameScene::dyeRemove));
+    CCCallFuncN *callFuncN = CCCallFuncN::create(this, callfuncN_selector(GameScene::dyeRemove));
+    callFuncN->retain();
+    Bomb *tSprite = Bomb::bomb("Dye",callFuncN);
     addChild(tSprite);
     tSprite->setZOrder(kDye);
     tSprite->setPosition(getPointByIndex(index));

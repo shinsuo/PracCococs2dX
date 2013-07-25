@@ -24,7 +24,7 @@ CCScene* HelloWorld::scene()
 bool HelloWorld::init()
 {
     //////////////////////////////
-    // 1. super init first
+    // 1. super init first 
     if ( !CCLayer::init() )
     {
         return false;
