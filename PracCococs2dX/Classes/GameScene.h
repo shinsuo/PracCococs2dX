@@ -65,7 +65,7 @@ public:
     void back(CCObject *pSender);
     void restart(CCObject *pSender);
     void test();
-    void bombRemove(CCNode *node);
+    void bombRemove(Bomb *node);
     void dyeRemove(CCNode *node);
     virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
 
@@ -109,7 +109,7 @@ private:
     bool changedObject(const Index& index);
     void checkEliminate();
     void showEliminate();
-    
+    Bomb* createBomb(const Index& index);
     Bomb* createDye(const Index& index);
     void createDyes(VIndex& vIndex);
     

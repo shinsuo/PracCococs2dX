@@ -19,10 +19,13 @@
 #define FRUIT_HEIGHT    85
 #define FRUIT_NUM       5
 
+#define ITEM_BOMB   0
+#define ITEM_DYE    1
+
 enum ZorderPriority {
     kFruit = 10,
     kBomb,
-    kDye,
+    kDye
 };
 
 enum FruitKind {
@@ -30,12 +33,12 @@ enum FruitKind {
     kFruit2,
     kFruit3,
     kFruit4,
-    kFruit5,
+    kFruit5
 };
 
-enum ItemTag {
+typedef enum  {
     kItemDye = 1000,
-    kItemBomb,
-};
+    kItemBomb = 1001
+}ItemTag;
 
 #endif

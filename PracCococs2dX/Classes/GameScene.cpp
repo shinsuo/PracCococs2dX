@@ -192,8 +192,9 @@ CCScene* GameScene::scene()
     CCBReader *ccbReader = new CCBReader(nodeLibrary);
     CCNode *node = ccbReader->readNodeGraphFromFile("ccb/GameScene");
     ccbReader->release();
+    CCLog("GameScene::scene =%p,%p",sc,node);
     sc->addChild(node);
-    gs = (GameScene *)sc;
+    gs = (GameScene *)node;
     return sc;
 }
 
@@ -260,8 +261,10 @@ void GameScene::pause(CCObject *pSender)
     }
     
     CCLog("pause size =%d",vIndex.size());
-    
     createDyes(vIndex);
+    
+    CCArray* allChild = this->getChildren();
+    CCLog("allChild count %d",allChild->count());
 }
 
 void GameScene::resume(CCObject *pSender)
@@ -320,12 +323,7 @@ bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
                 for (VIndex::iterator it = vIndex.begin(); it != vIndex.end(); it++) {
                     removeFruit(*it);
                     
-                    CCPoint pt = getPointByIndex(*it);
-                    Bomb *bomb = Bomb::bomb("Bomb",kItemBomb);
-                    bomb->setPosition(pt);
-                    bomb->setZOrder(kBomb);
-                    bomb->setTag(kItemBomb);
-                    addChild(bomb);
+                    createBomb(*it);
                     
                     VIndex::iterator it2 = it - 1;
                     if ((it == vIndex.begin()) || (it2->i != it->i)) {
@@ -478,12 +476,20 @@ void GameScene::showEliminate()
     }
 }
 
+Bomb* GameScene::createBomb(const Index& index)
+{
+    Bomb *tSprite = Bomb::bomb("Bomb",callfuncN_selector(GameScene::bombRemove));
+    addChild(tSprite);
+    tSprite->setZOrder(kBomb);
+    tSprite->setPosition(getPointByIndex(index));
+    return tSprite;
+}
+
 Bomb* GameScene::createDye(const Index& index)
 {
-    Bomb *tSprite = Bomb::bomb("Dye",kItemDye);
+    Bomb *tSprite = Bomb::bomb("Dye",callfuncN_selector(GameScene::dyeRemove));
     addChild(tSprite);
     tSprite->setZOrder(kDye);
-    tSprite->setTag(kItemDye);
     tSprite->setPosition(getPointByIndex(index));
     return tSprite;
 }
@@ -512,9 +518,7 @@ FruitObject* GameScene::fallingObject(const Index& index, const unsigned int col
     sprintf(ccbName, "ccb/fruit%d",color);
     
     FruitObject *tSprite=  FruitObject::node(ccbName, color);//(FruitObject *)addCCB(ccbName);//ccbReader->readNodeGraphFromFile(ccbName,this);//(CCNode *)node1;//
-    addChild(tSprite);
-    tSprite->setZOrder(kFruit);
-    tSprite->setTag(index.i*VERTICAL_NUM+index.j);
+    addChild(tSprite,kFruit,index.i*VERTICAL_NUM+index.j);
     g_color[index.i][index.j] = color;
     return tSprite;
 }
@@ -522,31 +526,39 @@ FruitObject* GameScene::fallingObject(const Index& index, const unsigned int col
 void GameScene::removeFruit(const Index& index)
 {
     if (isValidIndex(index)) {
+//        CCLog("removeFruit index===%d,%d tag=%d",index.i,index.j,index.i*VERTICAL_NUM+index.j);
         g_color[index.i][index.j] = -1;
         removeChildByTag(index.i*VERTICAL_NUM+index.j, true);
     }
 }
 
-void GameScene::bombRemove(CCNode *node)
+void GameScene::bombRemove(Bomb *node)
 {
-    CCLog("bombRemove");
-//    removeChildByTag(kItemBomb, true);
-    if (kItemBomb == node->getTag()) {
+    CCLog("bombRemove ==%p,%p",this,gs);
+    if (ITEM_BOMB == node->mFlag) {
         
-    }else if (kItemDye == node->getTag()) {
-        Index index = getIndexByPoint(node->getPosition());
-//        CCLog("index %d,%d",index.i,index.j);
-//        removeChildByTag(index.i*VERTICAL_NUM+index.j, true);
-        removeFruit(index);
-        fallingObject(index, 4);
+    }else if (ITEM_DYE == node->mFlag) {
+        
     }
     
-//    node->removeFromParentAndCleanup(true);
+    CCArray* allChild = this->getChildren();
+    CCLog("allChild count %d",allChild->count());
+    
+    node->removeFromParentAndCleanup(true);
 }
 
 void GameScene::dyeRemove(CCNode *node)
 {
-    CCLog("dyeRemove");
+    CCLog("dyeRemove %p",this);
+    CCArray* allChild = this->getChildren();
+    CCLog("allChild count %d",allChild->count());
+    
+    Index index = getIndexByPoint(node->getPosition());
+    
+    removeFruit(index);
+    
+    FruitObject* fruit = fallingObject(index, 3);
+    fruit->setPosition(getPointByIndex(index));
     
     node->removeFromParentAndCleanup(true);
 //    removeChildByTag(kItemDye,true);

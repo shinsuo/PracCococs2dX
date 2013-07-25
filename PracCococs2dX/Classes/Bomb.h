@@ -11,20 +11,30 @@
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
+#include "common_function.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
 
 class Bomb:public CCNode
 //,public CCBSelectorResolver
-//,public CCBMemberVariableAssigner
+,public CCBMemberVariableAssigner
 ,public CCNodeLoaderListener{
     
 public:
+    static Bomb* bomb(const char* ccbName,SEL_CallFuncN callBack);
 	static Bomb* bomb(const char* ccbName,int flag);
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(Bomb, create);
     virtual bool init();
     virtual void onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader){}
+    virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode){
+        return false;
+    }
+    
+    virtual bool onAssignCCBCustomProperty(CCObject* pTarget, const char* pMemberVariableName, CCBValue* pCCBValue) {
+        mFlag = pCCBValue->getIntValue();
+        return true;
+    };
     
     void test();
     bool isAutoRemove;
