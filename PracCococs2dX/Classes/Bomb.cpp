@@ -44,7 +44,6 @@ Bomb* Bomb::bomb(const char* ccbName,CCCallFuncN *callFuncN)
     //    node->mParent = parent;
     //    node->mFlag = flag;
     node->_callbackFuncN = callFuncN;
-    CCLog("bomb address :%p", node);
     ccbReader->getAnimationManager()->setAnimationCompletedCallback(node, callfunc_selector(Bomb::test));
     ccbReader->release();
     
@@ -68,7 +67,6 @@ Bomb* Bomb::bomb(const char* ccbName,SEL_CallFuncN callBack)
     //    node->mParent = parent;
     //    node->mFlag = flag;
     node->_callbackFunc = callBack;
-    CCLog("bomb address :%p", node);
     ccbReader->getAnimationManager()->setAnimationCompletedCallback(node, callfunc_selector(Bomb::test));
     ccbReader->release();
     
@@ -86,16 +84,17 @@ bool Bomb::init(){
 
 void Bomb::test()
 {
-    GameScene* gs = GameScene::shareScene();
-    CCLog("bomb address 2:%p",this);
-    this->runAction(_callbackFuncN);
-    _callbackFuncN->release();
+    if (_callbackFuncN) {
+        this->runAction(_callbackFuncN);
+        _callbackFuncN->release();
+    }
+    
     
     return;
-    if (this && _callbackFunc) {
-        (gs->*_callbackFunc)(this);
-    }
-    return;
+//    if (this && _callbackFunc) {
+//        (gs->*_callbackFunc)(this);
+//    }
+//    return;
     
     
 //    if (mFlag == kItemDye) {
@@ -103,12 +102,12 @@ void Bomb::test()
 //        gs->dyeRemove(this);
 //    }else if (mFlag == kItemBomb) {
 //        CCLog("dyeRemove 1");
-        gs->bombRemove(this);
+//        gs->bombRemove(this);
 //    }
 //    
-    if (isAutoRemove) {
-        removeFromParentAndCleanup(true);
-    }
+//    if (isAutoRemove) {
+//        removeFromParentAndCleanup(true);
+//    }
 
     
 }

@@ -25,6 +25,7 @@
 enum ZorderPriority {
     kFruit = 10,
     kBomb,
+    kPercent,
     kDye
 };
 
@@ -33,7 +34,11 @@ enum FruitKind {
     kFruit2,
     kFruit3,
     kFruit4,
-    kFruit5
+    kFruit5,
+  
+    kFruitBomb      = 5,
+    kFruitPercent   = 6,
+    kFruitDye       = 7,
 };
 
 typedef enum  {

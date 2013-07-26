@@ -61,9 +61,14 @@ public:
     
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(GameScene, create);
     void pause(CCObject *pSender);
+    void dye(CCObject *pSender);
+    void bomb(CCObject *pSender);
+    void percent(CCObject *pSender);
+    
     void resume(CCObject *pSender);
     void back(CCObject *pSender);
     void restart(CCObject *pSender);
+    
     void test();
     void bombRemove(Bomb *node);
     void dyeRemove(CCNode *node);
@@ -71,6 +76,11 @@ public:
 
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject * pTarget, const char* pSelectorName){
         CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "pause:", GameScene::pause);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "dye:", GameScene::dye);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "bomb:", GameScene::bomb);
+        CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "percent:", GameScene::percent);
+        
+        
         CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "resume:", GameScene::resume);
         CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "back:", GameScene::back);
         CCB_SELECTORRESOLVER_CCMENUITEM_GLUE(this, "restart:", GameScene::restart);
@@ -111,7 +121,7 @@ private:
     void showEliminate();
     Bomb* createBomb(const Index& index);
     Bomb* createDye(const Index& index);
-    void createDyes(VIndex& vIndex);
+    void createDyes();
     
     bool isTouch;
     bool isFever;

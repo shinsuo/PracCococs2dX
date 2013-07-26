@@ -40,6 +40,7 @@ public:
 private:
     cocos2d::CCSprite *pSprite;
     cocos2d::CCMenu *pMenu;
+    cocos2d::CCProgressTimer *mProgressTimer;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -62,61 +62,61 @@ bool HelloWorld::init()
 //    this->addChild(pLabel, 1);
     
     
-    CCLabelAtlas *pLabelAtlas = CCLabelAtlas::create("0", "fonts_rankscore.png", 24, 38, (unsigned int)'/');
-    pLabelAtlas->setString("38475");
-    pLabelAtlas->setPosition(ccp(100,100));
-//    this->addChild(pLabelAtlas,2);
-    
-    
-    CCLabelAtlas *pLabelAtlas1 = CCLabelAtlas::create("0", "fonts_ranking_01.png", 40, 46, (unsigned int)'0');
-    pLabelAtlas1->setString("38475");
-    pLabelAtlas1->setPosition(ccp(200,200));
-//    this->addChild(pLabelAtlas1,2);
-    
-    CCLabelAtlas *pLabelAtlas2 = CCLabelAtlas::create("0", "set1_player_hud3.png", 14, 21, (unsigned int)'0');
-    pLabelAtlas2->setString("38475:");
-    pLabelAtlas2->setPosition(ccp(300,100));
-//    this->addChild(pLabelAtlas2,2);
-    
-    CCLabelAtlas *pLabelAtlas3 = CCLabelAtlas::create("00.0", "fps_images.png", 12, 32, (unsigned int)'.');
-    pLabelAtlas3->setString("385.7");
-    pLabelAtlas3->setPosition(ccp(400,100));
+//    CCLabelAtlas *pLabelAtlas = CCLabelAtlas::create("0", "fonts_rankscore.png", 24, 38, (unsigned int)'/');
+//    pLabelAtlas->setString("38475");
+//    pLabelAtlas->setPosition(ccp(100,100));
+////    this->addChild(pLabelAtlas,2);
+//    
+//    
+//    CCLabelAtlas *pLabelAtlas1 = CCLabelAtlas::create("0", "fonts_ranking_01.png", 40, 46, (unsigned int)'0');
+//    pLabelAtlas1->setString("38475");
+//    pLabelAtlas1->setPosition(ccp(200,200));
+////    this->addChild(pLabelAtlas1,2);
+//    
+//    CCLabelAtlas *pLabelAtlas2 = CCLabelAtlas::create("0", "set1_player_hud3.png", 14, 21, (unsigned int)'0');
+//    pLabelAtlas2->setString("38475:");
+//    pLabelAtlas2->setPosition(ccp(300,100));
+////    this->addChild(pLabelAtlas2,2);
+//    
+//    CCLabelAtlas *pLabelAtlas3 = CCLabelAtlas::create("00.0", "fps_images.png", 12, 32, (unsigned int)'.');
+//    pLabelAtlas3->setString("385.7");
+//    pLabelAtlas3->setPosition(ccp(400,100));
 //    this->addChild(pLabelAtlas3,2);
     
-    
-    CCMenuItemLabel *pMenuLabelAtlas = CCMenuItemLabel::create(pLabel,
-                                                          this,
-                                                          menu_selector(HelloWorld::Test));
-    
-    
-    CCMenuItemImage *pMenuLabelAtlas1 = CCMenuItemImage::create("button_buy_01.png", this, menu_selector(HelloWorld::Test));
-    pMenuLabelAtlas1->setPosition(ccp(0,0));
-    pMenuLabelAtlas1->setAnchorPoint(ccp(0.5,0.5));
-    
-    CCMenuItemAtlasFont *pMenuAtlasFont = CCMenuItemAtlasFont::create("88", "fonts_rankscore.png", 24, 38, (unsigned int)'/', this, menu_selector(HelloWorld::Test));
-    pMenuAtlasFont->setPosition(ccp(400,400));
-    pMenuAtlasFont->setScale(4);
-    
-    
-    CCMenuItemFont *pMenuItemFont = CCMenuItemFont::create("Test", this, menu_selector(HelloWorld::Test));
-    pMenuItemFont->setPosition(ccp(500, 400));
-    pMenuItemFont->setScale(4);
-    
-    
-    CCMenuItemFont *p1 = CCMenuItemFont::create("Place", this, menu_selector(HelloWorld::Place));
-    CCMenuItemFont *p2 = CCMenuItemFont::create("Hide", this, menu_selector(HelloWorld::Hide));
-    CCMenuItemFont *p3 = CCMenuItemFont::create("Show", this, menu_selector(HelloWorld::Show));
-    CCMenuItemFont *p4 = CCMenuItemFont::create("Toggle", this, menu_selector(HelloWorld::Toggle));
-    CCMenuItemFont *p5 = CCMenuItemFont::create("Back", this, menu_selector(HelloWorld::Back));
-    
-    // create menu, it's an autorelease object
-    pMenu = CCMenu::create(
-                           p1,
-                           pMenuLabelAtlas1,
-                           NULL);
-    pMenu->alignItemsVerticallyWithPadding(30);
-    pMenu->setPosition( ccp(size.width / 2, size.height/2) );
-    this->addChild(pMenu, 1);
+//    
+//    CCMenuItemLabel *pMenuLabelAtlas = CCMenuItemLabel::create(pLabel,
+//                                                          this,
+//                                                          menu_selector(HelloWorld::Test));
+//    
+//    
+//    CCMenuItemImage *pMenuLabelAtlas1 = CCMenuItemImage::create("button_buy_01.png", this, menu_selector(HelloWorld::Test));
+//    pMenuLabelAtlas1->setPosition(ccp(0,0));
+//    pMenuLabelAtlas1->setAnchorPoint(ccp(0.5,0.5));
+//    
+//    CCMenuItemAtlasFont *pMenuAtlasFont = CCMenuItemAtlasFont::create("88", "fonts_rankscore.png", 24, 38, (unsigned int)'/', this, menu_selector(HelloWorld::Test));
+//    pMenuAtlasFont->setPosition(ccp(400,400));
+//    pMenuAtlasFont->setScale(4);
+//    
+//    
+//    CCMenuItemFont *pMenuItemFont = CCMenuItemFont::create("Test", this, menu_selector(HelloWorld::Test));
+//    pMenuItemFont->setPosition(ccp(500, 400));
+//    pMenuItemFont->setScale(4);
+//    
+//    
+//    CCMenuItemFont *p1 = CCMenuItemFont::create("Place", this, menu_selector(HelloWorld::Place));
+//    CCMenuItemFont *p2 = CCMenuItemFont::create("Hide", this, menu_selector(HelloWorld::Hide));
+//    CCMenuItemFont *p3 = CCMenuItemFont::create("Show", this, menu_selector(HelloWorld::Show));
+//    CCMenuItemFont *p4 = CCMenuItemFont::create("Toggle", this, menu_selector(HelloWorld::Toggle));
+//    CCMenuItemFont *p5 = CCMenuItemFont::create("Back", this, menu_selector(HelloWorld::Back));
+//    
+//    // create menu, it's an autorelease object
+//    pMenu = CCMenu::create(
+//                           p1,
+//                           pMenuLabelAtlas1,
+//                           NULL);
+//    pMenu->alignItemsVerticallyWithPadding(30);
+//    pMenu->setPosition( ccp(size.width / 2, size.height/2) );
+//    this->addChild(pMenu, 1);
     
 //    scheduleOnce(schedule_selector(HelloWorld::nextT), 2);
 
@@ -130,11 +130,20 @@ bool HelloWorld::init()
     this->addChild(Sprite, 0);
     
     
+    
     pSprite = CCSprite::create("icon_05.png");
     pSprite->setPosition(ccp(size.width/2, size.height/2));
-//    this->addChild(pSprite,1);
+    this->addChild(pSprite,1);
     
-//    schedule(schedule_selector(HelloWorld::update));
+    
+    CCSprite *sp = CCSprite::create("icon_01.png");
+//    addChild(sp);
+    mProgressTimer = CCProgressTimer::create(sp);
+    mProgressTimer->setPercentage(90);
+    mProgressTimer->setPosition(ccp(size.width/2, size.height/2));
+    
+    addChild(mProgressTimer,10);
+    schedule(schedule_selector(HelloWorld::update));
 //    schedule(schedule_selector(HelloWorld::update), 1);
 //    scheduleUpdate();
     setTouchEnabled(1);
@@ -195,7 +204,16 @@ void HelloWorld::Hide(CCObject* pSender)
 
 void HelloWorld::update(float delta)
 {
-    CCLOG("update --%f",delta);
+    float del = 100/60*delta*5;
+    float percent = mProgressTimer->getPercentage();
+    float total = del + percent;
+    if (total > 100) {
+        total = 0;
+//        CCSprite *sp = CCSprite::create("icon_02");
+//        mProgressTimer->setSprite(sp);
+    }
+    
+    mProgressTimer->setPercentage(total);
 }
 
 void HelloWorld::Show(CCObject* pSender)

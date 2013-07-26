@@ -163,13 +163,16 @@ bool GameScene::changedObject(const Index& index)
         Index index2 = Index(index.i+direction[p][0],index.j+direction[p][1]);
         if (isValidIndex(index2)) {
             FruitObject* fruiteObject2 = getFruitByIndex(index2);
-            if (fruiteObject2->color != fruiteObject->color) {
-                removeChild(fruiteObject2, true);
-                FruitObject* fruiteObject3 = fallingObject(index2, fruiteObject->color);
-                fruiteObject3->setPosition(getPointByIndex(index2));
-                num++;
-            }else{
-                num++;
+            if (fruiteObject2->color < kFruitBomb) {
+                if ((fruiteObject2->color != fruiteObject->color)) {
+                    //                removeChild(fruiteObject2, true);
+                    removeFruit(index2);
+                    FruitObject* fruiteObject3 = fallingObject(index2, fruiteObject->color);
+                    fruiteObject3->setPosition(getPointByIndex(index2));
+                    num++;
+                }else if (fruiteObject2->color < kFruitBomb){
+                    num++;
+                }
             }
         }
         
@@ -177,7 +180,11 @@ bool GameScene::changedObject(const Index& index)
             break;
         }
     }
-    return true;
+    
+    if (num >= 3) {
+        return true;
+    }
+    return false;
 }
 
 #pragma ----Common Function----
@@ -244,27 +251,42 @@ void GameScene::registerWithTouchDispatcher()
 
 void GameScene::pause(CCObject *pSender)
 {
-    VIndex vIndex;
-    int i = arc4random()%4;
-    int j = arc4random()%4;
     
+}
+
+void GameScene::dye(CCObject *pSender)
+{
+    int i = arc4random()%HORIZONTAL_NUM;
+    int j = arc4random()%VERTICAL_NUM;
     
-    int iLength = i+4;
-    int jLength = j+4;
-    CCLog("pause length:%d,%d",iLength,jLength);
-    for (; i < iLength; i++) {
-        for (int _j=j ; _j < jLength; _j++) {
-//            CCLog("pause:%d,%d",i,_j);
-            Index index = Index(i,_j);
-            vIndex.push_back(index);
-        }
-    }
+    Index index = Index(i,j);
+    removeFruit(index);
     
-    CCLog("pause size =%d",vIndex.size());
-    createDyes(vIndex);
+    FruitObject *fruitObject = fallingObject(index, kFruitDye);
+    fruitObject->setPosition(getPointByIndex(index));
+}
+
+void GameScene::bomb(CCObject *pSender)
+{
+    int i = arc4random()%HORIZONTAL_NUM;
+    int j = arc4random()%VERTICAL_NUM;
     
-    CCArray* allChild = this->getChildren();
-    CCLog("allChild count %d",allChild->count());
+    Index index = Index(i,j);
+    removeFruit(index);
+    
+    FruitObject *fruitObject = fallingObject(index, kFruitBomb);
+    fruitObject->setPosition(getPointByIndex(index));
+}
+
+void GameScene::percent(CCObject *pSender)
+{
+    int i = arc4random()%HORIZONTAL_NUM;
+    int j = arc4random()%VERTICAL_NUM;
+    
+    Index index = Index(i,j);
+    removeFruit(index);
+    FruitObject *fruitObject = fallingObject(index, kFruitPercent);
+    fruitObject->setPosition(getPointByIndex(index));
 }
 
 void GameScene::resume(CCObject *pSender)
@@ -296,101 +318,103 @@ bool GameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
         FruitObject* fruitObject = getFruitByIndex(index);
         if (fruitObject) {
             
-            memset(isSame, false, sizeof(isSame));
-            VIndex vIndex = getEliminateArray(index, fruitObject->color);
-            vector< VIndex > VVIndex;
-            
-            if (vIndex.size() >= 3) {
-                unschedule(schedule_selector(GameScene::showEliminate));
-                schedule(schedule_selector(GameScene::showEliminate), 5);
-                isTouch = false;
+            if (fruitObject->color < kFruitBomb) {
+                memset(isSame, false, sizeof(isSame));
+                VIndex vIndex = getEliminateArray(index, fruitObject->color);
+                vector< VIndex > VVIndex;
                 
-//                //All Fever
-                if (isFever) {
-                    for (int i = 0; i < HORIZONTAL_NUM; i++) {
-                        for (int j = 0; j < VERTICAL_NUM; j++) {
-                            FruitObject* fruitObject4 = getFruitByIJ(i,j);
-                            CCBAnimationManager *ccbManager = (CCBAnimationManager *)fruitObject4->getUserObject();
-                            ccbManager->runAnimationsForSequenceNamed("Fever");
-                        }
-                    }
-                }
-                
-                //sort
-                sort(vIndex.begin(),vIndex.end(), vectorComp);
-                
-                //remove & class Vector
-                for (VIndex::iterator it = vIndex.begin(); it != vIndex.end(); it++) {
-                    removeFruit(*it);
+                if (vIndex.size() >= 3) {
+                    unschedule(schedule_selector(GameScene::showEliminate));
+                    schedule(schedule_selector(GameScene::showEliminate), 5);
+                    isTouch = false;
                     
-                    createBomb(*it);
-                    
-                    VIndex::iterator it2 = it - 1;
-                    if ((it == vIndex.begin()) || (it2->i != it->i)) {
-                        VIndex vIndex2;
-                        vIndex2.push_back(*it);
-                        VVIndex.push_back(vIndex2);
-                    }else{
-                        VVIndex[VVIndex.size() - 1].push_back(*it);
-                    }
-                }
-                //remove & class Vector end
-                
-                //execute sequence interval
-                int interval = 1;
-                
-                //move & drop
-                for (vector< VIndex >::iterator it = VVIndex.begin(); it != VVIndex.end(); it ++) {
-                    int size = it->size();
-                    VIndex::iterator begin = it->begin();
-                    interval = 1;
-                    //move
-                    for (int j = begin->j; j < VERTICAL_NUM; j++) {
-                        for (int jj = j+1; jj < VERTICAL_NUM; jj++) {
-                            FruitObject *fruitObject2 = getFruitByIJ(begin->i, jj);
-                            if (fruitObject2) {
-                                
-                                fruitObject2->setTag(begin->i*VERTICAL_NUM+j);
-                                g_color[begin->i][j] = fruitObject2->color;
-                                fruitObject2->endPos = getPointByIJ(begin->i,j);
-                                fruitObject2->move();
-                                fruitObject2->scheduleOnce(schedule_selector(FruitObject::move), interval*DELAY);
-                                interval++;
-                                break;
-                            }else{
-                                continue;
+                    //                //All Fever
+                    if (isFever) {
+                        for (int i = 0; i < HORIZONTAL_NUM; i++) {
+                            for (int j = 0; j < VERTICAL_NUM; j++) {
+                                FruitObject* fruitObject4 = getFruitByIJ(i,j);
+                                CCBAnimationManager *ccbManager = (CCBAnimationManager *)fruitObject4->getUserObject();
+                                ccbManager->runAnimationsForSequenceNamed("Fever");
                             }
                         }
                     }
                     
-                    //drop
-                    for (int i = size; i > 0; i--) {
-                        int j = VERTICAL_NUM - i;
-                        int random = arc4random()%FRUIT_NUM;
-                        Index index2 = Index(begin->i,j);
-                        FruitObject *fruitObject3 = fallingObject(index2, random);
-                        CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-                        CCPoint endPos = getPointByIndex(index2);
-                        fruitObject3->setPosition(endPos.x,winSize.height);
-                        fruitObject3->endPos = endPos;
-                        //                    fruitObject3->move();
-                        fruitObject3->scheduleOnce(schedule_selector(FruitObject::move), interval*DELAY);
-                        interval++;
-                    }
-                    //                for (VIndex::iterator it2 = it->begin(); it2 != it->end(); it2++) {
-                    //                    
-                    //                }
+                    //sort
+                    sort(vIndex.begin(),vIndex.end(), vectorComp);
                     
-                }
-                //move & drop end
-                
-                //All Object finish moving , check Eliminate
-                scheduleOnce(schedule_selector(GameScene::checkEliminate), (interval+1)*DELAY);
-            }else{
-                for (VIndex::iterator it = vIndex.begin(); it != vIndex.end(); it++) {
-                    FruitObject* fruitObject4 = getFruitByIndex(*it);
-                    CCBAnimationManager *ccbManager = (CCBAnimationManager *)fruitObject4->getUserObject();
-                    ccbManager->runAnimationsForSequenceNamed("Invalid");
+                    //remove & class Vector
+                    for (VIndex::iterator it = vIndex.begin(); it != vIndex.end(); it++) {
+                        removeFruit(*it);
+                        
+                        createBomb(*it);
+                        
+                        VIndex::iterator it2 = it - 1;
+                        if ((it == vIndex.begin()) || (it2->i != it->i)) {
+                            VIndex vIndex2;
+                            vIndex2.push_back(*it);
+                            VVIndex.push_back(vIndex2);
+                        }else{
+                            VVIndex[VVIndex.size() - 1].push_back(*it);
+                        }
+                    }
+                    //remove & class Vector end
+                    
+                    //execute sequence interval
+                    int interval = 1;
+                    
+                    //move & drop
+                    for (vector< VIndex >::iterator it = VVIndex.begin(); it != VVIndex.end(); it ++) {
+                        int size = it->size();
+                        VIndex::iterator begin = it->begin();
+                        interval = 1;
+                        //move
+                        for (int j = begin->j; j < VERTICAL_NUM; j++) {
+                            for (int jj = j+1; jj < VERTICAL_NUM; jj++) {
+                                FruitObject *fruitObject2 = getFruitByIJ(begin->i, jj);
+                                if (fruitObject2) {
+                                    
+                                    fruitObject2->setTag(begin->i*VERTICAL_NUM+j);
+                                    g_color[begin->i][j] = fruitObject2->color;
+                                    fruitObject2->endPos = getPointByIJ(begin->i,j);
+                                    fruitObject2->move();
+                                    fruitObject2->scheduleOnce(schedule_selector(FruitObject::move), interval*DELAY);
+                                    interval++;
+                                    break;
+                                }else{
+                                    continue;
+                                }
+                            }
+                        }
+                        
+                        //drop
+                        for (int i = size; i > 0; i--) {
+                            int j = VERTICAL_NUM - i;
+                            int random = arc4random()%FRUIT_NUM;
+                            Index index2 = Index(begin->i,j);
+                            FruitObject *fruitObject3 = fallingObject(index2, random);
+                            CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+                            CCPoint endPos = getPointByIndex(index2);
+                            fruitObject3->setPosition(endPos.x,winSize.height);
+                            fruitObject3->endPos = endPos;
+                            //                    fruitObject3->move();
+                            fruitObject3->scheduleOnce(schedule_selector(FruitObject::move), interval*DELAY);
+                            interval++;
+                        }
+                        //                for (VIndex::iterator it2 = it->begin(); it2 != it->end(); it2++) {
+                        //
+                        //                }
+                        
+                    }
+                    //move & drop end
+                    
+                    //All Object finish moving , check Eliminate
+                    scheduleOnce(schedule_selector(GameScene::checkEliminate), (interval+1)*DELAY);
+                }else{
+                    for (VIndex::iterator it = vIndex.begin(); it != vIndex.end(); it++) {
+                        FruitObject* fruitObject4 = getFruitByIndex(*it);
+                        CCBAnimationManager *ccbManager = (CCBAnimationManager *)fruitObject4->getUserObject();
+                        ccbManager->runAnimationsForSequenceNamed("Invalid");
+                    }
                 }
             }
         }
@@ -422,10 +446,23 @@ void GameScene::checkEliminate()
     }
     
     if (isEliminate == false) {
-        int i = arc4random()%HORIZONTAL_NUM;
-        int j = arc4random()%VERTICAL_NUM;
-        Index index3 = Index(i,j);
-        changedObject(index3);
+        int i = 0;
+        int j = 0;
+        FruitObject *obj = NULL;
+        while (1) {
+            do {
+                i = arc4random()%HORIZONTAL_NUM;
+                j = arc4random()%VERTICAL_NUM;
+                obj = getFruitByIJ(i, j);
+                CCLog("do while,%d",obj->color);
+            } while (obj->color >= kFruitBomb);
+            
+            Index index3 = Index(i,j);
+            if (changedObject(index3)){
+                break;
+            }
+            CCLog("while 1");
+        }
     }
     //check Eliminate end
     isTouch = true;
@@ -433,6 +470,7 @@ void GameScene::checkEliminate()
 
 void GameScene::showEliminate()
 {
+    return;
     memset(isSame, false, sizeof(isSame));
     bool isEliminate =false;
     
@@ -499,8 +537,27 @@ Bomb* GameScene::createDye(const Index& index)
     return tSprite;
 }
 
-void GameScene::createDyes(VIndex& vIndex)
+void GameScene::createDyes()
 {
+    VIndex vIndex;
+    int i = arc4random()%4;
+    int j = arc4random()%4;
+    
+    
+    int iLength = i+4;
+    int jLength = j+4;
+    CCLog("pause length:%d,%d",iLength,jLength);
+    for (; i < iLength; i++) {
+        for (int _j=j ; _j < jLength; _j++) {
+            //            CCLog("pause:%d,%d",i,_j);
+            Index index = Index(i,_j);
+            vIndex.push_back(index);
+        }
+    }
+    
+    CCLog("pause size =%d",vIndex.size());
+//    createDyes(vIndex);
+    
     for (VIndex::iterator it = vIndex.begin(); it != vIndex.end(); it++) {
         createDye(*it);
     }
@@ -539,24 +596,17 @@ void GameScene::removeFruit(const Index& index)
 
 void GameScene::bombRemove(Bomb *node)
 {
-    CCLog("bombRemove ==%p,%p",this,gs);
     if (ITEM_BOMB == node->mFlag) {
         
     }else if (ITEM_DYE == node->mFlag) {
         
     }
     
-    CCArray* allChild = this->getChildren();
-    CCLog("allChild count %d",allChild->count());
-    
     node->removeFromParentAndCleanup(true);
 }
 
 void GameScene::dyeRemove(CCNode *node)
 {
-    CCLog("dyeRemove %p",this);
-    CCArray* allChild = this->getChildren();
-    CCLog("allChild count %d",allChild->count());
     
     Index index = getIndexByPoint(node->getPosition());
     
