@@ -27,7 +27,7 @@
 				<dict>
 					<key>0</key>
 					<dict>
-						<key>displayFrame</key>
+						<key>opacity</key>
 						<dict>
 							<key>keyframes</key>
 							<array>
@@ -35,169 +35,83 @@
 									<key>easing</key>
 									<dict>
 										<key>type</key>
-										<integer>0</integer>
+										<integer>1</integer>
 									</dict>
 									<key>name</key>
-									<string>displayFrame</string>
+									<string>opacity</string>
 									<key>time</key>
 									<real>0.0</real>
 									<key>type</key>
-									<integer>7</integer>
+									<integer>5</integer>
+									<key>value</key>
+									<integer>255</integer>
+								</dict>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>1</integer>
+									</dict>
+									<key>name</key>
+									<string>opacity</string>
+									<key>time</key>
+									<real>0.5</real>
+									<key>type</key>
+									<integer>5</integer>
+									<key>value</key>
+									<integer>10</integer>
+								</dict>
+							</array>
+							<key>name</key>
+							<string>opacity</string>
+							<key>type</key>
+							<integer>5</integer>
+						</dict>
+						<key>position</key>
+						<dict>
+							<key>keyframes</key>
+							<array>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>1</integer>
+									</dict>
+									<key>name</key>
+									<string>position</string>
+									<key>time</key>
+									<real>0.0</real>
+									<key>type</key>
+									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<string>dye_effect1.png</string>
-										<string>Animation/dye_effect.plist</string>
+										<real>0.0</real>
+										<real>0.0</real>
 									</array>
 								</dict>
 								<dict>
 									<key>easing</key>
 									<dict>
 										<key>type</key>
-										<integer>0</integer>
+										<integer>1</integer>
 									</dict>
 									<key>name</key>
-									<string>displayFrame</string>
+									<string>position</string>
 									<key>time</key>
-									<real>0.033333335071802139</real>
+									<real>0.5</real>
 									<key>type</key>
-									<integer>7</integer>
+									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<string>dye_effect2.png</string>
-										<string>Animation/dye_effect.plist</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>time</key>
-									<real>0.066666670143604279</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>dye_effect3.png</string>
-										<string>Animation/dye_effect.plist</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>time</key>
-									<real>0.10000000149011612</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>dye_effect4.png</string>
-										<string>Animation/dye_effect.plist</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>time</key>
-									<real>0.13333334028720856</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>dye_effect5.png</string>
-										<string>Animation/dye_effect.plist</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>time</key>
-									<real>0.1666666716337204</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>dye_effect6.png</string>
-										<string>Animation/dye_effect.plist</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>time</key>
-									<real>0.20000000298023224</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>dye_effect7.png</string>
-										<string>Animation/dye_effect.plist</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>time</key>
-									<real>0.23333333432674408</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>dye_effect8.png</string>
-										<string>Animation/dye_effect.plist</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>time</key>
-									<real>0.26666668057441711</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>dye_effect9.png</string>
-										<string>Animation/dye_effect.plist</string>
+										<real>0.0</real>
+										<real>40</real>
 									</array>
 								</dict>
 							</array>
 							<key>name</key>
-							<string>displayFrame</string>
+							<string>position</string>
 							<key>type</key>
-							<integer>7</integer>
+							<integer>3</integer>
 						</dict>
 					</dict>
 				</dict>
@@ -216,6 +130,23 @@
 				<key>properties</key>
 				<array>
 					<dict>
+						<key>baseValue</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+						</array>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
 						<key>name</key>
 						<string>anchorPoint</string>
 						<key>type</key>
@@ -233,8 +164,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.10000000149011612</real>
+							<real>0.10000000149011612</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -248,20 +179,25 @@
 						<false/>
 					</dict>
 					<dict>
-						<key>baseValue</key>
-						<array>
-							<string>dye_effect1.png</string>
-							<string>Animation/dye_effect.plist</string>
-						</array>
 						<key>name</key>
 						<string>displayFrame</string>
 						<key>type</key>
 						<string>SpriteFrame</string>
 						<key>value</key>
 						<array>
-							<string>Animation/dye_effect.plist</string>
-							<string>dye_effect1.png</string>
+							<string>Animation/LvUpStar.plist</string>
+							<string>starlight.png</string>
 						</array>
+					</dict>
+					<dict>
+						<key>baseValue</key>
+						<integer>255</integer>
+						<key>name</key>
+						<string>opacity</string>
+						<key>type</key>
+						<string>Byte</string>
+						<key>value</key>
+						<integer>255</integer>
 					</dict>
 				</array>
 				<key>seqExpanded</key>
@@ -269,20 +205,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Bomb</string>
-		<key>customProperties</key>
-		<array>
-			<dict>
-				<key>name</key>
-				<string>itemTag</string>
-				<key>optimized</key>
-				<false/>
-				<key>type</key>
-				<integer>0</integer>
-				<key>value</key>
-				<string>1</string>
-			</dict>
-		</array>
+		<string></string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -350,15 +273,15 @@
 			<key>autoPlay</key>
 			<true/>
 			<key>chainedSequenceId</key>
-			<integer>-1</integer>
+			<integer>0</integer>
 			<key>length</key>
-			<real>0.26666668057441711</real>
+			<real>0.5</real>
 			<key>name</key>
-			<string>Up</string>
+			<string>Default Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.26666668057441711</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

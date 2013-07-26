@@ -122,6 +122,8 @@ private:
     Bomb* createBomb(const Index& index);
     Bomb* createDye(const Index& index);
     void createDyes();
+    int moveAndDrop(VIndex& vIndex);
+    CCNode* createStar(int direction);
     
     bool isTouch;
     bool isFever;

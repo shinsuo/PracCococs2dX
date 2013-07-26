@@ -39,7 +39,7 @@ public:
     
     void test();
     bool isAutoRemove;
-    SEL_CallFuncN _callbackFunc = NULL;
+    SEL_CallFuncN _callbackFunc;
     CCCallFuncN* _callbackFuncN;
     CCNode* mParent;
     int mFlag;
